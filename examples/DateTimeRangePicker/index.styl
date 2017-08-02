@@ -1,0 +1,336 @@
+.date-picker-pane {
+    padding: 12px;
+
+    .date-picker-pane-header,
+    .date-picker-pane-body,
+    .date-picker-pane-footer {
+        clearfix();
+    }
+
+    .date-picker-pane-header {
+        .tilde {
+            float: left;
+            line-height: 32px;
+            text-align: center;
+            width: 24px;
+        }
+    }
+
+    .date-picker-pane-body {
+        margin-top: 8px;
+
+        .date-picker-pane-container {
+            float: left;
+        }
+
+        .date-picker-pane-container + .date-picker-pane-container {
+            margin-left: 24px;
+        }
+        .date-picker-pane-container + .date-picker-pane-container:before {
+            content: ' ';
+            display: block;
+            height: 260px;
+            vertical-align: middle;
+            margin-left: -12px;
+            float: left;
+            margin-right: 12px;
+            margin-top: 16px;
+            border-left: 1px solid #E6E6E6;
+        }
+    }
+
+    .date-picker-pane-footer {
+        margin-top: 12px;
+    }
+}
+
+.time-input {
+    position: relative;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    width: 120px;
+
+    > input {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+        font-size: 13px;
+        color: #222222;
+        border: none;
+    }
+}
+
+.input-icon-group {
+    position: relative;
+    float: left;
+
+    + .input-icon-group {
+        margin-left: 8px;
+    }
+
+    > .time-input {
+        padding-left: 30px;
+        padding-right: 12px;
+    }
+}
+
+.input-icon-label {
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    margin-top: -10px;
+    color: #666666;
+}
+
+/*
+.date-picker-pane {
+    width: 546px;
+    height: 388px;
+    padding: 12px;
+    border: 1px solid #dddddd;
+
+    .date-picker-pane-header {
+        width: 520px;
+        height: 32px;
+        .input-time-container {
+            margin-left: 8px;
+            float: left;
+            position: relative;
+            .time-input > input {
+                width: 120px;
+                display: block;
+                padding: 5px 12px;
+                padding-right: 12px;
+                padding-left: 30px;
+                font-size: 13px;
+                outline: none;
+                color: #222222;
+                background-color: #ffffff;
+                background-image: none;
+                border: 1px solid #cccccc;
+                border-radius: 3px;
+                
+                &:focus {
+                    border-color: #0096cc;
+                    transition: all 0.2s linear 0s;
+                    outline: none;
+                }
+            }
+        }
+        .field-date-picker {
+            width: 120px;
+            position: relative;
+            float: left;
+            
+            :global {
+                 .react-date-field--focused {
+                    transition: none;
+                    border: none;
+                    > input {
+                        border-color: #0096cc;
+                        transition: all 0.2s linear 0s;
+                        outline: none;
+                    }
+                }
+            }
+        }
+        
+        .input-icon-label {
+            position: absolute;
+            left: 9px;
+            top: 50%;
+            margin-top: -10px;
+            color: #666666;
+        }
+        
+        .tilde {
+            float: left;
+            line-height: 32px;
+            text-align: center;
+            width: 24px;
+        }
+    }
+    .date-picker-pane-body {
+        height: 280px;
+        margin-top: 8px;
+        
+        .date-picker-pane-container {
+            &-start, &-end {
+                width: 248px;
+                height: 280px;
+                float: left;
+                :global{
+                    .react-date-picker__history-view {
+                        width: 246px;
+                        height: 236px;
+                        margin-left: -6px;
+                        padding: 9px 10px;
+                        margin-top: 4px;
+                        padding-bottom: 0px;
+
+                        .history-months-view {
+                            width: 228px;
+                            height: 132px;
+                            padding: 0;
+                            .monthHistoryView {
+                                padding: 0;
+                                margin-top: 10px;
+                                margin-left: 0;
+                                line-height: 1.95;
+                            }
+
+                        }
+                        
+                        .history-years-container {
+                            padding: 10px 0px 12px 0px;
+                            
+                            width: 228px;
+                            
+                            .react-date-picker__decade-view-arrow--prev {
+                                width: 6px;
+                                padding-left: 5px;
+                                padding-right: 7px;
+                                width: 18px;
+                            }
+                            .react-date-picker__decade-view-arrow--next {
+                                width: 6px;
+                                padding-left: 7px;
+                                padding-right: 5px;
+                                width: 18px;
+                            }
+                            .react-date-picker__decade-view-year {
+                                margin: 0px 6px;
+                            }
+                            .react-date-picker__decade-view-year--active {
+                                background-color: #db3d44;
+                            }
+                            
+                        }
+                        
+                        .react-date-picker__footer {
+                            padding: 0px;
+                            height: 47px;
+                            background-color: #f8f8f8;
+                            width: 244px;
+                            margin-left: -10px;
+                            border-bottom-right-radius: 3px;
+                            border-bottom-left-radius: 3px;
+
+                            > button {
+                                margin: 0px;
+                                margin-left: 17px;
+                            }
+                        }
+                    
+                    }
+                }
+            }
+
+            &-start {
+                .date-picker-start > div  {
+                        width: 247px;
+                        height: 280px;
+                        padding: 0px 3px;
+                        border: none;
+                        box-shadow: none;
+                }
+            }
+            &-end {
+                margin-left: 24px;
+                &:before {
+                    content: ' ';
+                    display: block;
+                    height: 260px;
+                    vertical-align: middle;
+                    margin-left: -12px;
+                    float: left;
+                    margin-right: 12px;
+                    margin-top: 16px;
+                    border-left: 1px solid #E6E6E6;
+                }
+                
+                .date-picker-end > div  {
+                        width: 247px;
+                        height: 280px;
+                        padding: 0px 3px;
+                        border: none;
+                        box-shadow: none;
+                }
+            }
+        }
+    }
+    
+    .date-picker-pane-footer {
+        width: 520px;
+        height: 32px;
+        margin-top: 12px;
+        
+        .apply-button, .cancel-button {
+            display: inline-block;
+            min-width: 80px;
+            margin-bottom: 0;
+            font-weight: normal;
+            text-align: center;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            background-image: none;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            padding: 5px 12px;
+            font-size: 13px;
+            line-height: 20px;
+            border-radius: 3px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        .apply-button {
+            color: #fff;
+            background-color: #0096cc;
+            background-image: linear-gradient(to bottom, #00a7e6 0%, #0096cc 100%);
+            background-repeat: repeat-x;
+            border-color: #0095ce;
+            
+            &:hover {
+                color: #fff;
+                background-color: #1daee5;
+                background-image: linear-gradient(to bottom, #1daee5 0%, #00a3df 100%);
+                background-repeat: repeat-x;
+                border-color: #00759f;
+            }
+        }
+        .cancel-button {
+            margin-left: 8px;
+            color: #222222;
+            background-color: #fbfbfb;
+            background-image: linear-gradient(to bottom, #fbfbfb 0%, #ececec 100%);
+            background-repeat: repeat-x;
+            border-color: #cccccc;
+
+            &:hover {
+                color: #222222;
+                background-color: #ffffff;
+                background-image: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 100%);
+                background-repeat: repeat-x;
+                border-color: #999999;
+            }
+            &:active {
+                color: #222222;
+                background-color: #eeeeee;
+                border-color: #bbbbbb;
+                box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1) inset;
+            }
+            &:focus {
+                color: #222222;
+                border-color: #0096cc;
+            }
+        }
+    }
+}
+*/
