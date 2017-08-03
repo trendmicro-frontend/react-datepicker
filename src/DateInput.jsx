@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import { DateField } from 'react-date-picker';
 import 'react-date-picker/index.css';
 
-class DateFieldComponent extends PureComponent {
+class DateInput extends PureComponent {
     static propTypes = {
         locale: PropTypes.string,
         dateFormat: PropTypes.string,
@@ -53,4 +53,4 @@ class DateFieldComponent extends PureComponent {
     }
 }
 
-export default DateFieldComponent;
+export default DateInput;
