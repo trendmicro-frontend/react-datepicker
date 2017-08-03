@@ -1,4 +1,42 @@
 /*! react-datepicker v0.1.0 | (c) 2017 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-datepicker */
+.datepicker---time-input-container---11rJN {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 20px;
+  position: relative;
+}
+.datepicker---time-input-container---11rJN *,
+.datepicker---time-input-container---11rJN *:before,
+.datepicker---time-input-container---11rJN *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+.datepicker---time-input---1BajQ {
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 120px;
+}
+.datepicker---time-input---1BajQ > input {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  padding-left: 30px;
+  padding-right: 12px;
+  font-size: 13px;
+  color: #222;
+  border: none;
+}
+.datepicker---input-icon-label---3F2rd {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  margin-top: -10px;
+  color: #666;
+}
 .datepicker---date-picker-container---1kNBY {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
