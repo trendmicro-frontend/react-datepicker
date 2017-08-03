@@ -3248,7 +3248,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".time-input-container---ATM1X {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.time-input-container---ATM1X *,\n.time-input-container---ATM1X *:before,\n.time-input-container---ATM1X *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.time-input---2KU-r {\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  width: 120px;\n}\n.time-input---2KU-r > input {\n  display: block;\n  width: 100%;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: none;\n}\n.input-icon-label---3yC9C {\n  position: absolute;\n  left: 9px;\n  top: 50%;\n  margin-top: -10px;\n  color: #666;\n}\n", ""]);
+exports.push([module.i, ".time-input-container---ATM1X {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.time-input-container---ATM1X *,\n.time-input-container---ATM1X *:before,\n.time-input-container---ATM1X *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.time-input---2KU-r {\n  width: 120px;\n}\n.time-input---2KU-r > input {\n  display: block;\n  width: 100%;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.time-input---2KU-r > input:focus {\n  border-color: #0096cc;\n}\n.time-input---2KU-r:focus .input-icon-label---3yC9C {\n  color: #0096cc;\n}\n.input-icon-label---3yC9C {\n  position: absolute;\n  left: 9px;\n  top: 50%;\n  margin-top: -10px;\n  color: #666;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -55774,27 +55774,27 @@ var DateInput = (_temp = _class = function (_PureComponent) {
                 endDate = _props.endDate,
                 onChange = _props.onChange,
                 className = _props.className,
-                children = _props.children,
-                props = _objectWithoutProperties(_props, ['locale', 'dateFormat', 'value', 'startDate', 'endDate', 'onChange', 'className', 'children']);
+                props = _objectWithoutProperties(_props, ['locale', 'dateFormat', 'value', 'startDate', 'endDate', 'onChange', 'className']);
 
-            return _react2.default.createElement(
-                _reactDatePicker.DateField,
-                _extends({
-                    locale: locale,
-                    dateFormat: dateFormat,
-                    expanded: false,
-                    forceValidDate: true,
-                    updateOnDateClick: true,
-                    collapseOnDateClick: false,
-                    clearIcon: false,
-                    minDate: startDate,
-                    maxDate: endDate,
-                    onChange: onChange,
-                    value: value,
-                    className: (0, _classnames2.default)(className, _DateInput2.default.dateInput)
-                }, props),
-                children
-            );
+            if (typeof props.renderIcon === 'function') {
+                props.renderCalendarIcon = props.renderIcon;
+                delete props.renderIcon;
+            }
+
+            return _react2.default.createElement(_reactDatePicker.DateField, _extends({
+                locale: locale,
+                dateFormat: dateFormat,
+                expanded: false,
+                collapseOnDateClick: false,
+                forceValidDate: true,
+                updateOnDateClick: true,
+                clearIcon: false,
+                minDate: startDate,
+                maxDate: endDate,
+                onChange: onChange,
+                value: value,
+                className: (0, _classnames2.default)(className, _DateInput2.default.dateInput)
+            }, props));
         }
     }]);
 
@@ -55805,16 +55805,15 @@ var DateInput = (_temp = _class = function (_PureComponent) {
     value: _propTypes2.default.string,
     startDate: _propTypes2.default.object,
     endDate: _propTypes2.default.object,
-    onChange: _propTypes2.default.func
+    onChange: _propTypes2.default.func,
+    renderIcon: _propTypes2.default.func
 }, _class.defaultProps = {
     locale: 'en',
     dateFormat: 'YYYY-MM-DD',
     value: '',
     startDate: null,
     endDate: null,
-    onChange: function onChange(date /* moment */) {
-        // noop
-    }
+    onChange: function onChange() {}
 }, _temp);
 exports.default = DateInput;
 
@@ -56071,8 +56070,8 @@ var DatePickerDropdown = (_temp2 = _class = function (_PureComponent) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DatePickerDropdown.__proto__ || Object.getPrototypeOf(DatePickerDropdown)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            focus: false
-        }, _this.isClickEvent = false, _temp), _possibleConstructorReturn(_this, _ret);
+            focused: false
+        }, _this.isDateInputOnBlur = false, _this.isDatePickerOnClick = false, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(DatePickerDropdown, [{
@@ -56083,7 +56082,7 @@ var DatePickerDropdown = (_temp2 = _class = function (_PureComponent) {
             var _props = this.props,
                 locale = _props.locale,
                 date = _props.date,
-                _onChange = _props.onChange;
+                onChange = _props.onChange;
 
 
             return _react2.default.createElement(
@@ -56094,21 +56093,20 @@ var DatePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                         _this2.dateInput = node;
                     },
                     value: date,
-                    onChange: function onChange(value) {
-                        _onChange(value);
-                    },
+                    onChange: onChange,
                     onFocus: function onFocus() {
                         _this2.setState(function (state) {
                             return {
-                                focus: true
+                                focused: true
                             };
                         });
                     },
                     onBlur: function onBlur(event) {
                         event.stopPropagation();
+                        _this2.isDateInputOnBlur = true;
 
                         setTimeout(function () {
-                            if (_this2.isClickEvent) {
+                            if (_this2.isDatePickerOnClick) {
                                 // Focus on the input element
                                 var node = _reactDom2.default.findDOMNode(_this2.dateInput);
                                 if (node) {
@@ -56118,12 +56116,13 @@ var DatePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                             } else {
                                 _this2.setState(function (state) {
                                     return {
-                                        focus: false
+                                        focused: false
                                     };
                                 });
                             }
 
-                            _this2.isClickEvent = false;
+                            _this2.isDateInputOnBlur = false;
+                            _this2.isDatePickerOnClick = false;
                         }, 0);
                     }
                 }),
@@ -56132,18 +56131,18 @@ var DatePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                     {
                         className: _index2.default.dropdown,
                         style: {
-                            display: this.state.focus ? 'block' : 'none',
+                            display: this.state.focused ? 'block' : 'none',
                             padding: '8px 4px'
                         }
                     },
                     _react2.default.createElement(_DatePicker2.default, {
                         locale: locale,
                         date: date,
-                        onChange: function onChange(value, obj, event) {
-                            _onChange(value);
-                        },
+                        onChange: onChange,
                         onClick: function onClick(event) {
-                            _this2.isClickEvent = true;
+                            if (_this2.isDateInputOnBlur) {
+                                _this2.isDatePickerOnClick = true;
+                            }
                         }
                     })
                 )
@@ -56505,15 +56504,12 @@ var TimeInput = (_temp = _class = function (_PureComponent) {
                 _react2.default.createElement(_timeInput2.default, {
                     value: this.props.value,
                     onChange: this.props.onChange,
-                    className: _TimeInput2.default.timeInput,
-                    defaultValue: '00:00:00',
-                    placeholder: 'hh:mm:ss'
+                    className: _TimeInput2.default.timeInput
                 }),
-                _react2.default.createElement(
-                    'label',
-                    { className: _TimeInput2.default.inputIconLabel },
-                    _react2.default.createElement('i', { className: 'fa fa-clock-o' })
-                )
+                this.props.renderIcon({
+                    className: _TimeInput2.default.inputIconLabel,
+                    children: _react2.default.createElement('i', { className: 'fa fa-clock-o' })
+                })
             );
         }
     }]);
@@ -56521,10 +56517,18 @@ var TimeInput = (_temp = _class = function (_PureComponent) {
     return TimeInput;
 }(_react.PureComponent), _class.propTypes = {
     value: _propTypes2.default.string,
-    onChange: _propTypes2.default.func
+    onChange: _propTypes2.default.func,
+    rendeIcon: _propTypes2.default.func
 }, _class.defaultProps = {
     value: '00:00:00',
-    onChange: function onChange() {}
+    onChange: function onChange() {},
+    renderIcon: function renderIcon(props) {
+        return _react2.default.createElement(
+            'label',
+            { className: props.className },
+            props.children
+        );
+    }
 }, _temp);
 exports.default = TimeInput;
 
@@ -57214,4 +57218,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?2288551e9864a7612e2a
+//# sourceMappingURL=bundle.js.map?9d013efd290b9bfa8354
