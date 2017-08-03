@@ -56,6 +56,8 @@ state = {
 
 ### DatePicker in Dropdown Menu
 
+Check out Dropdown component at https://github.com/trendmicro-frontend/react-dropdown
+
 ```js
 <Dropdown>
     <Dropdown.Toggle
