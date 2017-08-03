@@ -7,11 +7,10 @@ import ReactDOM from 'react-dom';
 import Navbar from './Navbar';
 import Section from './Section';
 import {
+    DatePicker,
+    DatePickerDropdown,
     DateTimePicker,
     DateTimeRangePicker
-} from './components';
-import {
-    DatePicker
 } from '../src';
 
 const normalizeDateString = (dateString) => {
@@ -137,7 +136,7 @@ class App extends PureComponent {
                     <div className="row">
                         <div className="col-lg-6 col-md-12">
                             <Section className="row-md-6">
-                                <h2>Inline</h2>
+                                <h2>DatePicker - Inline</h2>
                                 <DatePicker
                                     locale={this.state.locale}
                                     date={this.state.startDate}
@@ -147,14 +146,19 @@ class App extends PureComponent {
                         </div>
                         <div className="col-lg-6 col-md-12">
                             <Section className="row-md-6">
-                                <h2>Dropdown</h2>
+                                <h2>DatePicker - Dropdown</h2>
+                                <DatePickerDropdown
+                                    locale={this.state.locale}
+                                    date={this.state.startDate}
+                                    onChange={this.changeStartDate}
+                                />
                             </Section>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-lg-6 col-md-12">
-                            <Section className="row-md-8">
-                                <h2>Date/Time Picker</h2>
+                            <Section className="row-md-7">
+                                <h2>DateTimePicker</h2>
                                 <DateTimePicker
                                     locale={this.state.locale}
                                     date={this.state.startDate}
@@ -165,8 +169,8 @@ class App extends PureComponent {
                             </Section>
                         </div>
                         <div className="col-lg-6 col-md-12">
-                            <Section className="row-md-8">
-                                <h2>Date/Time Range Picker</h2>
+                            <Section className="row-md-7">
+                                <h2>DateTimeRangePicker</h2>
                                 <DateTimeRangePicker
                                     locale={this.state.locale}
                                     startDate={this.state.startDate}

@@ -1,7 +1,9 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { DateField } from 'react-date-picker';
 import 'react-date-picker/index.css';
+import styles from './DateInput.styl';
 
 class DateInput extends PureComponent {
     static propTypes = {
@@ -31,6 +33,8 @@ class DateInput extends PureComponent {
             startDate,
             endDate,
             onChange,
+            className,
+            children,
             ...props
         } = this.props;
 
@@ -47,8 +51,11 @@ class DateInput extends PureComponent {
                 maxDate={endDate}
                 onChange={onChange}
                 value={value}
+                className={classNames(className, styles.dateInput)}
                 {...props}
-            />
+            >
+                {children}
+            </DateField>
         );
     }
 }

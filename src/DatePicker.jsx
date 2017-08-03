@@ -80,7 +80,7 @@ class DatePicker extends PureComponent {
                 {...props}
                 className={cx(
                     className,
-                    styles.datePickerContainer
+                    styles.container
                 )}
                 navBarArrows={{
                     prev: navArrows.prev,

@@ -1,10 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import {
-    DatePicker,
-    DateInput,
-    TimeInput
-} from '../../src';
+import DatePicker from './DatePicker';
+import DateInput from './DateInput';
+import TimeInput from './TimeInput';
 import styles from './index.styl';
 
 class DateTimePicker extends PureComponent {
@@ -49,7 +47,6 @@ class DateTimePicker extends PureComponent {
                             locale={locale}
                             date={date}
                             onChange={onChangeDate}
-                            style={{ width: 248 }}
                         />
                     </div>
                 </div>
