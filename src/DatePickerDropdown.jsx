@@ -13,10 +13,10 @@ class DatePickerDropdown extends PureComponent {
     };
 
     state = {
-        focus: false
+        focused: false
     };
-
-    isClickEvent = false;
+    isDateInputOnBlur = false;
+    isDatePickerOnClick = false;
 
     render() {
         const {
@@ -32,19 +32,18 @@ class DatePickerDropdown extends PureComponent {
                         this.dateInput = node;
                     }}
                     value={date}
-                    onChange={value => {
-                        onChange(value);
-                    }}
+                    onChange={onChange}
                     onFocus={() => {
                         this.setState((state) => ({
-                            focus: true
+                            focused: true
                         }));
                     }}
                     onBlur={event => {
                         event.stopPropagation();
-
+                        this.isDateInputOnBlur = true;
+                        
                         setTimeout(() => {
-                            if (this.isClickEvent) {
+                            if (this.isDatePickerOnClick) {
                                 // Focus on the input element
                                 const node = ReactDOM.findDOMNode(this.dateInput);
                                 if (node) {
@@ -52,30 +51,31 @@ class DatePickerDropdown extends PureComponent {
                                     el && el.focus();
                                 }
                             } else {
-                                this.setState((state) => ({
-                                    focus: false
+                                this.setState(state => ({
+                                    focused: false
                                 }));
                             }
 
-                            this.isClickEvent = false;
+                            this.isDateInputOnBlur = false;
+                            this.isDatePickerOnClick = false;
                         }, 0);
                     }}
                 />
                 <div
                     className={styles.dropdown}
                     style={{
-                        display: this.state.focus ? 'block' : 'none',
+                        display: this.state.focused ? 'block' : 'none',
                         padding: '8px 4px'
                     }}
                 >
                     <DatePicker
                         locale={locale}
                         date={date}
-                        onChange={(value, obj, event) => {
-                            onChange(value);
-                        }}
-                        onClick={(event) => {
-                            this.isClickEvent = true;
+                        onChange={onChange}
+                        onClick={event => {
+                            if (this.isDateInputOnBlur) {
+                                this.isDatePickerOnClick = true;
+                            }
                         }}
                     />
                 </div>
