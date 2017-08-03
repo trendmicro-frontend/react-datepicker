@@ -41,7 +41,7 @@ class DatePickerDropdown extends PureComponent {
                     onBlur={event => {
                         event.stopPropagation();
                         this.isDateInputOnBlur = true;
-                        
+
                         setTimeout(() => {
                             if (this.isDatePickerOnClick) {
                                 // Focus on the input element
