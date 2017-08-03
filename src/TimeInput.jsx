@@ -6,11 +6,17 @@ import styles from './TimeInput.styl';
 class TimeInput extends PureComponent {
     static propTypes = {
         value: PropTypes.string,
-        onChange: PropTypes.func
+        onChange: PropTypes.func,
+        rendeIcon: PropTypes.func
     };
     static defaultProps = {
         value: '00:00:00',
-        onChange: () => {}
+        onChange: () => {},
+        renderIcon: (props) => (
+            <label className={props.className}>
+                {props.children}
+            </label>
+        )
     };
 
     render() {
@@ -20,12 +26,11 @@ class TimeInput extends PureComponent {
                     value={this.props.value}
                     onChange={this.props.onChange}
                     className={styles.timeInput}
-                    defaultValue="00:00:00"
-                    placeholder="hh:mm:ss"
                 />
-                <label className={styles.inputIconLabel}>
-                    <i className="fa fa-clock-o" />
-                </label>
+                {this.props.renderIcon({
+                    className: styles.inputIconLabel,
+                    children: <i className="fa fa-clock-o" />
+                })}
             </div>
         );
     }

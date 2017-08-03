@@ -7,10 +7,6 @@
 }
 
 .time-input {
-    background-color: #ffffff;
-    background-image: none;
-    border: 1px solid #cccccc;
-    border-radius: 3px;
     width: 120px;
 
     > input {
@@ -21,7 +17,19 @@
         padding-right: 12px;
         font-size: 13px;
         color: #222222;
-        border: none;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+
+        &:focus {
+            border-color: #0096cc;
+        }
+    }
+
+    &:focus {
+        .input-icon-label {
+            color: #0096cc;
+        }
     }
 }
 

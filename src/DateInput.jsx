@@ -12,7 +12,8 @@ class DateInput extends PureComponent {
         value: PropTypes.string,
         startDate: PropTypes.object,
         endDate: PropTypes.object,
-        onChange: PropTypes.func
+        onChange: PropTypes.func,
+        renderIcon: PropTypes.func
     };
     static defaultProps = {
         locale: 'en',
@@ -20,9 +21,7 @@ class DateInput extends PureComponent {
         value: '',
         startDate: null,
         endDate: null,
-        onChange: (date /* moment */) => {
-            // noop
-        }
+        onChange: () => {}
     };
 
     render() {
@@ -34,18 +33,22 @@ class DateInput extends PureComponent {
             endDate,
             onChange,
             className,
-            children,
             ...props
         } = this.props;
+
+        if (typeof props.renderIcon === 'function') {
+            props.renderCalendarIcon = props.renderIcon;
+            delete props.renderIcon;
+        }
 
         return (
             <DateField
                 locale={locale}
                 dateFormat={dateFormat}
                 expanded={false}
+                collapseOnDateClick={false}
                 forceValidDate={true}
                 updateOnDateClick={true}
-                collapseOnDateClick={false}
                 clearIcon={false}
                 minDate={startDate}
                 maxDate={endDate}
@@ -53,9 +56,7 @@ class DateInput extends PureComponent {
                 value={value}
                 className={classNames(className, styles.dateInput)}
                 {...props}
-            >
-                {children}
-            </DateField>
+            />
         );
     }
 }
