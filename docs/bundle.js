@@ -33,9 +33,6 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -217,8 +214,13 @@ module.exports = _Anchor2.default;
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js!../node_modules/@trendmicro/react-buttons/dist/react-buttons.css");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -603,8 +605,13 @@ exports.ButtonToolbar = _ButtonToolbar3.default;
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js!../node_modules/@trendmicro/react-dropdown/dist/react-dropdown.css");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -3230,10 +3237,12 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".date-input---ppgSd {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n}\n.date-input---ppgSd *,\n.date-input---ppgSd *:before,\n.date-input---ppgSd *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.date-input---ppgSd > input:focus {\n  outline: none;\n}\n", ""]);
+exports.push([module.i, ".date-input-container---1NuQR {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n}\n.date-input-container---1NuQR *,\n.date-input-container---1NuQR *:before,\n.date-input-container---1NuQR *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.date-input-container---1NuQR .date-input---ppgSd {\n  width: 120px;\n}\n.date-input-container---1NuQR .date-input---ppgSd > input {\n  display: block;\n  width: 100%;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.date-input-container---1NuQR .date-input---ppgSd > input:focus {\n  border-color: #0096cc;\n}\n", ""]);
 
 // exports
 exports.locals = {
+	"date-input-container": "date-input-container---1NuQR",
+	"dateInputContainer": "date-input-container---1NuQR",
 	"date-input": "date-input---ppgSd",
 	"dateInput": "date-input---ppgSd"
 };
@@ -3248,7 +3257,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".time-input-container---ATM1X {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.time-input-container---ATM1X *,\n.time-input-container---ATM1X *:before,\n.time-input-container---ATM1X *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.time-input---2KU-r {\n  width: 120px;\n}\n.time-input---2KU-r > input {\n  display: block;\n  width: 100%;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.time-input---2KU-r > input:focus {\n  border-color: #0096cc;\n}\n.time-input---2KU-r:focus .input-icon-label---3yC9C {\n  color: #0096cc;\n}\n.input-icon-label---3yC9C {\n  position: absolute;\n  left: 9px;\n  top: 50%;\n  margin-top: -10px;\n  color: #666;\n}\n", ""]);
+exports.push([module.i, ".time-input-container---ATM1X {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.time-input-container---ATM1X *,\n.time-input-container---ATM1X *:before,\n.time-input-container---ATM1X *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.time-input-container---ATM1X .time-input---2KU-r {\n  width: 120px;\n}\n.time-input-container---ATM1X .time-input---2KU-r > input {\n  display: block;\n  width: 100%;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.time-input-container---ATM1X .time-input---2KU-r > input:focus {\n  border-color: #0096cc;\n}\n.time-input-container---ATM1X .time-input-icon---1_6jR {\n  position: absolute;\n  left: 9px;\n  top: 50%;\n  margin-top: -10px;\n  color: #666;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -3256,8 +3265,8 @@ exports.locals = {
 	"timeInputContainer": "time-input-container---ATM1X",
 	"time-input": "time-input---2KU-r",
 	"timeInput": "time-input---2KU-r",
-	"input-icon-label": "input-icon-label---3yC9C",
-	"inputIconLabel": "input-icon-label---3yC9C"
+	"time-input-icon": "time-input-icon---1_6jR",
+	"timeInputIcon": "time-input-icon---1_6jR"
 };
 
 /***/ }),
@@ -3270,12 +3279,12 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".dropdown---Wq_VE {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 0;\n  padding: 8px 0;\n  margin: 0;\n  list-style: none;\n  font-size: 13px;\n  text-align: left;\n  background-color: #fff;\n  border: 1px solid #bbb;\n  border-radius: 0;\n  -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2);\n  box-shadow: 0 2px 6px rgba(0,0,0,0.2);\n  -webkit-background-clip: padding;\n  -moz-background-clip: padding;\n  background-clip: padding-box;\n}\n.container---1tcgR {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  border: none;\n  border-radius: 0;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  padding: 0;\n  width: 248px;\n}\n.container---1tcgR *,\n.container---1tcgR *:before,\n.container---1tcgR *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.react-date-picker__month-view-day--today-highlight {\n  color: #db3d44 !important;\n}\n.date-picker-pane---44K3_ {\n  display: inline-block;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42 {\n  zoom: 1;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:before,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:before,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:before,\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:after,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:after,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:after {\n  content: \"\";\n  display: table;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:after,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:after,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:after {\n  clear: both;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm .tilde---3W1MT {\n  float: left;\n  line-height: 32px;\n  text-align: center;\n  width: 24px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv {\n  margin-top: 8px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz {\n  float: left;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz + .date-picker-pane-container---3RZYz {\n  margin-left: 24px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz + .date-picker-pane-container---3RZYz:before {\n  content: ' ';\n  display: block;\n  height: 260px;\n  vertical-align: middle;\n  margin-left: -12px;\n  float: left;\n  margin-right: 12px;\n  margin-top: 16px;\n  border-left: 1px solid #e6e6e6;\n}\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42 {\n  margin-top: 12px;\n}\n.input-icon-group---1ttz- {\n  position: relative;\n  float: left;\n}\n.input-icon-group---1ttz- + .input-icon-group---1ttz- {\n  margin-left: 8px;\n}\n", ""]);
+exports.push([module.i, ".date-picker-container---360sS {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  border: none;\n  border-radius: 0;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  padding: 0;\n  width: 248px;\n}\n.date-picker-container---360sS *,\n.date-picker-container---360sS *:before,\n.date-picker-container---360sS *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.react-date-picker__month-view-day--today-highlight {\n  color: #db3d44 !important;\n}\n.date-picker-pane---44K3_ {\n  display: inline-block;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42 {\n  zoom: 1;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:before,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:before,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:before,\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:after,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:after,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:after {\n  content: \"\";\n  display: table;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:after,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:after,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:after {\n  clear: both;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm .tilde---3W1MT {\n  float: left;\n  line-height: 32px;\n  text-align: center;\n  width: 24px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv {\n  margin-top: 8px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz {\n  float: left;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz + .date-picker-pane-container---3RZYz {\n  margin-left: 24px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz + .date-picker-pane-container---3RZYz:before {\n  content: ' ';\n  display: block;\n  height: 260px;\n  vertical-align: middle;\n  margin-left: -12px;\n  float: left;\n  margin-right: 12px;\n  margin-top: 16px;\n  border-left: 1px solid #e6e6e6;\n}\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42 {\n  margin-top: 12px;\n}\n.input-icon-group---1ttz- {\n  position: relative;\n  float: left;\n}\n.input-icon-group---1ttz- + .input-icon-group---1ttz- {\n  margin-left: 8px;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"dropdown": "dropdown---Wq_VE",
-	"container": "container---1tcgR",
+	"date-picker-container": "date-picker-container---360sS",
+	"datePickerContainer": "date-picker-container---360sS",
 	"date-picker-pane": "date-picker-pane---44K3_",
 	"datePickerPane": "date-picker-pane---44K3_",
 	"date-picker-pane-header": "date-picker-pane-header---lyLrm",
@@ -22569,8 +22578,13 @@ module.exports = ReactClass;
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js!../node_modules/react-date-picker/index.css");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -54323,219 +54337,278 @@ module.exports = __webpack_require__("../node_modules/react/lib/React.js");
 
 /***/ }),
 
-/***/ "../node_modules/style-loader/addStyles.js":
+/***/ "../node_modules/style-loader/lib/addStyles.js":
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-var stylesInDom = {},
-	memoize = function(fn) {
-		var memo;
-		return function () {
-			if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-			return memo;
-		};
-	},
-	isOldIE = memoize(function() {
-		// Test for IE <= 9 as proposed by Browserhacks
-		// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
-		// Tests for existence of standard globals is to allow style-loader 
-		// to operate correctly into non-standard environments
-		// @see https://github.com/webpack-contrib/style-loader/issues/177
-		return window && document && document.all && !window.atob;
-	}),
-	getElement = (function(fn) {
-		var memo = {};
-		return function(selector) {
-			if (typeof memo[selector] === "undefined") {
-				memo[selector] = fn.call(this, selector);
-			}
-			return memo[selector]
-		};
-	})(function (styleTarget) {
-		return document.querySelector(styleTarget)
-	}),
-	singletonElement = null,
-	singletonCounter = 0,
-	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__("../node_modules/style-loader/fixUrls.js");
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(selector) {
+		if (typeof memo[selector] === "undefined") {
+			memo[selector] = fn.call(this, selector);
+		}
+
+		return memo[selector]
+	};
+})(function (target) {
+	return document.querySelector(target)
+});
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__("../node_modules/style-loader/lib/urls.js");
 
 module.exports = function(list, options) {
-	if(typeof DEBUG !== "undefined" && DEBUG) {
-		if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 	}
 
 	options = options || {};
+
 	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
 
 	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 	// tags it will allow on a page
-	if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+	if (!options.singleton) options.singleton = isOldIE();
 
 	// By default, add <style> tags to the <head> element
-	if (typeof options.insertInto === "undefined") options.insertInto = "head";
+	if (!options.insertInto) options.insertInto = "head";
 
 	// By default, add <style> tags to the bottom of the target
-	if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+	if (!options.insertAt) options.insertAt = "bottom";
 
-	var styles = listToStyles(list);
+	var styles = listToStyles(list, options);
+
 	addStylesToDom(styles, options);
 
-	return function update(newList) {
+	return function update (newList) {
 		var mayRemove = [];
-		for(var i = 0; i < styles.length; i++) {
+
+		for (var i = 0; i < styles.length; i++) {
 			var item = styles[i];
 			var domStyle = stylesInDom[item.id];
+
 			domStyle.refs--;
 			mayRemove.push(domStyle);
 		}
+
 		if(newList) {
-			var newStyles = listToStyles(newList);
+			var newStyles = listToStyles(newList, options);
 			addStylesToDom(newStyles, options);
 		}
-		for(var i = 0; i < mayRemove.length; i++) {
+
+		for (var i = 0; i < mayRemove.length; i++) {
 			var domStyle = mayRemove[i];
+
 			if(domStyle.refs === 0) {
-				for(var j = 0; j < domStyle.parts.length; j++)
-					domStyle.parts[j]();
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
 				delete stylesInDom[domStyle.id];
 			}
 		}
 	};
 };
 
-function addStylesToDom(styles, options) {
-	for(var i = 0; i < styles.length; i++) {
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
 		var item = styles[i];
 		var domStyle = stylesInDom[item.id];
+
 		if(domStyle) {
 			domStyle.refs++;
+
 			for(var j = 0; j < domStyle.parts.length; j++) {
 				domStyle.parts[j](item.parts[j]);
 			}
+
 			for(; j < item.parts.length; j++) {
 				domStyle.parts.push(addStyle(item.parts[j], options));
 			}
 		} else {
 			var parts = [];
+
 			for(var j = 0; j < item.parts.length; j++) {
 				parts.push(addStyle(item.parts[j], options));
 			}
+
 			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
 		}
 	}
 }
 
-function listToStyles(list) {
+function listToStyles (list, options) {
 	var styles = [];
 	var newStyles = {};
-	for(var i = 0; i < list.length; i++) {
+
+	for (var i = 0; i < list.length; i++) {
 		var item = list[i];
-		var id = item[0];
+		var id = options.base ? item[0] + options.base : item[0];
 		var css = item[1];
 		var media = item[2];
 		var sourceMap = item[3];
 		var part = {css: css, media: media, sourceMap: sourceMap};
-		if(!newStyles[id])
-			styles.push(newStyles[id] = {id: id, parts: [part]});
-		else
-			newStyles[id].parts.push(part);
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
 	}
+
 	return styles;
 }
 
-function insertStyleElement(options, styleElement) {
-	var styleTarget = getElement(options.insertInto)
-	if (!styleTarget) {
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
 		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
 	}
-	var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
 	if (options.insertAt === "top") {
-		if(!lastStyleElementInsertedAtTop) {
-			styleTarget.insertBefore(styleElement, styleTarget.firstChild);
-		} else if(lastStyleElementInsertedAtTop.nextSibling) {
-			styleTarget.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
 		} else {
-			styleTarget.appendChild(styleElement);
+			target.appendChild(style);
 		}
-		styleElementsInsertedAtTop.push(styleElement);
+		stylesInsertedAtTop.push(style);
 	} else if (options.insertAt === "bottom") {
-		styleTarget.appendChild(styleElement);
+		target.appendChild(style);
 	} else {
 		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
 	}
 }
 
-function removeStyleElement(styleElement) {
-	styleElement.parentNode.removeChild(styleElement);
-	var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
 	if(idx >= 0) {
-		styleElementsInsertedAtTop.splice(idx, 1);
+		stylesInsertedAtTop.splice(idx, 1);
 	}
 }
 
-function createStyleElement(options) {
-	var styleElement = document.createElement("style");
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
 	options.attrs.type = "text/css";
 
-	attachTagAttrs(styleElement, options.attrs);
-	insertStyleElement(options, styleElement);
-	return styleElement;
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
 }
 
-function createLinkElement(options) {
-	var linkElement = document.createElement("link");
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
 	options.attrs.type = "text/css";
 	options.attrs.rel = "stylesheet";
 
-	attachTagAttrs(linkElement, options.attrs);
-	insertStyleElement(options, linkElement);
-	return linkElement;
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
 }
 
-function attachTagAttrs(element, attrs) {
+function addAttrs (el, attrs) {
 	Object.keys(attrs).forEach(function (key) {
-		element.setAttribute(key, attrs[key]);
+		el.setAttribute(key, attrs[key]);
 	});
 }
 
-function addStyle(obj, options) {
-	var styleElement, update, remove;
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = options.transform(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
 
 	if (options.singleton) {
 		var styleIndex = singletonCounter++;
-		styleElement = singletonElement || (singletonElement = createStyleElement(options));
-		update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-		remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-	} else if(obj.sourceMap &&
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
 		typeof URL === "function" &&
 		typeof URL.createObjectURL === "function" &&
 		typeof URL.revokeObjectURL === "function" &&
 		typeof Blob === "function" &&
-		typeof btoa === "function") {
-		styleElement = createLinkElement(options);
-		update = updateLink.bind(null, styleElement, options);
-		remove = function() {
-			removeStyleElement(styleElement);
-			if(styleElement.href)
-				URL.revokeObjectURL(styleElement.href);
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
 		};
 	} else {
-		styleElement = createStyleElement(options);
-		update = applyToTag.bind(null, styleElement);
-		remove = function() {
-			removeStyleElement(styleElement);
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
 		};
 	}
 
 	update(obj);
 
-	return function updateStyle(newObj) {
-		if(newObj) {
-			if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
 				return;
+			}
+
 			update(obj = newObj);
 		} else {
 			remove();
@@ -54548,79 +54621,83 @@ var replaceText = (function () {
 
 	return function (index, replacement) {
 		textStore[index] = replacement;
+
 		return textStore.filter(Boolean).join('\n');
 	};
 })();
 
-function applyToSingletonTag(styleElement, index, remove, obj) {
+function applyToSingletonTag (style, index, remove, obj) {
 	var css = remove ? "" : obj.css;
 
-	if (styleElement.styleSheet) {
-		styleElement.styleSheet.cssText = replaceText(index, css);
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
 	} else {
 		var cssNode = document.createTextNode(css);
-		var childNodes = styleElement.childNodes;
-		if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
 		if (childNodes.length) {
-			styleElement.insertBefore(cssNode, childNodes[index]);
+			style.insertBefore(cssNode, childNodes[index]);
 		} else {
-			styleElement.appendChild(cssNode);
+			style.appendChild(cssNode);
 		}
 	}
 }
 
-function applyToTag(styleElement, obj) {
+function applyToTag (style, obj) {
 	var css = obj.css;
 	var media = obj.media;
 
 	if(media) {
-		styleElement.setAttribute("media", media)
+		style.setAttribute("media", media)
 	}
 
-	if(styleElement.styleSheet) {
-		styleElement.styleSheet.cssText = css;
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
 	} else {
-		while(styleElement.firstChild) {
-			styleElement.removeChild(styleElement.firstChild);
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
 		}
-		styleElement.appendChild(document.createTextNode(css));
+
+		style.appendChild(document.createTextNode(css));
 	}
 }
 
-function updateLink(linkElement, options, obj) {
+function updateLink (link, options, obj) {
 	var css = obj.css;
 	var sourceMap = obj.sourceMap;
 
-	/* If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
-	and there is no publicPath defined then lets turn convertToAbsoluteUrls
-	on by default.  Otherwise default to the convertToAbsoluteUrls option
-	directly
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
 	*/
 	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
 
-	if (options.convertToAbsoluteUrls || autoFixUrls){
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
 		css = fixUrls(css);
 	}
 
-	if(sourceMap) {
+	if (sourceMap) {
 		// http://stackoverflow.com/a/26603875
 		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
 	}
 
 	var blob = new Blob([css], { type: "text/css" });
 
-	var oldSrc = linkElement.href;
+	var oldSrc = link.href;
 
-	linkElement.href = URL.createObjectURL(blob);
+	link.href = URL.createObjectURL(blob);
 
-	if(oldSrc)
-		URL.revokeObjectURL(oldSrc);
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
 }
 
 
 /***/ }),
 
-/***/ "../node_modules/style-loader/fixUrls.js":
+/***/ "../node_modules/style-loader/lib/urls.js":
 /***/ (function(module, exports) {
 
 
@@ -55136,8 +55213,13 @@ module.exports = function zeroPad(val, digits) {
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js!../node_modules/trendmicro-ui/dist/css/trendmicro-ui.css");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -55738,8 +55820,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDatePicker = __webpack_require__("../node_modules/react-date-picker/lib/index.js");
 
-__webpack_require__("../node_modules/react-date-picker/index.css");
-
 var _DateInput = __webpack_require__("../src/DateInput.styl");
 
 var _DateInput2 = _interopRequireDefault(_DateInput);
@@ -55781,20 +55861,24 @@ var DateInput = (_temp = _class = function (_PureComponent) {
                 delete props.renderIcon;
             }
 
-            return _react2.default.createElement(_reactDatePicker.DateField, _extends({
-                locale: locale,
-                dateFormat: dateFormat,
-                expanded: false,
-                collapseOnDateClick: false,
-                forceValidDate: true,
-                updateOnDateClick: true,
-                clearIcon: false,
-                minDate: startDate,
-                maxDate: endDate,
-                onChange: onChange,
-                value: value,
-                className: (0, _classnames2.default)(className, _DateInput2.default.dateInput)
-            }, props));
+            return _react2.default.createElement(
+                'div',
+                { className: (0, _classnames2.default)(className, _DateInput2.default.dateInputContainer) },
+                _react2.default.createElement(_reactDatePicker.DateField, _extends({
+                    locale: locale,
+                    dateFormat: dateFormat,
+                    expanded: false,
+                    collapseOnDateClick: false,
+                    forceValidDate: true,
+                    updateOnDateClick: true,
+                    clearIcon: false,
+                    minDate: startDate,
+                    maxDate: endDate,
+                    onChange: onChange,
+                    value: value,
+                    className: _DateInput2.default.dateInput
+                }, props))
+            );
         }
     }]);
 
@@ -55827,8 +55911,13 @@ exports.default = DateInput;
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/DateInput.styl");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -55877,8 +55966,6 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 var _react2 = _interopRequireDefault(_react);
 
 var _reactDatePicker = __webpack_require__("../node_modules/react-date-picker/lib/index.js");
-
-__webpack_require__("../node_modules/react-date-picker/index.css");
 
 var _index = __webpack_require__("../src/index.styl");
 
@@ -55953,7 +56040,7 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
             delete props.renderDay;
 
             return _react2.default.createElement(_reactDatePicker.MonthView, _extends({}, props, {
-                className: (0, _classnames2.default)(className, _index2.default.container),
+                className: (0, _classnames2.default)(className, _index2.default.datePickerContainer),
                 navBarArrows: {
                     prev: navArrows.prev,
                     next: navArrows.next
@@ -55981,8 +56068,8 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
     date: null,
     startDate: null,
     endDate: null,
-    onChange: function onChange(date /* moment */) {},
-    renderDay: function renderDay(day, /* moment */locale) {
+    onChange: function onChange() {},
+    renderDay: function renderDay(day, locale) {
         if ((typeof day === 'undefined' ? 'undefined' : _typeof(day)) === 'object' && typeof day.format === 'function') {
             return day.format('D', locale);
         }
@@ -56006,157 +56093,6 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
     })
 }, _temp2);
 exports.default = DatePicker;
-
-/***/ }),
-
-/***/ "../src/DatePickerDropdown.jsx":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp2;
-
-var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__("../node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__("../node_modules/react-dom/index.js");
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _DateInput = __webpack_require__("../src/DateInput.jsx");
-
-var _DateInput2 = _interopRequireDefault(_DateInput);
-
-var _DatePicker = __webpack_require__("../src/DatePicker.jsx");
-
-var _DatePicker2 = _interopRequireDefault(_DatePicker);
-
-var _index = __webpack_require__("../src/index.styl");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DatePickerDropdown = (_temp2 = _class = function (_PureComponent) {
-    _inherits(DatePickerDropdown, _PureComponent);
-
-    function DatePickerDropdown() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
-        _classCallCheck(this, DatePickerDropdown);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DatePickerDropdown.__proto__ || Object.getPrototypeOf(DatePickerDropdown)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            focused: false
-        }, _this.isDateInputOnBlur = false, _this.isDatePickerOnClick = false, _temp), _possibleConstructorReturn(_this, _ret);
-    }
-
-    _createClass(DatePickerDropdown, [{
-        key: 'render',
-        value: function render() {
-            var _this2 = this;
-
-            var _props = this.props,
-                locale = _props.locale,
-                date = _props.date,
-                onChange = _props.onChange;
-
-
-            return _react2.default.createElement(
-                'div',
-                { style: { position: 'relative' } },
-                _react2.default.createElement(_DateInput2.default, {
-                    ref: function ref(node) {
-                        _this2.dateInput = node;
-                    },
-                    value: date,
-                    onChange: onChange,
-                    onFocus: function onFocus() {
-                        _this2.setState(function (state) {
-                            return {
-                                focused: true
-                            };
-                        });
-                    },
-                    onBlur: function onBlur(event) {
-                        event.stopPropagation();
-                        _this2.isDateInputOnBlur = true;
-
-                        setTimeout(function () {
-                            if (_this2.isDatePickerOnClick) {
-                                // Focus on the input element
-                                var node = _reactDom2.default.findDOMNode(_this2.dateInput);
-                                if (node) {
-                                    var el = node.querySelector('input');
-                                    el && el.focus();
-                                }
-                            } else {
-                                _this2.setState(function (state) {
-                                    return {
-                                        focused: false
-                                    };
-                                });
-                            }
-
-                            _this2.isDateInputOnBlur = false;
-                            _this2.isDatePickerOnClick = false;
-                        }, 0);
-                    }
-                }),
-                _react2.default.createElement(
-                    'div',
-                    {
-                        className: _index2.default.dropdown,
-                        style: {
-                            display: this.state.focused ? 'block' : 'none',
-                            padding: '8px 4px'
-                        }
-                    },
-                    _react2.default.createElement(_DatePicker2.default, {
-                        locale: locale,
-                        date: date,
-                        onChange: onChange,
-                        onClick: function onClick(event) {
-                            if (_this2.isDateInputOnBlur) {
-                                _this2.isDatePickerOnClick = true;
-                            }
-                        }
-                    })
-                )
-            );
-        }
-    }]);
-
-    return DatePickerDropdown;
-}(_react.PureComponent), _class.propTypes = {
-    locale: _propTypes2.default.string,
-    date: _propTypes2.default.string,
-    onChange: _propTypes2.default.func
-}, _temp2);
-exports.default = DatePickerDropdown;
 
 /***/ }),
 
@@ -56462,6 +56398,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp;
 
+var _classnames = __webpack_require__("../node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -56498,16 +56438,19 @@ var TimeInput = (_temp = _class = function (_PureComponent) {
     _createClass(TimeInput, [{
         key: 'render',
         value: function render() {
+            var className = this.props.className;
+
+
             return _react2.default.createElement(
                 'div',
-                { className: _TimeInput2.default.timeInputContainer },
+                { className: (0, _classnames2.default)(className, _TimeInput2.default.timeInputContainer) },
                 _react2.default.createElement(_timeInput2.default, {
                     value: this.props.value,
                     onChange: this.props.onChange,
                     className: _TimeInput2.default.timeInput
                 }),
                 this.props.renderIcon({
-                    className: _TimeInput2.default.inputIconLabel,
+                    className: _TimeInput2.default.timeInputIcon,
                     children: _react2.default.createElement('i', { className: 'fa fa-clock-o' })
                 })
             );
@@ -56542,8 +56485,13 @@ exports.default = TimeInput;
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/TimeInput.styl");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -56570,7 +56518,9 @@ if(false) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DateTimeRangePicker = exports.DateTimePicker = exports.DatePickerDropdown = exports.DatePicker = exports.TimeInput = exports.DateInput = undefined;
+exports.DateTimeRangePicker = exports.DateTimePicker = exports.DatePicker = exports.TimeInput = exports.DateInput = undefined;
+
+__webpack_require__("../node_modules/react-date-picker/index.css");
 
 var _DateInput2 = __webpack_require__("../src/DateInput.jsx");
 
@@ -56583,10 +56533,6 @@ var _TimeInput3 = _interopRequireDefault(_TimeInput2);
 var _DatePicker2 = __webpack_require__("../src/DatePicker.jsx");
 
 var _DatePicker3 = _interopRequireDefault(_DatePicker2);
-
-var _DatePickerDropdown2 = __webpack_require__("../src/DatePickerDropdown.jsx");
-
-var _DatePickerDropdown3 = _interopRequireDefault(_DatePickerDropdown2);
 
 var _DateTimePicker2 = __webpack_require__("../src/DateTimePicker.jsx");
 
@@ -56601,7 +56547,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.DateInput = _DateInput3.default;
 exports.TimeInput = _TimeInput3.default;
 exports.DatePicker = _DatePicker3.default;
-exports.DatePickerDropdown = _DatePickerDropdown3.default;
 exports.DateTimePicker = _DateTimePicker3.default;
 exports.DateTimeRangePicker = _DateTimeRangePicker3.default;
 
@@ -56615,8 +56560,13 @@ exports.DateTimeRangePicker = _DateTimeRangePicker3.default;
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/index.styl");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -56840,8 +56790,13 @@ exports.default = _default;
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./Navbar.styl");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -56905,8 +56860,13 @@ exports.default = function (props) {
 // load the styles
 var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./Section.styl");
 if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -56939,6 +56899,10 @@ __webpack_require__("../node_modules/trendmicro-ui/dist/css/trendmicro-ui.css");
 __webpack_require__("../node_modules/@trendmicro/react-buttons/dist/react-buttons.css");
 
 __webpack_require__("../node_modules/@trendmicro/react-dropdown/dist/react-dropdown.css");
+
+var _reactDropdown = __webpack_require__("../node_modules/@trendmicro/react-dropdown/lib/index.js");
+
+var _reactDropdown2 = _interopRequireDefault(_reactDropdown);
 
 var _moment = __webpack_require__("../node_modules/moment/moment.js");
 
@@ -57125,11 +57089,11 @@ var App = function (_PureComponent) {
                             { className: 'col-lg-6 col-md-12' },
                             _react2.default.createElement(
                                 _Section2.default,
-                                { className: 'row-md-6' },
+                                { className: 'row-md-7' },
                                 _react2.default.createElement(
                                     'h2',
                                     null,
-                                    'DatePicker - Inline'
+                                    'DatePicker'
                                 ),
                                 _react2.default.createElement(_src.DatePicker, {
                                     locale: this.state.locale,
@@ -57143,17 +57107,41 @@ var App = function (_PureComponent) {
                             { className: 'col-lg-6 col-md-12' },
                             _react2.default.createElement(
                                 _Section2.default,
-                                { className: 'row-md-6' },
+                                { className: 'row-md-7' },
                                 _react2.default.createElement(
                                     'h2',
                                     null,
-                                    'DatePicker - Dropdown'
+                                    'DatePicker in Dropdown Menu'
                                 ),
-                                _react2.default.createElement(_src.DatePickerDropdown, {
-                                    locale: this.state.locale,
-                                    date: this.state.startDate,
-                                    onChange: this.changeStartDate
-                                })
+                                _react2.default.createElement(
+                                    _reactDropdown2.default,
+                                    null,
+                                    _react2.default.createElement(
+                                        _reactDropdown2.default.Toggle,
+                                        {
+                                            btnStyle: 'link',
+                                            noCaret: true,
+                                            style: { padding: 0 }
+                                        },
+                                        _react2.default.createElement(_src.DateInput, {
+                                            value: this.state.startDate,
+                                            onChange: this.changeStartDate
+                                        })
+                                    ),
+                                    _react2.default.createElement(
+                                        _reactDropdown2.default.Menu,
+                                        {
+                                            style: {
+                                                padding: 8
+                                            }
+                                        },
+                                        _react2.default.createElement(_src.DatePicker, {
+                                            locale: this.state.locale,
+                                            date: this.state.startDate,
+                                            onChange: this.changeStartDate
+                                        })
+                                    )
+                                )
                             )
                         )
                     ),
@@ -57218,4 +57206,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?9d013efd290b9bfa8354
+//# sourceMappingURL=bundle.js.map?537adbe17c1b914a2c52

@@ -1,8 +1,7 @@
-import classNames from 'classnames';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { DateField } from 'react-date-picker';
-import 'react-date-picker/index.css';
 import styles from './DateInput.styl';
 
 class DateInput extends PureComponent {
@@ -42,21 +41,23 @@ class DateInput extends PureComponent {
         }
 
         return (
-            <DateField
-                locale={locale}
-                dateFormat={dateFormat}
-                expanded={false}
-                collapseOnDateClick={false}
-                forceValidDate={true}
-                updateOnDateClick={true}
-                clearIcon={false}
-                minDate={startDate}
-                maxDate={endDate}
-                onChange={onChange}
-                value={value}
-                className={classNames(className, styles.dateInput)}
-                {...props}
-            />
+            <div className={cx(className, styles.dateInputContainer)}>
+                <DateField
+                    locale={locale}
+                    dateFormat={dateFormat}
+                    expanded={false}
+                    collapseOnDateClick={false}
+                    forceValidDate={true}
+                    updateOnDateClick={true}
+                    clearIcon={false}
+                    minDate={startDate}
+                    maxDate={endDate}
+                    onChange={onChange}
+                    value={value}
+                    className={styles.dateInput}
+                    {...props}
+                />
+            </div>
         );
     }
 }

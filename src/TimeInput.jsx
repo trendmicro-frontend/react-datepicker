@@ -1,3 +1,4 @@
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import TimeInputComponent from 'time-input';
@@ -20,15 +21,17 @@ class TimeInput extends PureComponent {
     };
 
     render() {
+        const { className } = this.props;
+
         return (
-            <div className={styles.timeInputContainer}>
+            <div className={cx(className, styles.timeInputContainer)}>
                 <TimeInputComponent
                     value={this.props.value}
                     onChange={this.props.onChange}
                     className={styles.timeInput}
                 />
                 {this.props.renderIcon({
-                    className: styles.inputIconLabel,
+                    className: styles.timeInputIcon,
                     children: <i className="fa fa-clock-o" />
                 })}
             </div>

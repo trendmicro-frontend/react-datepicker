@@ -1,14 +1,15 @@
 import 'trendmicro-ui/dist/css/trendmicro-ui.css';
 import '@trendmicro/react-buttons/dist/react-buttons.css';
 import '@trendmicro/react-dropdown/dist/react-dropdown.css';
+import Dropdown from '@trendmicro/react-dropdown';
 import moment from 'moment';
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import Navbar from './Navbar';
 import Section from './Section';
 import {
+    DateInput,
     DatePicker,
-    DatePickerDropdown,
     DateTimePicker,
     DateTimeRangePicker
 } from '../src';
@@ -135,8 +136,8 @@ class App extends PureComponent {
                 <div className="container-fluid" style={{ padding: '20px 20px 0' }}>
                     <div className="row">
                         <div className="col-lg-6 col-md-12">
-                            <Section className="row-md-6">
-                                <h2>DatePicker - Inline</h2>
+                            <Section className="row-md-7">
+                                <h2>DatePicker</h2>
                                 <DatePicker
                                     locale={this.state.locale}
                                     date={this.state.startDate}
@@ -145,13 +146,31 @@ class App extends PureComponent {
                             </Section>
                         </div>
                         <div className="col-lg-6 col-md-12">
-                            <Section className="row-md-6">
-                                <h2>DatePicker - Dropdown</h2>
-                                <DatePickerDropdown
-                                    locale={this.state.locale}
-                                    date={this.state.startDate}
-                                    onChange={this.changeStartDate}
-                                />
+                            <Section className="row-md-7">
+                                <h2>DatePicker in Dropdown Menu</h2>
+                                <Dropdown>
+                                    <Dropdown.Toggle
+                                        btnStyle="link"
+                                        noCaret
+                                        style={{ padding: 0 }}
+                                    >
+                                        <DateInput
+                                            value={this.state.startDate}
+                                            onChange={this.changeStartDate}
+                                        />
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu
+                                        style={{
+                                            padding: 8
+                                        }}
+                                    >
+                                        <DatePicker
+                                            locale={this.state.locale}
+                                            date={this.state.startDate}
+                                            onChange={this.changeStartDate}
+                                        />
+                                    </Dropdown.Menu>
+                                </Dropdown>
                             </Section>
                         </div>
                     </div>

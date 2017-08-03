@@ -1,9 +1,26 @@
 @import "reset-context";
 
-.date-input {
+.date-input-container {
     reset-context();
 
-    > input:focus {
-        outline: none;
+    .date-input {
+        width: 120px;
+
+        > input {
+            display: block;
+            width: 100%;
+            padding: 5px 0;
+            padding-left: 30px;
+            padding-right: 12px;
+            font-size: 13px;
+            color: #222222;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            outline: none;
+            
+            &:focus {
+                border-color: #0096cc;
+            }
+        }
     }
 }

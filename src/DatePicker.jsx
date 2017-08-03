@@ -2,7 +2,6 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { MonthView } from 'react-date-picker';
-import 'react-date-picker/index.css';
 import styles from './index.styl';
 
 class DatePicker extends PureComponent {
@@ -11,8 +10,8 @@ class DatePicker extends PureComponent {
         date: null,
         startDate: null,
         endDate: null,
-        onChange: (date /* moment */) => {},
-        renderDay: (day, /* moment */ locale) => {
+        onChange: () => {},
+        renderDay: (day, locale) => {
             if (typeof day === 'object' && typeof day.format === 'function') {
                 return day.format('D', locale);
             }
@@ -78,10 +77,7 @@ class DatePicker extends PureComponent {
         return (
             <MonthView
                 {...props}
-                className={cx(
-                    className,
-                    styles.container
-                )}
+                className={cx(className, styles.datePickerContainer)}
                 navBarArrows={{
                     prev: navArrows.prev,
                     next: navArrows.next
