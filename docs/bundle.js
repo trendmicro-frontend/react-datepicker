@@ -3222,6 +3222,24 @@ exports.push([module.i, "/*!\n * trendmicro-ui v0.4.4\n * https://github.com/tre
 
 /***/ }),
 
+/***/ "../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/DateInput.styl":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".date-input---ppgSd {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n}\n.date-input---ppgSd *,\n.date-input---ppgSd *:before,\n.date-input---ppgSd *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.date-input---ppgSd > input:focus {\n  outline: none;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"date-input": "date-input---ppgSd",
+	"dateInput": "date-input---ppgSd"
+};
+
+/***/ }),
+
 /***/ "../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/TimeInput.styl":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3252,12 +3270,25 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".date-picker-container---360sS {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  border: none;\n  border-radius: 0;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  padding: 0;\n}\n.date-picker-container---360sS *,\n.date-picker-container---360sS *:before,\n.date-picker-container---360sS *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.react-date-picker__month-view-day--today-highlight {\n  color: #db3d44 !important;\n}\n", ""]);
+exports.push([module.i, ".dropdown---Wq_VE {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 0;\n  padding: 8px 0;\n  margin: 0;\n  list-style: none;\n  font-size: 13px;\n  text-align: left;\n  background-color: #fff;\n  border: 1px solid #bbb;\n  border-radius: 0;\n  -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2);\n  box-shadow: 0 2px 6px rgba(0,0,0,0.2);\n  -webkit-background-clip: padding;\n  -moz-background-clip: padding;\n  background-clip: padding-box;\n}\n.container---1tcgR {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  border: none;\n  border-radius: 0;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  padding: 0;\n  width: 248px;\n}\n.container---1tcgR *,\n.container---1tcgR *:before,\n.container---1tcgR *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.react-date-picker__month-view-day--today-highlight {\n  color: #db3d44 !important;\n}\n.date-picker-pane---44K3_ {\n  display: inline-block;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42 {\n  zoom: 1;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:before,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:before,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:before,\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:after,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:after,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:after {\n  content: \"\";\n  display: table;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm:after,\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv:after,\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42:after {\n  clear: both;\n}\n.date-picker-pane---44K3_ .date-picker-pane-header---lyLrm .tilde---3W1MT {\n  float: left;\n  line-height: 32px;\n  text-align: center;\n  width: 24px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv {\n  margin-top: 8px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz {\n  float: left;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz + .date-picker-pane-container---3RZYz {\n  margin-left: 24px;\n}\n.date-picker-pane---44K3_ .date-picker-pane-body---2eEqv .date-picker-pane-container---3RZYz + .date-picker-pane-container---3RZYz:before {\n  content: ' ';\n  display: block;\n  height: 260px;\n  vertical-align: middle;\n  margin-left: -12px;\n  float: left;\n  margin-right: 12px;\n  margin-top: 16px;\n  border-left: 1px solid #e6e6e6;\n}\n.date-picker-pane---44K3_ .date-picker-pane-footer---1ZI42 {\n  margin-top: 12px;\n}\n.input-icon-group---1ttz- {\n  position: relative;\n  float: left;\n}\n.input-icon-group---1ttz- + .input-icon-group---1ttz- {\n  margin-left: 8px;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"date-picker-container": "date-picker-container---360sS",
-	"datePickerContainer": "date-picker-container---360sS"
+	"dropdown": "dropdown---Wq_VE",
+	"container": "container---1tcgR",
+	"date-picker-pane": "date-picker-pane---44K3_",
+	"datePickerPane": "date-picker-pane---44K3_",
+	"date-picker-pane-header": "date-picker-pane-header---lyLrm",
+	"datePickerPaneHeader": "date-picker-pane-header---lyLrm",
+	"date-picker-pane-body": "date-picker-pane-body---2eEqv",
+	"datePickerPaneBody": "date-picker-pane-body---2eEqv",
+	"date-picker-pane-footer": "date-picker-pane-footer---1ZI42",
+	"datePickerPaneFooter": "date-picker-pane-footer---1ZI42",
+	"tilde": "tilde---3W1MT",
+	"date-picker-pane-container": "date-picker-pane-container---3RZYz",
+	"datePickerPaneContainer": "date-picker-pane-container---3RZYz",
+	"input-icon-group": "input-icon-group---1ttz-",
+	"inputIconGroup": "input-icon-group---1ttz-"
 };
 
 /***/ }),
@@ -3367,35 +3398,6 @@ exports.locals = {
 	"section": "section---1wA3k",
 	"section-content": "section-content---21DU7",
 	"sectionContent": "section-content---21DU7"
-};
-
-/***/ }),
-
-/***/ "../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./components/index.styl":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/css-base.js")(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".date-picker-pane---APR57 {\n  padding: 12px;\n}\n.date-picker-pane---APR57 .date-picker-pane-header---1qUfA,\n.date-picker-pane---APR57 .date-picker-pane-body---3eD7N,\n.date-picker-pane---APR57 .date-picker-pane-footer---1DHUi {\n  zoom: 1;\n}\n.date-picker-pane---APR57 .date-picker-pane-header---1qUfA:before,\n.date-picker-pane---APR57 .date-picker-pane-body---3eD7N:before,\n.date-picker-pane---APR57 .date-picker-pane-footer---1DHUi:before,\n.date-picker-pane---APR57 .date-picker-pane-header---1qUfA:after,\n.date-picker-pane---APR57 .date-picker-pane-body---3eD7N:after,\n.date-picker-pane---APR57 .date-picker-pane-footer---1DHUi:after {\n  content: \"\";\n  display: table;\n}\n.date-picker-pane---APR57 .date-picker-pane-header---1qUfA:after,\n.date-picker-pane---APR57 .date-picker-pane-body---3eD7N:after,\n.date-picker-pane---APR57 .date-picker-pane-footer---1DHUi:after {\n  clear: both;\n}\n.date-picker-pane---APR57 .date-picker-pane-header---1qUfA .tilde---3Ho62 {\n  float: left;\n  line-height: 32px;\n  text-align: center;\n  width: 24px;\n}\n.date-picker-pane---APR57 .date-picker-pane-body---3eD7N {\n  margin-top: 8px;\n}\n.date-picker-pane---APR57 .date-picker-pane-body---3eD7N .date-picker-pane-container---nmtDu {\n  float: left;\n}\n.date-picker-pane---APR57 .date-picker-pane-body---3eD7N .date-picker-pane-container---nmtDu + .date-picker-pane-container---nmtDu {\n  margin-left: 24px;\n}\n.date-picker-pane---APR57 .date-picker-pane-body---3eD7N .date-picker-pane-container---nmtDu + .date-picker-pane-container---nmtDu:before {\n  content: ' ';\n  display: block;\n  height: 260px;\n  vertical-align: middle;\n  margin-left: -12px;\n  float: left;\n  margin-right: 12px;\n  margin-top: 16px;\n  border-left: 1px solid #e6e6e6;\n}\n.date-picker-pane---APR57 .date-picker-pane-footer---1DHUi {\n  margin-top: 12px;\n}\n.input-icon-group---3oEDv {\n  position: relative;\n  float: left;\n}\n.input-icon-group---3oEDv + .input-icon-group---3oEDv {\n  margin-left: 8px;\n}\n", ""]);
-
-// exports
-exports.locals = {
-	"date-picker-pane": "date-picker-pane---APR57",
-	"datePickerPane": "date-picker-pane---APR57",
-	"date-picker-pane-header": "date-picker-pane-header---1qUfA",
-	"datePickerPaneHeader": "date-picker-pane-header---1qUfA",
-	"date-picker-pane-body": "date-picker-pane-body---3eD7N",
-	"datePickerPaneBody": "date-picker-pane-body---3eD7N",
-	"date-picker-pane-footer": "date-picker-pane-footer---1DHUi",
-	"datePickerPaneFooter": "date-picker-pane-footer---1DHUi",
-	"tilde": "tilde---3Ho62",
-	"date-picker-pane-container": "date-picker-pane-container---nmtDu",
-	"datePickerPaneContainer": "date-picker-pane-container---nmtDu",
-	"input-icon-group": "input-icon-group---3oEDv",
-	"inputIconGroup": "input-icon-group---3oEDv"
 };
 
 /***/ }),
@@ -55722,6 +55724,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp;
 
+var _classnames = __webpack_require__("../node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
@@ -55733,6 +55739,10 @@ var _react2 = _interopRequireDefault(_react);
 var _reactDatePicker = __webpack_require__("../node_modules/react-date-picker/lib/index.js");
 
 __webpack_require__("../node_modules/react-date-picker/index.css");
+
+var _DateInput = __webpack_require__("../src/DateInput.styl");
+
+var _DateInput2 = _interopRequireDefault(_DateInput);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55763,21 +55773,28 @@ var DateInput = (_temp = _class = function (_PureComponent) {
                 startDate = _props.startDate,
                 endDate = _props.endDate,
                 onChange = _props.onChange,
-                props = _objectWithoutProperties(_props, ['locale', 'dateFormat', 'value', 'startDate', 'endDate', 'onChange']);
+                className = _props.className,
+                children = _props.children,
+                props = _objectWithoutProperties(_props, ['locale', 'dateFormat', 'value', 'startDate', 'endDate', 'onChange', 'className', 'children']);
 
-            return _react2.default.createElement(_reactDatePicker.DateField, _extends({
-                locale: locale,
-                dateFormat: dateFormat,
-                expanded: false,
-                forceValidDate: true,
-                updateOnDateClick: true,
-                collapseOnDateClick: false,
-                clearIcon: false,
-                minDate: startDate,
-                maxDate: endDate,
-                onChange: onChange,
-                value: value
-            }, props));
+            return _react2.default.createElement(
+                _reactDatePicker.DateField,
+                _extends({
+                    locale: locale,
+                    dateFormat: dateFormat,
+                    expanded: false,
+                    forceValidDate: true,
+                    updateOnDateClick: true,
+                    collapseOnDateClick: false,
+                    clearIcon: false,
+                    minDate: startDate,
+                    maxDate: endDate,
+                    onChange: onChange,
+                    value: value,
+                    className: (0, _classnames2.default)(className, _DateInput2.default.dateInput)
+                }, props),
+                children
+            );
         }
     }]);
 
@@ -55800,6 +55817,33 @@ var DateInput = (_temp = _class = function (_PureComponent) {
     }
 }, _temp);
 exports.default = DateInput;
+
+/***/ }),
+
+/***/ "../src/DateInput.styl":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/DateInput.styl");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./DateInput.styl", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./DateInput.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ }),
 
@@ -55910,7 +55954,7 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
             delete props.renderDay;
 
             return _react2.default.createElement(_reactDatePicker.MonthView, _extends({}, props, {
-                className: (0, _classnames2.default)(className, _index2.default.datePickerContainer),
+                className: (0, _classnames2.default)(className, _index2.default.container),
                 navBarArrows: {
                     prev: navArrows.prev,
                     next: navArrows.next
@@ -55963,6 +56007,445 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
     })
 }, _temp2);
 exports.default = DatePicker;
+
+/***/ }),
+
+/***/ "../src/DatePickerDropdown.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp2;
+
+var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__("../node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__("../node_modules/react-dom/index.js");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _DateInput = __webpack_require__("../src/DateInput.jsx");
+
+var _DateInput2 = _interopRequireDefault(_DateInput);
+
+var _DatePicker = __webpack_require__("../src/DatePicker.jsx");
+
+var _DatePicker2 = _interopRequireDefault(_DatePicker);
+
+var _index = __webpack_require__("../src/index.styl");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DatePickerDropdown = (_temp2 = _class = function (_PureComponent) {
+    _inherits(DatePickerDropdown, _PureComponent);
+
+    function DatePickerDropdown() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, DatePickerDropdown);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DatePickerDropdown.__proto__ || Object.getPrototypeOf(DatePickerDropdown)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            focus: false
+        }, _this.isClickEvent = false, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(DatePickerDropdown, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var _props = this.props,
+                locale = _props.locale,
+                date = _props.date,
+                _onChange = _props.onChange;
+
+
+            return _react2.default.createElement(
+                'div',
+                { style: { position: 'relative' } },
+                _react2.default.createElement(_DateInput2.default, {
+                    ref: function ref(node) {
+                        _this2.dateInput = node;
+                    },
+                    value: date,
+                    onChange: function onChange(value) {
+                        _onChange(value);
+                    },
+                    onFocus: function onFocus() {
+                        _this2.setState(function (state) {
+                            return {
+                                focus: true
+                            };
+                        });
+                    },
+                    onBlur: function onBlur(event) {
+                        event.stopPropagation();
+
+                        setTimeout(function () {
+                            if (_this2.isClickEvent) {
+                                // Focus on the input element
+                                var node = _reactDom2.default.findDOMNode(_this2.dateInput);
+                                if (node) {
+                                    var el = node.querySelector('input');
+                                    el && el.focus();
+                                }
+                            } else {
+                                _this2.setState(function (state) {
+                                    return {
+                                        focus: false
+                                    };
+                                });
+                            }
+
+                            _this2.isClickEvent = false;
+                        }, 0);
+                    }
+                }),
+                _react2.default.createElement(
+                    'div',
+                    {
+                        className: _index2.default.dropdown,
+                        style: {
+                            display: this.state.focus ? 'block' : 'none',
+                            padding: '8px 4px'
+                        }
+                    },
+                    _react2.default.createElement(_DatePicker2.default, {
+                        locale: locale,
+                        date: date,
+                        onChange: function onChange(value, obj, event) {
+                            _onChange(value);
+                        },
+                        onClick: function onClick(event) {
+                            _this2.isClickEvent = true;
+                        }
+                    })
+                )
+            );
+        }
+    }]);
+
+    return DatePickerDropdown;
+}(_react.PureComponent), _class.propTypes = {
+    locale: _propTypes2.default.string,
+    date: _propTypes2.default.string,
+    onChange: _propTypes2.default.func
+}, _temp2);
+exports.default = DatePickerDropdown;
+
+/***/ }),
+
+/***/ "../src/DateTimePicker.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp;
+
+var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__("../node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _DatePicker = __webpack_require__("../src/DatePicker.jsx");
+
+var _DatePicker2 = _interopRequireDefault(_DatePicker);
+
+var _DateInput = __webpack_require__("../src/DateInput.jsx");
+
+var _DateInput2 = _interopRequireDefault(_DateInput);
+
+var _TimeInput = __webpack_require__("../src/TimeInput.jsx");
+
+var _TimeInput2 = _interopRequireDefault(_TimeInput);
+
+var _index = __webpack_require__("../src/index.styl");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DateTimePicker = (_temp = _class = function (_PureComponent) {
+    _inherits(DateTimePicker, _PureComponent);
+
+    function DateTimePicker() {
+        _classCallCheck(this, DateTimePicker);
+
+        return _possibleConstructorReturn(this, (DateTimePicker.__proto__ || Object.getPrototypeOf(DateTimePicker)).apply(this, arguments));
+    }
+
+    _createClass(DateTimePicker, [{
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                locale = _props.locale,
+                date = _props.date,
+                time = _props.time,
+                onChangeDate = _props.onChangeDate,
+                onChangeTime = _props.onChangeTime;
+
+
+            return _react2.default.createElement(
+                'div',
+                { className: _index2.default.datePickerPane },
+                _react2.default.createElement(
+                    'div',
+                    { className: _index2.default.datePickerPaneHeader },
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.dateTimeContainer },
+                        _react2.default.createElement(
+                            'div',
+                            { className: _index2.default.inputIconGroup },
+                            _react2.default.createElement(_DateInput2.default, {
+                                value: date,
+                                onChange: onChangeDate
+                            })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: _index2.default.inputIconGroup },
+                            _react2.default.createElement(_TimeInput2.default, {
+                                value: time,
+                                onChange: onChangeTime
+                            })
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: _index2.default.datePickerPaneBody },
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.datePickerPaneContainer },
+                        _react2.default.createElement(_DatePicker2.default, {
+                            locale: locale,
+                            date: date,
+                            onChange: onChangeDate
+                        })
+                    )
+                ),
+                _react2.default.createElement('div', { className: _index2.default.datePickerPaneFooter })
+            );
+        }
+    }]);
+
+    return DateTimePicker;
+}(_react.PureComponent), _class.propTypes = {
+    locale: _propTypes2.default.string,
+    date: _propTypes2.default.string,
+    time: _propTypes2.default.string,
+    onChangeDate: _propTypes2.default.func,
+    onChangeTime: _propTypes2.default.func
+}, _temp);
+exports.default = DateTimePicker;
+
+/***/ }),
+
+/***/ "../src/DateTimeRangePicker.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp;
+
+var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__("../node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _DatePicker = __webpack_require__("../src/DatePicker.jsx");
+
+var _DatePicker2 = _interopRequireDefault(_DatePicker);
+
+var _DateInput = __webpack_require__("../src/DateInput.jsx");
+
+var _DateInput2 = _interopRequireDefault(_DateInput);
+
+var _TimeInput = __webpack_require__("../src/TimeInput.jsx");
+
+var _TimeInput2 = _interopRequireDefault(_TimeInput);
+
+var _index = __webpack_require__("../src/index.styl");
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
+    _inherits(DateTimeRangePicker, _PureComponent);
+
+    function DateTimeRangePicker() {
+        _classCallCheck(this, DateTimeRangePicker);
+
+        return _possibleConstructorReturn(this, (DateTimeRangePicker.__proto__ || Object.getPrototypeOf(DateTimeRangePicker)).apply(this, arguments));
+    }
+
+    _createClass(DateTimeRangePicker, [{
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                locale = _props.locale,
+                startDate = _props.startDate,
+                startTime = _props.startTime,
+                endDate = _props.endDate,
+                endTime = _props.endTime,
+                onChangeStartDate = _props.onChangeStartDate,
+                onChangeStartTime = _props.onChangeStartTime,
+                onChangeEndDate = _props.onChangeEndDate,
+                onChangeEndTime = _props.onChangeEndTime;
+
+
+            return _react2.default.createElement(
+                'div',
+                { className: _index2.default.datePickerPane },
+                _react2.default.createElement(
+                    'div',
+                    { className: _index2.default.datePickerPaneHeader },
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.dateTimeContainer },
+                        _react2.default.createElement(
+                            'div',
+                            { className: _index2.default.inputIconGroup },
+                            _react2.default.createElement(_DateInput2.default, {
+                                value: startDate,
+                                onChange: onChangeStartDate
+                            })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: _index2.default.inputIconGroup },
+                            _react2.default.createElement(_TimeInput2.default, {
+                                value: startTime,
+                                onChange: onChangeStartTime
+                            })
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.tilde },
+                        '~'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.dateTimeContainer },
+                        _react2.default.createElement(
+                            'div',
+                            { className: _index2.default.inputIconGroup },
+                            _react2.default.createElement(_DateInput2.default, {
+                                value: endDate,
+                                onChange: onChangeEndDate
+                            })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: _index2.default.inputIconGroup },
+                            _react2.default.createElement(_TimeInput2.default, {
+                                value: endTime,
+                                onChange: onChangeEndTime
+                            })
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: _index2.default.datePickerPaneBody },
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.datePickerPaneContainer },
+                        _react2.default.createElement(_DatePicker2.default, {
+                            locale: locale,
+                            date: startDate,
+                            onChange: onChangeStartDate
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: _index2.default.datePickerPaneContainer },
+                        _react2.default.createElement(_DatePicker2.default, {
+                            locale: locale,
+                            date: endDate,
+                            onChange: onChangeEndDate
+                        })
+                    )
+                ),
+                _react2.default.createElement('div', { className: _index2.default.datePickerPaneFooter })
+            );
+        }
+    }]);
+
+    return DateTimeRangePicker;
+}(_react.PureComponent), _class.propTypes = {
+    locale: _propTypes2.default.string,
+    startDate: _propTypes2.default.string,
+    startTime: _propTypes2.default.string,
+    endDate: _propTypes2.default.string,
+    endTime: _propTypes2.default.string,
+    onChangeStartDate: _propTypes2.default.func,
+    onChangeStartTime: _propTypes2.default.func,
+    onChangeEndDate: _propTypes2.default.func,
+    onChangeEndTime: _propTypes2.default.func
+}, _temp);
+exports.default = DateTimeRangePicker;
 
 /***/ }),
 
@@ -56083,7 +56566,7 @@ if(false) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DatePicker = exports.TimeInput = exports.DateInput = undefined;
+exports.DateTimeRangePicker = exports.DateTimePicker = exports.DatePickerDropdown = exports.DatePicker = exports.TimeInput = exports.DateInput = undefined;
 
 var _DateInput2 = __webpack_require__("../src/DateInput.jsx");
 
@@ -56097,11 +56580,26 @@ var _DatePicker2 = __webpack_require__("../src/DatePicker.jsx");
 
 var _DatePicker3 = _interopRequireDefault(_DatePicker2);
 
+var _DatePickerDropdown2 = __webpack_require__("../src/DatePickerDropdown.jsx");
+
+var _DatePickerDropdown3 = _interopRequireDefault(_DatePickerDropdown2);
+
+var _DateTimePicker2 = __webpack_require__("../src/DateTimePicker.jsx");
+
+var _DateTimePicker3 = _interopRequireDefault(_DateTimePicker2);
+
+var _DateTimeRangePicker2 = __webpack_require__("../src/DateTimeRangePicker.jsx");
+
+var _DateTimeRangePicker3 = _interopRequireDefault(_DateTimeRangePicker2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.DateInput = _DateInput3.default;
 exports.TimeInput = _TimeInput3.default;
 exports.DatePicker = _DatePicker3.default;
+exports.DatePickerDropdown = _DatePickerDropdown3.default;
+exports.DateTimePicker = _DateTimePicker3.default;
+exports.DateTimeRangePicker = _DateTimeRangePicker3.default;
 
 /***/ }),
 
@@ -56422,330 +56920,6 @@ if(false) {
 
 /***/ }),
 
-/***/ "./components/DateTimePicker.jsx":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp;
-
-var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__("../node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _src = __webpack_require__("../src/index.js");
-
-var _index = __webpack_require__("./components/index.styl");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DateTimePicker = (_temp = _class = function (_PureComponent) {
-    _inherits(DateTimePicker, _PureComponent);
-
-    function DateTimePicker() {
-        _classCallCheck(this, DateTimePicker);
-
-        return _possibleConstructorReturn(this, (DateTimePicker.__proto__ || Object.getPrototypeOf(DateTimePicker)).apply(this, arguments));
-    }
-
-    _createClass(DateTimePicker, [{
-        key: 'render',
-        value: function render() {
-            var _props = this.props,
-                locale = _props.locale,
-                date = _props.date,
-                time = _props.time,
-                onChangeDate = _props.onChangeDate,
-                onChangeTime = _props.onChangeTime;
-
-
-            return _react2.default.createElement(
-                'div',
-                { className: _index2.default.datePickerPane },
-                _react2.default.createElement(
-                    'div',
-                    { className: _index2.default.datePickerPaneHeader },
-                    _react2.default.createElement(
-                        'div',
-                        { className: _index2.default.dateTimeContainer },
-                        _react2.default.createElement(
-                            'div',
-                            { className: _index2.default.inputIconGroup },
-                            _react2.default.createElement(_src.DateInput, {
-                                value: date,
-                                onChange: onChangeDate
-                            })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: _index2.default.inputIconGroup },
-                            _react2.default.createElement(_src.TimeInput, {
-                                value: time,
-                                onChange: onChangeTime
-                            })
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: _index2.default.datePickerPaneBody },
-                    _react2.default.createElement(
-                        'div',
-                        { className: _index2.default.datePickerPaneContainer },
-                        _react2.default.createElement(_src.DatePicker, {
-                            locale: locale,
-                            date: date,
-                            onChange: onChangeDate,
-                            style: { width: 248 }
-                        })
-                    )
-                ),
-                _react2.default.createElement('div', { className: _index2.default.datePickerPaneFooter })
-            );
-        }
-    }]);
-
-    return DateTimePicker;
-}(_react.PureComponent), _class.propTypes = {
-    locale: _propTypes2.default.string,
-    date: _propTypes2.default.string,
-    time: _propTypes2.default.string,
-    onChangeDate: _propTypes2.default.func,
-    onChangeTime: _propTypes2.default.func
-}, _temp);
-exports.default = DateTimePicker;
-
-/***/ }),
-
-/***/ "./components/DateTimeRangePicker.jsx":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp;
-
-var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__("../node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _src = __webpack_require__("../src/index.js");
-
-var _index = __webpack_require__("./components/index.styl");
-
-var _index2 = _interopRequireDefault(_index);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
-    _inherits(DateTimeRangePicker, _PureComponent);
-
-    function DateTimeRangePicker() {
-        _classCallCheck(this, DateTimeRangePicker);
-
-        return _possibleConstructorReturn(this, (DateTimeRangePicker.__proto__ || Object.getPrototypeOf(DateTimeRangePicker)).apply(this, arguments));
-    }
-
-    _createClass(DateTimeRangePicker, [{
-        key: 'render',
-        value: function render() {
-            var _props = this.props,
-                locale = _props.locale,
-                startDate = _props.startDate,
-                startTime = _props.startTime,
-                endDate = _props.endDate,
-                endTime = _props.endTime,
-                onChangeStartDate = _props.onChangeStartDate,
-                onChangeStartTime = _props.onChangeStartTime,
-                onChangeEndDate = _props.onChangeEndDate,
-                onChangeEndTime = _props.onChangeEndTime;
-
-
-            return _react2.default.createElement(
-                'div',
-                { className: _index2.default.datePickerPane },
-                _react2.default.createElement(
-                    'div',
-                    { className: _index2.default.datePickerPaneHeader },
-                    _react2.default.createElement(
-                        'div',
-                        { className: _index2.default.dateTimeContainer },
-                        _react2.default.createElement(
-                            'div',
-                            { className: _index2.default.inputIconGroup },
-                            _react2.default.createElement(_src.DateInput, {
-                                value: startDate,
-                                onChange: onChangeStartDate
-                            })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: _index2.default.inputIconGroup },
-                            _react2.default.createElement(_src.TimeInput, {
-                                value: startTime,
-                                onChange: onChangeStartTime
-                            })
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: _index2.default.tilde },
-                        '~'
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: _index2.default.dateTimeContainer },
-                        _react2.default.createElement(
-                            'div',
-                            { className: _index2.default.inputIconGroup },
-                            _react2.default.createElement(_src.DateInput, {
-                                value: endDate,
-                                onChange: onChangeEndDate
-                            })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: _index2.default.inputIconGroup },
-                            _react2.default.createElement(_src.TimeInput, {
-                                value: endTime,
-                                onChange: onChangeEndTime
-                            })
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: _index2.default.datePickerPaneBody },
-                    _react2.default.createElement(
-                        'div',
-                        { className: _index2.default.datePickerPaneContainer },
-                        _react2.default.createElement(_src.DatePicker, {
-                            locale: locale,
-                            date: startDate,
-                            onChange: onChangeStartDate,
-                            style: { width: 248 }
-                        })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: _index2.default.datePickerPaneContainer },
-                        _react2.default.createElement(_src.DatePicker, {
-                            locale: locale,
-                            date: endDate,
-                            onChange: onChangeEndDate,
-                            style: { width: 248 }
-                        })
-                    )
-                ),
-                _react2.default.createElement('div', { className: _index2.default.datePickerPaneFooter })
-            );
-        }
-    }]);
-
-    return DateTimeRangePicker;
-}(_react.PureComponent), _class.propTypes = {
-    locale: _propTypes2.default.string,
-    startDate: _propTypes2.default.string,
-    startTime: _propTypes2.default.string,
-    endDate: _propTypes2.default.string,
-    endTime: _propTypes2.default.string,
-    onChangeStartDate: _propTypes2.default.func,
-    onChangeStartTime: _propTypes2.default.func,
-    onChangeEndDate: _propTypes2.default.func,
-    onChangeEndTime: _propTypes2.default.func
-}, _temp);
-exports.default = DateTimeRangePicker;
-
-/***/ }),
-
-/***/ "./components/index.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.DateTimeRangePicker = exports.DateTimePicker = undefined;
-
-var _DateTimePicker2 = __webpack_require__("./components/DateTimePicker.jsx");
-
-var _DateTimePicker3 = _interopRequireDefault(_DateTimePicker2);
-
-var _DateTimeRangePicker2 = __webpack_require__("./components/DateTimeRangePicker.jsx");
-
-var _DateTimeRangePicker3 = _interopRequireDefault(_DateTimeRangePicker2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.DateTimePicker = _DateTimePicker3.default;
-exports.DateTimeRangePicker = _DateTimeRangePicker3.default;
-
-/***/ }),
-
-/***/ "./components/index.styl":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./components/index.styl");
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/addStyles.js")(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../../node_modules/stylus-loader/index.js!../../node_modules/stylint-loader/index.js!./index.styl", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../../node_modules/stylus-loader/index.js!../../node_modules/stylint-loader/index.js!./index.styl");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
 /***/ "./index.jsx":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -56781,8 +56955,6 @@ var _Navbar2 = _interopRequireDefault(_Navbar);
 var _Section = __webpack_require__("./Section.jsx");
 
 var _Section2 = _interopRequireDefault(_Section);
-
-var _components = __webpack_require__("./components/index.js");
 
 var _src = __webpack_require__("../src/index.js");
 
@@ -56953,7 +57125,7 @@ var App = function (_PureComponent) {
                                 _react2.default.createElement(
                                     'h2',
                                     null,
-                                    'Inline'
+                                    'DatePicker - Inline'
                                 ),
                                 _react2.default.createElement(_src.DatePicker, {
                                     locale: this.state.locale,
@@ -56971,8 +57143,13 @@ var App = function (_PureComponent) {
                                 _react2.default.createElement(
                                     'h2',
                                     null,
-                                    'Dropdown'
-                                )
+                                    'DatePicker - Dropdown'
+                                ),
+                                _react2.default.createElement(_src.DatePickerDropdown, {
+                                    locale: this.state.locale,
+                                    date: this.state.startDate,
+                                    onChange: this.changeStartDate
+                                })
                             )
                         )
                     ),
@@ -56984,13 +57161,13 @@ var App = function (_PureComponent) {
                             { className: 'col-lg-6 col-md-12' },
                             _react2.default.createElement(
                                 _Section2.default,
-                                { className: 'row-md-8' },
+                                { className: 'row-md-7' },
                                 _react2.default.createElement(
                                     'h2',
                                     null,
-                                    'Date/Time Picker'
+                                    'DateTimePicker'
                                 ),
-                                _react2.default.createElement(_components.DateTimePicker, {
+                                _react2.default.createElement(_src.DateTimePicker, {
                                     locale: this.state.locale,
                                     date: this.state.startDate,
                                     time: this.state.startTime,
@@ -57004,13 +57181,13 @@ var App = function (_PureComponent) {
                             { className: 'col-lg-6 col-md-12' },
                             _react2.default.createElement(
                                 _Section2.default,
-                                { className: 'row-md-8' },
+                                { className: 'row-md-7' },
                                 _react2.default.createElement(
                                     'h2',
                                     null,
-                                    'Date/Time Range Picker'
+                                    'DateTimeRangePicker'
                                 ),
-                                _react2.default.createElement(_components.DateTimeRangePicker, {
+                                _react2.default.createElement(_src.DateTimeRangePicker, {
                                     locale: this.state.locale,
                                     startDate: this.state.startDate,
                                     startTime: this.state.startTime,
@@ -57037,4 +57214,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?f4008f91ab5faf2ad82a
+//# sourceMappingURL=bundle.js.map?2288551e9864a7612e2a
