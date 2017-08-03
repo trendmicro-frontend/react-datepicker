@@ -30,10 +30,6 @@
   box-sizing: inherit;
 }
 .datepicker---time-input---1BajQ {
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 3px;
   width: 120px;
 }
 .datepicker---time-input---1BajQ > input {
@@ -44,7 +40,15 @@
   padding-right: 12px;
   font-size: 13px;
   color: #222;
-  border: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+}
+.datepicker---time-input---1BajQ > input:focus {
+  border-color: #0096cc;
+}
+.datepicker---time-input---1BajQ:focus .datepicker---input-icon-label---3F2rd {
+  color: #0096cc;
 }
 .datepicker---input-icon-label---3F2rd {
   position: absolute;
