@@ -1,10 +1,9 @@
-import { Button } from '@trendmicro/react-buttons';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import TimeInput from 'time-input';
 import {
-    DateField,
-    DatePicker
+    DatePicker,
+    DateInput,
+    TimeInput
 } from '../../src';
 import styles from './index.styl';
 
@@ -37,9 +36,9 @@ class DateTimeRangePicker extends PureComponent {
         return (
             <div className={styles.datePickerPane}>
                 <div className={styles.datePickerPaneHeader}>
-                    <div className={styles.simpleDateTimeContainer}>
+                    <div className={styles.dateTimeContainer}>
                         <div className={styles.inputIconGroup}>
-                            <DateField
+                            <DateInput
                                 value={startDate}
                                 onChange={onChangeStartDate}
                             />
@@ -48,19 +47,13 @@ class DateTimeRangePicker extends PureComponent {
                             <TimeInput
                                 value={startTime}
                                 onChange={onChangeStartTime}
-                                className={styles.timeInput}
-                                defaultValue="12:00:00"
-                                placeholder="hh:mm:ss"
                             />
-                            <label className={styles.inputIconLabel}>
-                                <i className="fa fa-clock-o" />
-                            </label>
                         </div>
                     </div>
                     <div className={styles.tilde}>~</div>
-                    <div className={styles.simpleDateTimeContainer}>
+                    <div className={styles.dateTimeContainer}>
                         <div className={styles.inputIconGroup}>
-                            <DateField
+                            <DateInput
                                 value={endDate}
                                 onChange={onChangeEndDate}
                             />
@@ -69,13 +62,7 @@ class DateTimeRangePicker extends PureComponent {
                             <TimeInput
                                 value={endTime}
                                 onChange={onChangeEndTime}
-                                className={styles.timeInput}
-                                defaultValue="12:00:00"
-                                placeholder="hh:mm:ss"
                             />
-                            <label className={styles.inputIconLabel}>
-                                <i className="fa fa-clock-o" />
-                            </label>
                         </div>
                     </div>
                 </div>
@@ -97,14 +84,10 @@ class DateTimeRangePicker extends PureComponent {
                         />
                     </div>
                 </div>
-                <div className={styles.datePickerPaneFooter}>
-                    <Button btnStyle="primary">Apply</Button>
-                    <Button>Cancel</Button>
-                </div>
+                <div className={styles.datePickerPaneFooter} />
             </div>
         );
     }
 }
 
 export default DateTimeRangePicker;
-
