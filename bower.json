@@ -2,16 +2,14 @@
   "name": "@trendmicro/react-datepicker",
   "description": "React DatePicker Component",
   "authors": [
-    {
-      "name": "Cheton Wu",
-      "email": "cheton_wu@trend.com.tw",
-      "homepage": "https://github.com/trendmicro-frontend"
-    }
+    "Cheton Wu <cheton_wu@trend.com.tw>"
   ],
   "homepage": "https://github.com/trendmicro-frontend/react-datepicker",
   "snapshots": [],
   "keywords": [
     "react",
+    "date",
+    "picker",
     "react-datepicker"
   ],
   "license": "MIT"

@@ -40,6 +40,8 @@
   "homepage": "https://github.com/trendmicro-frontend/react-datepicker",
   "keywords": [
     "react",
+    "date",
+    "picker",
     "react-datepicker"
   ],
   "peerDependencies": {
