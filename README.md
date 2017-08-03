@@ -31,7 +31,7 @@ Demo: https://trendmicro-frontend.github.io/react-datepicker
 
 ## Usage
 
-To initialize state in your React component:
+Initialize state in your React component:
 ```js
 state = {
     locale: 'en',
