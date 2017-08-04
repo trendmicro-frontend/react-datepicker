@@ -80,7 +80,6 @@ class DateTimeRangePicker extends PureComponent {
                         />
                     </div>
                 </div>
-                <div className={styles.datePickerPaneFooter} />
             </div>
         );
     }
