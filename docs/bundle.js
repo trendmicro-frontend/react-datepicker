@@ -3237,7 +3237,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".date-input-container---1NuQR {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n}\n.date-input-container---1NuQR *,\n.date-input-container---1NuQR *:before,\n.date-input-container---1NuQR *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.date-input-container---1NuQR .date-input---ppgSd {\n  width: 120px;\n}\n.date-input-container---1NuQR .date-input---ppgSd > input {\n  display: block;\n  width: 100%;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.date-input-container---1NuQR .date-input---ppgSd > input:focus {\n  border-color: #0096cc;\n}\n", ""]);
+exports.push([module.i, ".date-input-container---1NuQR {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n}\n.date-input-container---1NuQR *,\n.date-input-container---1NuQR *:before,\n.date-input-container---1NuQR *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.date-input-container---1NuQR .date-input---ppgSd {\n  width: 120px;\n}\n.date-input-container---1NuQR .date-input---ppgSd > input {\n  display: block;\n  width: 100%;\n  line-height: 20px;\n  height: auto;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.date-input-container---1NuQR .date-input---ppgSd > input:focus {\n  border-color: #0096cc;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -3257,7 +3257,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".time-input-container---ATM1X {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.time-input-container---ATM1X *,\n.time-input-container---ATM1X *:before,\n.time-input-container---ATM1X *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.time-input-container---ATM1X .time-input---2KU-r {\n  width: 120px;\n}\n.time-input-container---ATM1X .time-input---2KU-r > input {\n  display: block;\n  width: 100%;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.time-input-container---ATM1X .time-input---2KU-r > input:focus {\n  border-color: #0096cc;\n}\n.time-input-container---ATM1X .time-input-icon---1_6jR {\n  position: absolute;\n  left: 9px;\n  top: 50%;\n  margin-top: -10px;\n  color: #666;\n}\n", ""]);
+exports.push([module.i, ".time-input-container---ATM1X {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.time-input-container---ATM1X *,\n.time-input-container---ATM1X *:before,\n.time-input-container---ATM1X *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.time-input-container---ATM1X .time-input---2KU-r {\n  width: 120px;\n}\n.time-input-container---ATM1X .time-input---2KU-r > input {\n  display: block;\n  width: 100%;\n  line-height: 20px;\n  height: auto;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.time-input-container---ATM1X .time-input---2KU-r > input:focus {\n  border-color: #0096cc;\n}\n.time-input-container---ATM1X .time-input-icon---1_6jR {\n  position: absolute;\n  left: 9px;\n  top: 50%;\n  margin-top: -10px;\n  color: #666;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -56362,8 +56362,7 @@ var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
                             onChange: onChangeEndDate
                         })
                     )
-                ),
-                _react2.default.createElement('div', { className: _index2.default.datePickerPaneFooter })
+                )
             );
         }
     }]);
@@ -57206,4 +57205,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?537adbe17c1b914a2c52
+//# sourceMappingURL=bundle.js.map?1e26457bd5916617d038
