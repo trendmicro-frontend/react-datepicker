@@ -2,15 +2,16 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { MonthView } from 'react-date-picker';
+import uncontrollable from 'uncontrollable';
 import styles from './index.styl';
 
 class DatePicker extends PureComponent {
     static defaultProps = {
         locale: 'en',
-        date: null,
-        startDate: null,
-        endDate: null,
-        onChange: () => {},
+        value: null,
+        minDate: null,
+        maxDate: null,
+        onSelect: () => {},
         renderDay: (day, locale) => {
             if (typeof day === 'object' && typeof day.format === 'function') {
                 return day.format('D', locale);
@@ -25,14 +26,35 @@ class DatePicker extends PureComponent {
     };
     static propTypes = {
         locale: PropTypes.string,
-        date: PropTypes.oneOfType([
+
+        value: PropTypes.oneOfType([
             PropTypes.object,
             PropTypes.string
         ]),
-        startDate: PropTypes.object,
-        endDate: PropTypes.object,
-        onChange: PropTypes.func,
+
+        // The minimum selectable date. When set to null, there is no minimum.
+        //
+        // Types supported:
+        // * Date: A date object containing the minimum date.
+        minDate: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.string
+        ]),
+
+        // The maximum selectable date. When set to null, there is no maximum.
+        //
+        // Types supported:
+        // * Date: A date object containing the maximum date.
+        maxDate: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.string
+        ]),
+
+        // Called when a date is selected from datepicker.
+        onSelect: PropTypes.func,
+
         renderDay: PropTypes.func,
+
         navArrows: PropTypes.shape({
             prev: PropTypes.node,
             next: PropTypes.node
@@ -63,10 +85,10 @@ class DatePicker extends PureComponent {
     render() {
         const {
             locale,
-            date,
-            startDate,
-            endDate,
-            onChange,
+            value,
+            minDate,
+            maxDate,
+            onSelect,
             navArrows,
             className,
             ...props
@@ -83,10 +105,10 @@ class DatePicker extends PureComponent {
                     next: navArrows.next
                 }}
                 locale={locale}
-                date={date}
-                minDate={startDate}
-                maxDate={endDate}
-                onChange={onChange}
+                date={value}
+                minDate={minDate}
+                maxDate={maxDate}
+                onChange={onSelect}
                 renderDay={this.renderDay}
                 showDaysBeforeMonth={true}
                 showDaysAfterMonth={true}
@@ -100,4 +122,7 @@ class DatePicker extends PureComponent {
     }
 }
 
-export default DatePicker;
+export default uncontrollable(DatePicker, {
+    // Define the pairs of prop/handlers you want to be uncontrollable
+    value: 'onSelect'
+});

@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import uncontrollable from 'uncontrollable';
 import DatePicker from './DatePicker';
 import DateInput from './DateInput';
 import TimeInput from './TimeInput';
-import styles from './index.styl';
+import styles from './date-picker-pane.styl';
 
 class DateTimeRangePicker extends PureComponent {
     static propTypes = {
@@ -68,15 +69,15 @@ class DateTimeRangePicker extends PureComponent {
                     <div className={styles.datePickerPaneContainer}>
                         <DatePicker
                             locale={locale}
-                            date={startDate}
-                            onChange={onChangeStartDate}
+                            value={startDate}
+                            onSelect={onChangeStartDate}
                         />
                     </div>
                     <div className={styles.datePickerPaneContainer}>
                         <DatePicker
                             locale={locale}
-                            date={endDate}
-                            onChange={onChangeEndDate}
+                            value={endDate}
+                            onSelect={onChangeEndDate}
                         />
                     </div>
                 </div>
@@ -85,4 +86,10 @@ class DateTimeRangePicker extends PureComponent {
     }
 }
 
-export default DateTimeRangePicker;
+export default uncontrollable(DateTimeRangePicker, {
+    // Define the pairs of prop/handlers you want to be uncontrollable
+    startDate: 'onChangeStartDate',
+    startTime: 'onChangeStartTime',
+    endDate: 'onChangeEndDate',
+    endTime: 'onChangeEndTime'
+});

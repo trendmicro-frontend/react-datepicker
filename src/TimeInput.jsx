@@ -1,7 +1,8 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import TimeInputComponent from 'time-input';
+import uncontrollable from 'uncontrollable';
+import TimeInputComponent from './TimeInput/index';
 import styles from './TimeInput.styl';
 
 class TimeInput extends PureComponent {
@@ -39,4 +40,7 @@ class TimeInput extends PureComponent {
     }
 }
 
-export default TimeInput;
+export default uncontrollable(TimeInput, {
+    // Define the pairs of prop/handlers you want to be uncontrollable
+    value: 'onChange'
+});

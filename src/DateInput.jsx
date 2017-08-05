@@ -2,6 +2,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { DateField } from 'react-date-picker';
+import uncontrollable from 'uncontrollable';
 import styles from './DateInput.styl';
 
 class DateInput extends PureComponent {
@@ -62,4 +63,7 @@ class DateInput extends PureComponent {
     }
 }
 
-export default DateInput;
+export default uncontrollable(DateInput, {
+    // Define the pairs of prop/handlers you want to be uncontrollable
+    value: 'onChange'
+});
