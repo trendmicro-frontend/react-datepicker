@@ -58293,7 +58293,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                     },
                     _react2.default.createElement(
                         _reactDropdown2.default.Toggle,
-                        { noCaret: true },
+                        null,
                         mapPeriodToString(period)
                     ),
                     _react2.default.createElement(
@@ -59058,4 +59058,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?6575496ae2917a471aa7
+//# sourceMappingURL=bundle.js.map?2019118238c7b05e0d5d

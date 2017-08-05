@@ -180,7 +180,7 @@ export default class extends PureComponent {
                         });
                     }}
                 >
-                    <Dropdown.Toggle noCaret>
+                    <Dropdown.Toggle>
                         {mapPeriodToString(period)}
                     </Dropdown.Toggle>
                     <Dropdown.MenuWrapper>
