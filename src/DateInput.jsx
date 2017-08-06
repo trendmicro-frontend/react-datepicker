@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DateField } from 'react-date-picker';
+import DateField from 'react-date-picker/lib/DateField';
 import uncontrollable from 'uncontrollable';
 import styles from './DateInput.styl';
 

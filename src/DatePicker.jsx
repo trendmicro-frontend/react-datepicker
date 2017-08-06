@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { MonthView } from 'react-date-picker';
+import MonthView from 'react-date-picker/lib/MonthView';
 import uncontrollable from 'uncontrollable';
 import styles from './index.styl';
 
