@@ -2,8 +2,8 @@ import '@trendmicro/react-buttons/dist/react-buttons.css';
 import '@trendmicro/react-dropdown/dist/react-dropdown.css';
 import Anchor from '@trendmicro/react-anchor';
 import { Button } from '@trendmicro/react-buttons';
-import Dropdown, { MenuItem } from '@trendmicro/react-dropdown';
-import moment from 'moment';
+import Dropdown, { MenuItem } from '@trendmicro/react-dropdown'; // @trendmicro/react-dropdown@0.7.0 or above is required
+import moment from 'moment'; 
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import DateTimeRangePicker from './DateTimeRangePicker';
