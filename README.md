@@ -122,14 +122,20 @@ state = {
 
 ## Examples
 
-### DatePicker
-https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker
+### [DatePicker](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker)
+* [Controlled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker/Controlled.jsx)
+* [Uncontrolled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker/Uncontrolled.jsx)
+* [Selectable](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker/Selectable.jsx)
+* [Dropdown](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker/Dropdown.jsx)
 
-### DateTimePicker
-https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimePicker
+### [DateTimePicker](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimePicker)
+* [Controlled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimePicker/Controlled.jsx)
+* [Uncontrolled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimePicker/Uncontrolled.jsx)
 
-### DateTimeRangePicker
-https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker
+### [DateTimeRangePicker](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker)
+* [Controlled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker/Controlled.jsx)
+* [Uncontrolled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker/Uncontrolled.jsx)
+* [Dropdown](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker/Dropdown.jsx)
 
 ## API
 
