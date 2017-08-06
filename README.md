@@ -126,7 +126,7 @@ state = {
 
 ### [DatePicker](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker)
 
-![image](https://user-images.githubusercontent.com/447801/29000356-37ffdbd0-7a9a-11e7-96b2-66ba33c212d1.png)
+[![image](https://user-images.githubusercontent.com/447801/29000356-37ffdbd0-7a9a-11e7-96b2-66ba33c212d1.png)](https://trendmicro-frontend.github.io/react-datepicker)
 
 #### Sources
 * [Controlled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker/Controlled.jsx)
@@ -136,7 +136,7 @@ state = {
 
 ### [DateTimePicker](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimePicker)
 
-![image](https://user-images.githubusercontent.com/447801/29000301-239cd7d4-7a99-11e7-842d-59c70abe9ee1.png)
+[![image](https://user-images.githubusercontent.com/447801/29000301-239cd7d4-7a99-11e7-842d-59c70abe9ee1.png)](https://trendmicro-frontend.github.io/react-datepicker)
 
 #### Sources
 * [Controlled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimePicker/Controlled.jsx)
@@ -144,7 +144,7 @@ state = {
 
 ### [DateTimeRangePicker](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker)
 
-![image](https://user-images.githubusercontent.com/447801/29000331-ec51c0f4-7a99-11e7-859f-381b3e336a8d.png)
+[![image](https://user-images.githubusercontent.com/447801/29000331-ec51c0f4-7a99-11e7-859f-381b3e336a8d.png)](https://trendmicro-frontend.github.io/react-datepicker)
 
 #### Sources
 * [Controlled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker/Controlled.jsx)
