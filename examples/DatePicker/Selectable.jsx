@@ -1,7 +1,8 @@
+import Anchor from '@trendmicro/react-anchor';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DatePicker } from '../../src';
+import DatePicker from '../../src';
 
 export default class extends PureComponent {
     static propTypes = {
@@ -14,26 +15,26 @@ export default class extends PureComponent {
         const now = moment();
 
         return {
-            value: moment(now).format('YYYY-MM-DD'),
+            date: moment(now).format('YYYY-MM-DD'),
             minDate: moment(now).subtract(7, 'days').format('YYYY-MM-DD'),
             maxDate: moment(now).add(7, 'days').format('YYYY-MM-DD')
         };
     }
     render() {
         const { locale } = this.props;
-        const { value, minDate, maxDate } = this.state;
+        const { date, minDate, maxDate } = this.state;
 
         return (
             <div>
-                <h3>Selectable Date <span style={{ fontSize: '80%' }}>({minDate} ~ {maxDate})</span></h3>
-                <p>{value}</p>
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DatePicker/Selectable.jsx" target="_blank">Selectable Date</Anchor> <span style={{ fontSize: '80%' }}>({minDate} ~ {maxDate})</span></h3>
+                <p>Selected: {date}</p>
                 <DatePicker
                     locale={locale}
-                    defaultValue={value}
+                    defaultDate={date}
                     minDate={minDate}
                     maxDate={maxDate}
-                    onSelect={value => {
-                        this.setState(state => ({ value: value }));
+                    onSelect={date => {
+                        this.setState(state => ({ date: date }));
                     }}
                 />
             </div>

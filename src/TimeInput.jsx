@@ -8,7 +8,10 @@ import styles from './TimeInput.styl';
 class TimeInput extends PureComponent {
     static propTypes = {
         value: PropTypes.string,
+
+        // Called when the value changes.
         onChange: PropTypes.func,
+
         rendeIcon: PropTypes.func
     };
     static defaultProps = {

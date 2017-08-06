@@ -1,8 +1,10 @@
+import '@trendmicro/react-dropdown/dist/react-dropdown.css';
+import Anchor from '@trendmicro/react-anchor';
 import Dropdown from '@trendmicro/react-dropdown';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DatePicker, DateInput } from '../../src';
+import DatePicker, { DateInput } from '../../src';
 
 export default class extends PureComponent {
     static propTypes = {
@@ -15,17 +17,17 @@ export default class extends PureComponent {
         const now = moment();
 
         return {
-            value: moment(now).format('YYYY-MM-DD')
+            date: moment(now).format('YYYY-MM-DD')
         };
     }
     render() {
         const { locale } = this.props;
-        const { value } = this.state;
+        const { date } = this.state;
 
         return (
             <div>
-                <h3>Dropdown Menu</h3>
-                <p>{value}</p>
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DatePicker/Dropdown.jsx" target="_blank">Dropdown</Anchor></h3>
+                <p>Selected: {date}</p>
                 <Dropdown>
                     <Dropdown.Toggle
                         btnStyle="link"
@@ -33,18 +35,18 @@ export default class extends PureComponent {
                         style={{ padding: 0 }}
                     >
                         <DateInput
-                            value={value}
+                            value={date}
                             onChange={value => {
-                                this.setState(state => ({ value: value }));
+                                this.setState(state => ({ date: value }));
                             }}
                         />
                     </Dropdown.Toggle>
                     <Dropdown.Menu style={{ padding: 8 }}>
                         <DatePicker
                             locale={locale}
-                            value={value}
-                            onSelect={value => {
-                                this.setState(state => ({ value: value }));
+                            date={date}
+                            onSelect={date => {
+                                this.setState(state => ({ date: date }));
                             }}
                         />
                     </Dropdown.Menu>

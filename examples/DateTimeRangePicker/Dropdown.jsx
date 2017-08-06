@@ -1,9 +1,12 @@
+import '@trendmicro/react-buttons/dist/react-buttons.css';
+import '@trendmicro/react-dropdown/dist/react-dropdown.css';
+import Anchor from '@trendmicro/react-anchor';
 import { Button } from '@trendmicro/react-buttons';
 import Dropdown, { MenuItem } from '@trendmicro/react-dropdown';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DateTimeRangePicker } from '../../src';
+import DateTimeRangePicker from './DateTimeRangePicker';
 
 const normalizeDateString = (dateString) => {
     let m = moment(dateString);
@@ -144,12 +147,12 @@ export default class extends PureComponent {
 
         return (
             <div>
-                <h3>Dropdown</h3>
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Dropdown.jsx" target="_blank">Dropdown</Anchor></h3>
                 {period !== 'custom' &&
-                <p>{mapPeriodToString(period)}</p>
+                <p>Selected: {mapPeriodToString(period)}</p>
                 }
                 {period === 'custom' &&
-                <p>{mapPeriodToString(period)}: {startDate} {startTime} - {endDate} {endTime}</p>
+                <p>Selected: {startDate} {startTime} - {endDate} {endTime}</p>
                 }
                 <Dropdown
                     style={{ width: '100%' }}

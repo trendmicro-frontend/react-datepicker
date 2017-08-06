@@ -53,6 +53,7 @@
     "react-date-picker": "git+https://git@github.com/cheton/react-date-picker.git"
   },
   "devDependencies": {
+    "@trendmicro/react-anchor": "~0.5.5",
     "@trendmicro/react-buttons": "~1.1.0",
     "@trendmicro/react-dropdown": "~0.7.0",
     "babel-cli": "~6.24.1",

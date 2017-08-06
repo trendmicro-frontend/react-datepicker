@@ -1,7 +1,7 @@
 import 'react-date-picker/index.css';
+import DatePicker from './DatePicker';
 
 export DateInput from './DateInput';
 export TimeInput from './TimeInput';
-export DatePicker from './DatePicker';
-export DateTimePicker from './DateTimePicker';
-export DateTimeRangePicker from './DateTimeRangePicker';
+
+export default DatePicker;

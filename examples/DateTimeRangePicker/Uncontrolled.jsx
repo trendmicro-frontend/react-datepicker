@@ -1,7 +1,8 @@
+import Anchor from '@trendmicro/react-anchor';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DateTimeRangePicker } from '../../src';
+import DateTimeRangePicker from './DateTimeRangePicker';
 
 export default class extends PureComponent {
     static propTypes = {
@@ -26,8 +27,9 @@ export default class extends PureComponent {
 
         return (
             <div>
-                <h3>Uncontrolled Component</h3>
-                <p>This example will not update invalid date/time range.</p>
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Uncontrolled.jsx" target="_blank">Uncontrolled Component</Anchor></h3>
+                <p><b>Note:</b> This example will not update invalid date/time range.</p>
+                <p>Selected: {startDate} {startTime} ~ {endDate} {endTime}</p>
                 <DateTimeRangePicker
                     locale={locale}
                     defaultStartDate={startDate}

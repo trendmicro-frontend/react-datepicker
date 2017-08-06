@@ -3425,35 +3425,6 @@ exports.locals = {
 
 /***/ }),
 
-/***/ "../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/date-picker-pane.styl":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/css-base.js")(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".date-picker-pane---jZS7D {\n  display: inline-block;\n}\n.date-picker-pane---jZS7D .date-picker-pane-header---16Drw,\n.date-picker-pane---jZS7D .date-picker-pane-body---1pWab,\n.date-picker-pane---jZS7D .date-picker-pane-footer---2EEyI {\n  zoom: 1;\n}\n.date-picker-pane---jZS7D .date-picker-pane-header---16Drw:before,\n.date-picker-pane---jZS7D .date-picker-pane-body---1pWab:before,\n.date-picker-pane---jZS7D .date-picker-pane-footer---2EEyI:before,\n.date-picker-pane---jZS7D .date-picker-pane-header---16Drw:after,\n.date-picker-pane---jZS7D .date-picker-pane-body---1pWab:after,\n.date-picker-pane---jZS7D .date-picker-pane-footer---2EEyI:after {\n  content: \"\";\n  display: table;\n}\n.date-picker-pane---jZS7D .date-picker-pane-header---16Drw:after,\n.date-picker-pane---jZS7D .date-picker-pane-body---1pWab:after,\n.date-picker-pane---jZS7D .date-picker-pane-footer---2EEyI:after {\n  clear: both;\n}\n.date-picker-pane---jZS7D .date-picker-pane-header---16Drw .tilde---17Jmk {\n  float: left;\n  line-height: 32px;\n  text-align: center;\n  width: 24px;\n}\n.date-picker-pane---jZS7D .date-picker-pane-body---1pWab {\n  margin-top: 8px;\n}\n.date-picker-pane---jZS7D .date-picker-pane-body---1pWab .date-picker-pane-container---2gJTD {\n  float: left;\n}\n.date-picker-pane---jZS7D .date-picker-pane-body---1pWab .date-picker-pane-container---2gJTD + .date-picker-pane-container---2gJTD {\n  margin-left: 24px;\n}\n.date-picker-pane---jZS7D .date-picker-pane-body---1pWab .date-picker-pane-container---2gJTD + .date-picker-pane-container---2gJTD:before {\n  content: ' ';\n  display: block;\n  height: 260px;\n  vertical-align: middle;\n  margin-left: -12px;\n  float: left;\n  margin-right: 12px;\n  margin-top: 16px;\n  border-left: 1px solid #e6e6e6;\n}\n.date-picker-pane---jZS7D .date-picker-pane-footer---2EEyI {\n  margin-top: 12px;\n}\n.input-icon-group---2wzSt {\n  position: relative;\n  float: left;\n}\n.input-icon-group---2wzSt + .input-icon-group---2wzSt {\n  margin-left: 8px;\n}\n", ""]);
-
-// exports
-exports.locals = {
-	"date-picker-pane": "date-picker-pane---jZS7D",
-	"datePickerPane": "date-picker-pane---jZS7D",
-	"date-picker-pane-header": "date-picker-pane-header---16Drw",
-	"datePickerPaneHeader": "date-picker-pane-header---16Drw",
-	"date-picker-pane-body": "date-picker-pane-body---1pWab",
-	"datePickerPaneBody": "date-picker-pane-body---1pWab",
-	"date-picker-pane-footer": "date-picker-pane-footer---2EEyI",
-	"datePickerPaneFooter": "date-picker-pane-footer---2EEyI",
-	"tilde": "tilde---17Jmk",
-	"date-picker-pane-container": "date-picker-pane-container---2gJTD",
-	"datePickerPaneContainer": "date-picker-pane-container---2gJTD",
-	"input-icon-group": "input-icon-group---2wzSt",
-	"inputIconGroup": "input-icon-group---2wzSt"
-};
-
-/***/ }),
-
 /***/ "../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/index.styl":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3468,6 +3439,35 @@ exports.push([module.i, ".date-picker-container---360sS {\n  -webkit-box-sizing:
 exports.locals = {
 	"date-picker-container": "date-picker-container---360sS",
 	"datePickerContainer": "date-picker-container---360sS"
+};
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./DateTimeRangePicker/DateTimeRangePicker.styl":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".date-picker-pane---K22l_ {\n  display: inline-block;\n}\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y,\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG,\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa {\n  zoom: 1;\n}\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y:before,\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG:before,\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa:before,\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y:after,\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG:after,\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa:after {\n  content: \"\";\n  display: table;\n}\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y:after,\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG:after,\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa:after {\n  clear: both;\n}\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y .tilde---sKOcj {\n  float: left;\n  line-height: 32px;\n  text-align: center;\n  width: 24px;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG {\n  margin-top: 8px;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g {\n  float: left;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g + .date-picker-pane-container---1u-4g {\n  margin-left: 24px;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g + .date-picker-pane-container---1u-4g:before {\n  content: ' ';\n  display: block;\n  height: 260px;\n  vertical-align: middle;\n  margin-left: -12px;\n  float: left;\n  margin-right: 12px;\n  margin-top: 16px;\n  border-left: 1px solid #e6e6e6;\n}\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa {\n  margin-top: 12px;\n}\n.input-icon-group---1RBoX {\n  position: relative;\n  float: left;\n}\n.input-icon-group---1RBoX + .input-icon-group---1RBoX {\n  margin-left: 8px;\n}\n", ""]);
+
+// exports
+exports.locals = {
+	"date-picker-pane": "date-picker-pane---K22l_",
+	"datePickerPane": "date-picker-pane---K22l_",
+	"date-picker-pane-header": "date-picker-pane-header---3ky6y",
+	"datePickerPaneHeader": "date-picker-pane-header---3ky6y",
+	"date-picker-pane-body": "date-picker-pane-body---XFXHG",
+	"datePickerPaneBody": "date-picker-pane-body---XFXHG",
+	"date-picker-pane-footer": "date-picker-pane-footer---3SrNa",
+	"datePickerPaneFooter": "date-picker-pane-footer---3SrNa",
+	"tilde": "tilde---sKOcj",
+	"date-picker-pane-container": "date-picker-pane-container---1u-4g",
+	"datePickerPaneContainer": "date-picker-pane-container---1u-4g",
+	"input-icon-group": "input-icon-group---1RBoX",
+	"inputIconGroup": "input-icon-group---1RBoX"
 };
 
 /***/ }),
@@ -55612,11 +55612,11 @@ var DateInput = (_temp = _class = function (_PureComponent) {
                 locale = _props.locale,
                 dateFormat = _props.dateFormat,
                 value = _props.value,
-                startDate = _props.startDate,
-                endDate = _props.endDate,
+                minDate = _props.minDate,
+                maxDate = _props.maxDate,
                 onChange = _props.onChange,
                 className = _props.className,
-                props = _objectWithoutProperties(_props, ['locale', 'dateFormat', 'value', 'startDate', 'endDate', 'onChange', 'className']);
+                props = _objectWithoutProperties(_props, ['locale', 'dateFormat', 'value', 'minDate', 'maxDate', 'onChange', 'className']);
 
             if (typeof props.renderIcon === 'function') {
                 props.renderCalendarIcon = props.renderIcon;
@@ -55634,8 +55634,8 @@ var DateInput = (_temp = _class = function (_PureComponent) {
                     forceValidDate: true,
                     updateOnDateClick: true,
                     clearIcon: false,
-                    minDate: startDate,
-                    maxDate: endDate,
+                    minDate: minDate,
+                    maxDate: maxDate,
                     onChange: onChange,
                     value: value,
                     className: _DateInput2.default.dateInput
@@ -55647,18 +55647,33 @@ var DateInput = (_temp = _class = function (_PureComponent) {
     return DateInput;
 }(_react.PureComponent), _class.propTypes = {
     locale: _propTypes2.default.string,
+
     dateFormat: _propTypes2.default.string,
-    value: _propTypes2.default.string,
-    startDate: _propTypes2.default.object,
-    endDate: _propTypes2.default.object,
+
+    value: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+
+    // The minimum selectable date. When set to null, there is no minimum.
+    // Types supported:
+    // * Date: A date object containing the minimum date.
+    // * String: A date string defined by dateFormat.
+    minDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+
+    // The maximum selectable date. When set to null, there is no maximum.
+    // Types supported:
+    // * Date: A date object containing the maximum date.
+    // * String: A date string defined by dateFormat.
+    maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+
+    // Called when the value changes.
     onChange: _propTypes2.default.func,
+
     renderIcon: _propTypes2.default.func
 }, _class.defaultProps = {
     locale: 'en',
     dateFormat: 'YYYY-MM-DD',
     value: '',
-    startDate: null,
-    endDate: null,
+    minDate: null,
+    maxDate: null,
     onChange: function onChange() {}
 }, _temp);
 exports.default = (0, _uncontrollable2.default)(DateInput, {
@@ -55798,13 +55813,13 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
         value: function render() {
             var _props = this.props,
                 locale = _props.locale,
-                value = _props.value,
+                date = _props.date,
                 minDate = _props.minDate,
                 maxDate = _props.maxDate,
                 onSelect = _props.onSelect,
                 navArrows = _props.navArrows,
                 className = _props.className,
-                props = _objectWithoutProperties(_props, ['locale', 'value', 'minDate', 'maxDate', 'onSelect', 'navArrows', 'className']);
+                props = _objectWithoutProperties(_props, ['locale', 'date', 'minDate', 'maxDate', 'onSelect', 'navArrows', 'className']);
 
             delete props.renderDay;
 
@@ -55815,7 +55830,7 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
                     next: navArrows.next
                 },
                 locale: locale,
-                date: value,
+                date: date,
                 minDate: minDate,
                 maxDate: maxDate,
                 onChange: onSelect,
@@ -55832,9 +55847,35 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
     }]);
 
     return DatePicker;
-}(_react.PureComponent), _class.defaultProps = {
+}(_react.PureComponent), _class.propTypes = {
+    locale: _propTypes2.default.string,
+
+    date: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+
+    // The minimum selectable date. When set to null, there is no minimum.
+    // Types supported:
+    // * Date: A date object containing the minimum date.
+    // * String: A date string in ISO 8601 format (i.e. YYYY-MM-DD).
+    minDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+
+    // The maximum selectable date. When set to null, there is no maximum.
+    // Types supported:
+    // * Date: A date object containing the maximum date.
+    // * String: A date string in ISO 8601 format (i.e. YYYY-MM-DD).
+    maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+
+    // Called when a date is selected from datepicker.
+    onSelect: _propTypes2.default.func,
+
+    renderDay: _propTypes2.default.func,
+
+    navArrows: _propTypes2.default.shape({
+        prev: _propTypes2.default.node,
+        next: _propTypes2.default.node
+    })
+}, _class.defaultProps = {
     locale: 'en',
-    value: null,
+    date: null,
     minDate: null,
     maxDate: null,
     onSelect: function onSelect() {},
@@ -55849,341 +55890,10 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
         prev: _react2.default.createElement('i', { className: 'fa fa-angle-left' }),
         next: _react2.default.createElement('i', { className: 'fa fa-angle-right' })
     }
-}, _class.propTypes = {
-    locale: _propTypes2.default.string,
-
-    value: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
-
-    // The minimum selectable date. When set to null, there is no minimum.
-    //
-    // Types supported:
-    // * Date: A date object containing the minimum date.
-    minDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
-
-    // The maximum selectable date. When set to null, there is no maximum.
-    //
-    // Types supported:
-    // * Date: A date object containing the maximum date.
-    maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
-
-    // Called when a date is selected from datepicker.
-    onSelect: _propTypes2.default.func,
-
-    renderDay: _propTypes2.default.func,
-
-    navArrows: _propTypes2.default.shape({
-        prev: _propTypes2.default.node,
-        next: _propTypes2.default.node
-    })
 }, _temp2);
 exports.default = (0, _uncontrollable2.default)(DatePicker, {
     // Define the pairs of prop/handlers you want to be uncontrollable
-    value: 'onSelect'
-});
-
-/***/ }),
-
-/***/ "../src/DateTimePicker.jsx":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp;
-
-var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__("../node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _uncontrollable = __webpack_require__("../node_modules/uncontrollable/index.js");
-
-var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
-
-var _DatePicker = __webpack_require__("../src/DatePicker.jsx");
-
-var _DatePicker2 = _interopRequireDefault(_DatePicker);
-
-var _DateInput = __webpack_require__("../src/DateInput.jsx");
-
-var _DateInput2 = _interopRequireDefault(_DateInput);
-
-var _TimeInput = __webpack_require__("../src/TimeInput.jsx");
-
-var _TimeInput2 = _interopRequireDefault(_TimeInput);
-
-var _datePickerPane = __webpack_require__("../src/date-picker-pane.styl");
-
-var _datePickerPane2 = _interopRequireDefault(_datePickerPane);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DateTimePicker = (_temp = _class = function (_PureComponent) {
-    _inherits(DateTimePicker, _PureComponent);
-
-    function DateTimePicker() {
-        _classCallCheck(this, DateTimePicker);
-
-        return _possibleConstructorReturn(this, (DateTimePicker.__proto__ || Object.getPrototypeOf(DateTimePicker)).apply(this, arguments));
-    }
-
-    _createClass(DateTimePicker, [{
-        key: 'render',
-        value: function render() {
-            var _props = this.props,
-                locale = _props.locale,
-                date = _props.date,
-                time = _props.time,
-                onChangeDate = _props.onChangeDate,
-                onChangeTime = _props.onChangeTime;
-
-
-            return _react2.default.createElement(
-                'div',
-                { className: _datePickerPane2.default.datePickerPane },
-                _react2.default.createElement(
-                    'div',
-                    { className: _datePickerPane2.default.datePickerPaneHeader },
-                    _react2.default.createElement(
-                        'div',
-                        { className: _datePickerPane2.default.dateTimeContainer },
-                        _react2.default.createElement(
-                            'div',
-                            { className: _datePickerPane2.default.inputIconGroup },
-                            _react2.default.createElement(_DateInput2.default, {
-                                value: date,
-                                onChange: onChangeDate
-                            })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: _datePickerPane2.default.inputIconGroup },
-                            _react2.default.createElement(_TimeInput2.default, {
-                                value: time,
-                                onChange: onChangeTime
-                            })
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: _datePickerPane2.default.datePickerPaneBody },
-                    _react2.default.createElement(
-                        'div',
-                        { className: _datePickerPane2.default.datePickerPaneContainer },
-                        _react2.default.createElement(_DatePicker2.default, {
-                            locale: locale,
-                            value: date,
-                            onSelect: onChangeDate
-                        })
-                    )
-                ),
-                _react2.default.createElement('div', { className: _datePickerPane2.default.datePickerPaneFooter })
-            );
-        }
-    }]);
-
-    return DateTimePicker;
-}(_react.PureComponent), _class.propTypes = {
-    locale: _propTypes2.default.string,
-    date: _propTypes2.default.string,
-    time: _propTypes2.default.string,
-    onChangeDate: _propTypes2.default.func,
-    onChangeTime: _propTypes2.default.func
-}, _temp);
-exports.default = (0, _uncontrollable2.default)(DateTimePicker, {
-    // Define the pairs of prop/handlers you want to be uncontrollable
-    date: 'onChangeDate',
-    time: 'onChangeTime'
-});
-
-/***/ }),
-
-/***/ "../src/DateTimeRangePicker.jsx":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _class, _temp;
-
-var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _react = __webpack_require__("../node_modules/react/react.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _uncontrollable = __webpack_require__("../node_modules/uncontrollable/index.js");
-
-var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
-
-var _DatePicker = __webpack_require__("../src/DatePicker.jsx");
-
-var _DatePicker2 = _interopRequireDefault(_DatePicker);
-
-var _DateInput = __webpack_require__("../src/DateInput.jsx");
-
-var _DateInput2 = _interopRequireDefault(_DateInput);
-
-var _TimeInput = __webpack_require__("../src/TimeInput.jsx");
-
-var _TimeInput2 = _interopRequireDefault(_TimeInput);
-
-var _datePickerPane = __webpack_require__("../src/date-picker-pane.styl");
-
-var _datePickerPane2 = _interopRequireDefault(_datePickerPane);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
-    _inherits(DateTimeRangePicker, _PureComponent);
-
-    function DateTimeRangePicker() {
-        _classCallCheck(this, DateTimeRangePicker);
-
-        return _possibleConstructorReturn(this, (DateTimeRangePicker.__proto__ || Object.getPrototypeOf(DateTimeRangePicker)).apply(this, arguments));
-    }
-
-    _createClass(DateTimeRangePicker, [{
-        key: 'render',
-        value: function render() {
-            var _props = this.props,
-                locale = _props.locale,
-                startDate = _props.startDate,
-                startTime = _props.startTime,
-                endDate = _props.endDate,
-                endTime = _props.endTime,
-                onChangeStartDate = _props.onChangeStartDate,
-                onChangeStartTime = _props.onChangeStartTime,
-                onChangeEndDate = _props.onChangeEndDate,
-                onChangeEndTime = _props.onChangeEndTime;
-
-
-            return _react2.default.createElement(
-                'div',
-                { className: _datePickerPane2.default.datePickerPane },
-                _react2.default.createElement(
-                    'div',
-                    { className: _datePickerPane2.default.datePickerPaneHeader },
-                    _react2.default.createElement(
-                        'div',
-                        { className: _datePickerPane2.default.dateTimeContainer },
-                        _react2.default.createElement(
-                            'div',
-                            { className: _datePickerPane2.default.inputIconGroup },
-                            _react2.default.createElement(_DateInput2.default, {
-                                value: startDate,
-                                onChange: onChangeStartDate
-                            })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: _datePickerPane2.default.inputIconGroup },
-                            _react2.default.createElement(_TimeInput2.default, {
-                                value: startTime,
-                                onChange: onChangeStartTime
-                            })
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: _datePickerPane2.default.tilde },
-                        '~'
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: _datePickerPane2.default.dateTimeContainer },
-                        _react2.default.createElement(
-                            'div',
-                            { className: _datePickerPane2.default.inputIconGroup },
-                            _react2.default.createElement(_DateInput2.default, {
-                                value: endDate,
-                                onChange: onChangeEndDate
-                            })
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: _datePickerPane2.default.inputIconGroup },
-                            _react2.default.createElement(_TimeInput2.default, {
-                                value: endTime,
-                                onChange: onChangeEndTime
-                            })
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: _datePickerPane2.default.datePickerPaneBody },
-                    _react2.default.createElement(
-                        'div',
-                        { className: _datePickerPane2.default.datePickerPaneContainer },
-                        _react2.default.createElement(_DatePicker2.default, {
-                            locale: locale,
-                            value: startDate,
-                            onSelect: onChangeStartDate
-                        })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: _datePickerPane2.default.datePickerPaneContainer },
-                        _react2.default.createElement(_DatePicker2.default, {
-                            locale: locale,
-                            value: endDate,
-                            onSelect: onChangeEndDate
-                        })
-                    )
-                )
-            );
-        }
-    }]);
-
-    return DateTimeRangePicker;
-}(_react.PureComponent), _class.propTypes = {
-    locale: _propTypes2.default.string,
-    startDate: _propTypes2.default.string,
-    startTime: _propTypes2.default.string,
-    endDate: _propTypes2.default.string,
-    endTime: _propTypes2.default.string,
-    onChangeStartDate: _propTypes2.default.func,
-    onChangeStartTime: _propTypes2.default.func,
-    onChangeEndDate: _propTypes2.default.func,
-    onChangeEndTime: _propTypes2.default.func
-}, _temp);
-exports.default = (0, _uncontrollable2.default)(DateTimeRangePicker, {
-    // Define the pairs of prop/handlers you want to be uncontrollable
-    startDate: 'onChangeStartDate',
-    startTime: 'onChangeStartTime',
-    endDate: 'onChangeEndDate',
-    endTime: 'onChangeEndTime'
+    date: 'onSelect'
 });
 
 /***/ }),
@@ -56268,7 +55978,10 @@ var TimeInput = (_temp = _class = function (_PureComponent) {
     return TimeInput;
 }(_react.PureComponent), _class.propTypes = {
     value: _propTypes2.default.string,
+
+    // Called when the value changes.
     onChange: _propTypes2.default.func,
+
     rendeIcon: _propTypes2.default.func
 }, _class.defaultProps = {
     value: '00:00:00',
@@ -56932,38 +56645,6 @@ module.exports = function zeroPad(val, digits) {
 
 /***/ }),
 
-/***/ "../src/date-picker-pane.styl":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!../src/date-picker-pane.styl");
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./date-picker-pane.styl", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./date-picker-pane.styl");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
 /***/ "../src/index.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -56973,9 +56654,13 @@ if(false) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DateTimeRangePicker = exports.DateTimePicker = exports.DatePicker = exports.TimeInput = exports.DateInput = undefined;
+exports.TimeInput = exports.DateInput = undefined;
 
 __webpack_require__("../node_modules/react-date-picker/index.css");
+
+var _DatePicker = __webpack_require__("../src/DatePicker.jsx");
+
+var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
 var _DateInput2 = __webpack_require__("../src/DateInput.jsx");
 
@@ -56985,25 +56670,11 @@ var _TimeInput2 = __webpack_require__("../src/TimeInput.jsx");
 
 var _TimeInput3 = _interopRequireDefault(_TimeInput2);
 
-var _DatePicker2 = __webpack_require__("../src/DatePicker.jsx");
-
-var _DatePicker3 = _interopRequireDefault(_DatePicker2);
-
-var _DateTimePicker2 = __webpack_require__("../src/DateTimePicker.jsx");
-
-var _DateTimePicker3 = _interopRequireDefault(_DateTimePicker2);
-
-var _DateTimeRangePicker2 = __webpack_require__("../src/DateTimeRangePicker.jsx");
-
-var _DateTimeRangePicker3 = _interopRequireDefault(_DateTimeRangePicker2);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.DateInput = _DateInput3.default;
 exports.TimeInput = _TimeInput3.default;
-exports.DatePicker = _DatePicker3.default;
-exports.DateTimePicker = _DateTimePicker3.default;
-exports.DateTimeRangePicker = _DateTimeRangePicker3.default;
+exports.default = _DatePicker2.default;
 
 /***/ }),
 
@@ -57054,6 +56725,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp2;
 
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
 var _moment = __webpack_require__("../node_modules/moment/moment.js");
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -57067,6 +56742,8 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 var _react2 = _interopRequireDefault(_react);
 
 var _src = __webpack_require__("../src/index.js");
+
+var _src2 = _interopRequireDefault(_src);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57099,7 +56776,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var now = (0, _moment2.default)();
 
             return {
-                value: (0, _moment2.default)(now).format('YYYY-MM-DD')
+                date: (0, _moment2.default)(now).format('YYYY-MM-DD')
             };
         }
     }, {
@@ -57108,7 +56785,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var _this2 = this;
 
             var locale = this.props.locale;
-            var value = this.state.value;
+            var date = this.state.date;
 
 
             return _react2.default.createElement(
@@ -57117,19 +56794,24 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Controlled Component'
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DatePicker/Controlled.jsx', target: '_blank' },
+                        'Controlled Component'
+                    )
                 ),
                 _react2.default.createElement(
                     'p',
                     null,
-                    value
+                    'Selected: ',
+                    date
                 ),
-                _react2.default.createElement(_src.DatePicker, {
+                _react2.default.createElement(_src2.default, {
                     locale: locale,
-                    value: value,
-                    onSelect: function onSelect(value) {
+                    date: date,
+                    onSelect: function onSelect(date) {
                         _this2.setState(function (state) {
-                            return { value: value };
+                            return { date: date };
                         });
                     }
                 })
@@ -57161,6 +56843,12 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp2;
 
+__webpack_require__("../node_modules/@trendmicro/react-dropdown/dist/react-dropdown.css");
+
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
 var _reactDropdown = __webpack_require__("../node_modules/@trendmicro/react-dropdown/lib/index.js");
 
 var _reactDropdown2 = _interopRequireDefault(_reactDropdown);
@@ -57178,6 +56866,8 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 var _react2 = _interopRequireDefault(_react);
 
 var _src = __webpack_require__("../src/index.js");
+
+var _src2 = _interopRequireDefault(_src);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57210,7 +56900,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var now = (0, _moment2.default)();
 
             return {
-                value: (0, _moment2.default)(now).format('YYYY-MM-DD')
+                date: (0, _moment2.default)(now).format('YYYY-MM-DD')
             };
         }
     }, {
@@ -57219,7 +56909,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var _this2 = this;
 
             var locale = this.props.locale;
-            var value = this.state.value;
+            var date = this.state.date;
 
 
             return _react2.default.createElement(
@@ -57228,12 +56918,17 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Dropdown Menu'
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DatePicker/Dropdown.jsx', target: '_blank' },
+                        'Dropdown'
+                    )
                 ),
                 _react2.default.createElement(
                     'p',
                     null,
-                    value
+                    'Selected: ',
+                    date
                 ),
                 _react2.default.createElement(
                     _reactDropdown2.default,
@@ -57246,10 +56941,10 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                             style: { padding: 0 }
                         },
                         _react2.default.createElement(_src.DateInput, {
-                            value: value,
+                            value: date,
                             onChange: function onChange(value) {
                                 _this2.setState(function (state) {
-                                    return { value: value };
+                                    return { date: value };
                                 });
                             }
                         })
@@ -57257,12 +56952,12 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                     _react2.default.createElement(
                         _reactDropdown2.default.Menu,
                         { style: { padding: 8 } },
-                        _react2.default.createElement(_src.DatePicker, {
+                        _react2.default.createElement(_src2.default, {
                             locale: locale,
-                            value: value,
-                            onSelect: function onSelect(value) {
+                            date: date,
+                            onSelect: function onSelect(date) {
                                 _this2.setState(function (state) {
-                                    return { value: value };
+                                    return { date: date };
                                 });
                             }
                         })
@@ -57296,6 +56991,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp2;
 
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
 var _moment = __webpack_require__("../node_modules/moment/moment.js");
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -57309,6 +57008,8 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 var _react2 = _interopRequireDefault(_react);
 
 var _src = __webpack_require__("../src/index.js");
+
+var _src2 = _interopRequireDefault(_src);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57341,7 +57042,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var now = (0, _moment2.default)();
 
             return {
-                value: (0, _moment2.default)(now).format('YYYY-MM-DD'),
+                date: (0, _moment2.default)(now).format('YYYY-MM-DD'),
                 minDate: (0, _moment2.default)(now).subtract(7, 'days').format('YYYY-MM-DD'),
                 maxDate: (0, _moment2.default)(now).add(7, 'days').format('YYYY-MM-DD')
             };
@@ -57353,7 +57054,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
 
             var locale = this.props.locale;
             var _state = this.state,
-                value = _state.value,
+                date = _state.date,
                 minDate = _state.minDate,
                 maxDate = _state.maxDate;
 
@@ -57364,7 +57065,12 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Selectable Date ',
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DatePicker/Selectable.jsx', target: '_blank' },
+                        'Selectable Date'
+                    ),
+                    ' ',
                     _react2.default.createElement(
                         'span',
                         { style: { fontSize: '80%' } },
@@ -57378,16 +57084,17 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'p',
                     null,
-                    value
+                    'Selected: ',
+                    date
                 ),
-                _react2.default.createElement(_src.DatePicker, {
+                _react2.default.createElement(_src2.default, {
                     locale: locale,
-                    defaultValue: value,
+                    defaultDate: date,
                     minDate: minDate,
                     maxDate: maxDate,
-                    onSelect: function onSelect(value) {
+                    onSelect: function onSelect(date) {
                         _this2.setState(function (state) {
-                            return { value: value };
+                            return { date: date };
                         });
                     }
                 })
@@ -57419,6 +57126,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp2;
 
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
 var _moment = __webpack_require__("../node_modules/moment/moment.js");
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -57432,6 +57143,8 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 var _react2 = _interopRequireDefault(_react);
 
 var _src = __webpack_require__("../src/index.js");
+
+var _src2 = _interopRequireDefault(_src);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57464,7 +57177,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var now = (0, _moment2.default)();
 
             return {
-                value: (0, _moment2.default)(now).format('YYYY-MM-DD')
+                date: (0, _moment2.default)(now).format('YYYY-MM-DD')
             };
         }
     }, {
@@ -57473,7 +57186,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var _this2 = this;
 
             var locale = this.props.locale;
-            var value = this.state.value;
+            var date = this.state.date;
 
 
             return _react2.default.createElement(
@@ -57482,19 +57195,24 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Uncontrolled Component'
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DatePicker/Uncontrolled.jsx', target: '_blank' },
+                        'Uncontrolled Component'
+                    )
                 ),
                 _react2.default.createElement(
                     'p',
                     null,
-                    value
+                    'Selected: ',
+                    date
                 ),
-                _react2.default.createElement(_src.DatePicker, {
+                _react2.default.createElement(_src2.default, {
                     locale: locale,
-                    defaultValue: value,
-                    onSelect: function onSelect(value) {
+                    defaultDate: date,
+                    onSelect: function onSelect(date) {
                         _this2.setState(function (state) {
-                            return { value: value };
+                            return { date: date };
                         });
                     }
                 })
@@ -57562,6 +57280,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp2;
 
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
 var _moment = __webpack_require__("../node_modules/moment/moment.js");
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -57575,6 +57297,8 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 var _react2 = _interopRequireDefault(_react);
 
 var _src = __webpack_require__("../src/index.js");
+
+var _src2 = _interopRequireDefault(_src);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57628,30 +57352,61 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Controlled Component'
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimePicker/Controlled.jsx', target: '_blank' },
+                        'Controlled Component'
+                    )
                 ),
                 _react2.default.createElement(
                     'p',
                     null,
+                    'Selected: ',
                     date,
                     ' ',
                     time
                 ),
-                _react2.default.createElement(_src.DateTimePicker, {
-                    locale: locale,
-                    date: date,
-                    time: time,
-                    onChangeDate: function onChangeDate(value) {
-                        _this2.setState(function (state) {
-                            return { date: value };
-                        });
-                    },
-                    onChangeTime: function onChangeTime(value) {
-                        _this2.setState(function (state) {
-                            return { time: value };
-                        });
-                    }
-                })
+                _react2.default.createElement(
+                    'div',
+                    { className: 'clearfix' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'pull-left' },
+                        _react2.default.createElement(_src.DateInput, {
+                            value: date,
+                            onChange: function onChange(value) {
+                                _this2.setState(function (state) {
+                                    return { date: value };
+                                });
+                            }
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'pull-left', style: { marginLeft: 8 } },
+                        _react2.default.createElement(_src.TimeInput, {
+                            value: time,
+                            onChange: function onChange(value) {
+                                _this2.setState(function (state) {
+                                    return { time: value };
+                                });
+                            }
+                        })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(_src2.default, {
+                        locale: locale,
+                        date: date,
+                        onSelect: function onSelect(date) {
+                            _this2.setState(function (state) {
+                                return { date: date };
+                            });
+                        }
+                    })
+                )
             );
         }
     }]);
@@ -57680,6 +57435,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp2;
 
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
 var _moment = __webpack_require__("../node_modules/moment/moment.js");
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -57693,6 +57452,8 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 var _react2 = _interopRequireDefault(_react);
 
 var _src = __webpack_require__("../src/index.js");
+
+var _src2 = _interopRequireDefault(_src);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57746,30 +57507,61 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Uncontrolled Component'
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimePicker/Uncontrolled.jsx', target: '_blank' },
+                        'Uncontrolled Component'
+                    )
                 ),
                 _react2.default.createElement(
                     'p',
                     null,
+                    'Selected: ',
                     date,
                     ' ',
                     time
                 ),
-                _react2.default.createElement(_src.DateTimePicker, {
-                    locale: locale,
-                    defaultDate: date,
-                    defaultTime: time,
-                    onChangeDate: function onChangeDate(value) {
-                        _this2.setState(function (state) {
-                            return { date: value };
-                        });
-                    },
-                    onChangeTime: function onChangeTime(value) {
-                        _this2.setState(function (state) {
-                            return { time: value };
-                        });
-                    }
-                })
+                _react2.default.createElement(
+                    'div',
+                    { className: 'clearfix' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'pull-left' },
+                        _react2.default.createElement(_src.DateInput, {
+                            defaultValue: date,
+                            onChange: function onChange(value) {
+                                _this2.setState(function (state) {
+                                    return { date: value };
+                                });
+                            }
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'pull-left', style: { marginLeft: 8 } },
+                        _react2.default.createElement(_src.TimeInput, {
+                            defaultValue: time,
+                            onChange: function onChange(value) {
+                                _this2.setState(function (state) {
+                                    return { time: value };
+                                });
+                            }
+                        })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(_src2.default, {
+                        locale: locale,
+                        defaultDate: date,
+                        onSelect: function onSelect(date) {
+                            _this2.setState(function (state) {
+                                return { date: date };
+                            });
+                        }
+                    })
+                )
             );
         }
     }]);
@@ -57826,6 +57618,10 @@ var _class, _temp2;
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
 var _moment = __webpack_require__("../node_modules/moment/moment.js");
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -57838,7 +57634,9 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _src = __webpack_require__("../src/index.js");
+var _DateTimeRangePicker = __webpack_require__("./DateTimeRangePicker/DateTimeRangePicker.jsx");
+
+var _DateTimeRangePicker2 = _interopRequireDefault(_DateTimeRangePicker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57987,14 +57785,35 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Controlled Component'
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Controlled.jsx', target: '_blank' },
+                        'Controlled Component'
+                    )
                 ),
                 _react2.default.createElement(
                     'p',
                     null,
-                    'This example will update invalid date/time range.'
+                    _react2.default.createElement(
+                        'b',
+                        null,
+                        'Note:'
+                    ),
+                    ' This example will update invalid date/time range.'
                 ),
-                _react2.default.createElement(_src.DateTimeRangePicker, {
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'Selected: ',
+                    startDate,
+                    ' ',
+                    startTime,
+                    ' ~ ',
+                    endDate,
+                    ' ',
+                    endTime
+                ),
+                _react2.default.createElement(_DateTimeRangePicker2.default, {
                     locale: locale,
                     startDate: startDate,
                     startTime: startTime,
@@ -58018,6 +57837,204 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "./DateTimeRangePicker/DateTimeRangePicker.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp;
+
+var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__("../node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _uncontrollable = __webpack_require__("../node_modules/uncontrollable/index.js");
+
+var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
+
+var _src = __webpack_require__("../src/index.js");
+
+var _src2 = _interopRequireDefault(_src);
+
+var _DateTimeRangePicker = __webpack_require__("./DateTimeRangePicker/DateTimeRangePicker.styl");
+
+var _DateTimeRangePicker2 = _interopRequireDefault(_DateTimeRangePicker);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
+    _inherits(DateTimeRangePicker, _PureComponent);
+
+    function DateTimeRangePicker() {
+        _classCallCheck(this, DateTimeRangePicker);
+
+        return _possibleConstructorReturn(this, (DateTimeRangePicker.__proto__ || Object.getPrototypeOf(DateTimeRangePicker)).apply(this, arguments));
+    }
+
+    _createClass(DateTimeRangePicker, [{
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                locale = _props.locale,
+                startDate = _props.startDate,
+                startTime = _props.startTime,
+                endDate = _props.endDate,
+                endTime = _props.endTime,
+                onChangeStartDate = _props.onChangeStartDate,
+                onChangeStartTime = _props.onChangeStartTime,
+                onChangeEndDate = _props.onChangeEndDate,
+                onChangeEndTime = _props.onChangeEndTime;
+
+
+            return _react2.default.createElement(
+                'div',
+                { className: _DateTimeRangePicker2.default.datePickerPane },
+                _react2.default.createElement(
+                    'div',
+                    { className: _DateTimeRangePicker2.default.datePickerPaneHeader },
+                    _react2.default.createElement(
+                        'div',
+                        { className: _DateTimeRangePicker2.default.dateTimeContainer },
+                        _react2.default.createElement(
+                            'div',
+                            { className: _DateTimeRangePicker2.default.inputIconGroup },
+                            _react2.default.createElement(_src.DateInput, {
+                                value: startDate,
+                                onChange: onChangeStartDate
+                            })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: _DateTimeRangePicker2.default.inputIconGroup },
+                            _react2.default.createElement(_src.TimeInput, {
+                                value: startTime,
+                                onChange: onChangeStartTime
+                            })
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: _DateTimeRangePicker2.default.tilde },
+                        '~'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: _DateTimeRangePicker2.default.dateTimeContainer },
+                        _react2.default.createElement(
+                            'div',
+                            { className: _DateTimeRangePicker2.default.inputIconGroup },
+                            _react2.default.createElement(_src.DateInput, {
+                                value: endDate,
+                                onChange: onChangeEndDate
+                            })
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: _DateTimeRangePicker2.default.inputIconGroup },
+                            _react2.default.createElement(_src.TimeInput, {
+                                value: endTime,
+                                onChange: onChangeEndTime
+                            })
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: _DateTimeRangePicker2.default.datePickerPaneBody },
+                    _react2.default.createElement(
+                        'div',
+                        { className: _DateTimeRangePicker2.default.datePickerPaneContainer },
+                        _react2.default.createElement(_src2.default, {
+                            locale: locale,
+                            date: startDate,
+                            onSelect: onChangeStartDate
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: _DateTimeRangePicker2.default.datePickerPaneContainer },
+                        _react2.default.createElement(_src2.default, {
+                            locale: locale,
+                            date: endDate,
+                            onSelect: onChangeEndDate
+                        })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return DateTimeRangePicker;
+}(_react.PureComponent), _class.propTypes = {
+    locale: _propTypes2.default.string,
+    startDate: _propTypes2.default.string,
+    startTime: _propTypes2.default.string,
+    endDate: _propTypes2.default.string,
+    endTime: _propTypes2.default.string,
+    onChangeStartDate: _propTypes2.default.func,
+    onChangeStartTime: _propTypes2.default.func,
+    onChangeEndDate: _propTypes2.default.func,
+    onChangeEndTime: _propTypes2.default.func
+}, _temp);
+exports.default = (0, _uncontrollable2.default)(DateTimeRangePicker, {
+    // Define the pairs of prop/handlers you want to be uncontrollable
+    startDate: 'onChangeStartDate',
+    startTime: 'onChangeStartTime',
+    endDate: 'onChangeEndDate',
+    endTime: 'onChangeEndTime'
+});
+
+/***/ }),
+
+/***/ "./DateTimeRangePicker/DateTimeRangePicker.styl":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../node_modules/stylus-loader/index.js!../node_modules/stylint-loader/index.js!./DateTimeRangePicker/DateTimeRangePicker.styl");
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__("../node_modules/style-loader/lib/addStyles.js")(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../../node_modules/stylus-loader/index.js!../../node_modules/stylint-loader/index.js!./DateTimeRangePicker.styl", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js?camelCase&modules&importLoaders=1&localIdentName=[local]---[hash:base64:5]!../../node_modules/stylus-loader/index.js!../../node_modules/stylint-loader/index.js!./DateTimeRangePicker.styl");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
 /***/ "./DateTimeRangePicker/Dropdown.jsx":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -58034,6 +58051,14 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _class, _temp2;
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+__webpack_require__("../node_modules/@trendmicro/react-buttons/dist/react-buttons.css");
+
+__webpack_require__("../node_modules/@trendmicro/react-dropdown/dist/react-dropdown.css");
+
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
 
 var _reactButtons = __webpack_require__("../node_modules/@trendmicro/react-buttons/lib/index.js");
 
@@ -58053,7 +58078,9 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _src = __webpack_require__("../src/index.js");
+var _DateTimeRangePicker = __webpack_require__("./DateTimeRangePicker/DateTimeRangePicker.jsx");
+
+var _DateTimeRangePicker2 = _interopRequireDefault(_DateTimeRangePicker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58235,18 +58262,22 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Dropdown'
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Dropdown.jsx', target: '_blank' },
+                        'Dropdown'
+                    )
                 ),
                 period !== 'custom' && _react2.default.createElement(
                     'p',
                     null,
+                    'Selected: ',
                     mapPeriodToString(period)
                 ),
                 period === 'custom' && _react2.default.createElement(
                     'p',
                     null,
-                    mapPeriodToString(period),
-                    ': ',
+                    'Selected: ',
                     startDate,
                     ' ',
                     startTime,
@@ -58337,7 +58368,7 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                                     padding: 12
                                 }
                             },
-                            _react2.default.createElement(_src.DateTimeRangePicker, {
+                            _react2.default.createElement(_DateTimeRangePicker2.default, {
                                 locale: locale,
                                 startDate: nextStartDate,
                                 startTime: nextStartTime,
@@ -58419,6 +58450,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _class, _temp2;
 
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
 var _moment = __webpack_require__("../node_modules/moment/moment.js");
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -58431,7 +58466,9 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _src = __webpack_require__("../src/index.js");
+var _DateTimeRangePicker = __webpack_require__("./DateTimeRangePicker/DateTimeRangePicker.jsx");
+
+var _DateTimeRangePicker2 = _interopRequireDefault(_DateTimeRangePicker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58487,14 +58524,35 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                 _react2.default.createElement(
                     'h3',
                     null,
-                    'Uncontrolled Component'
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Uncontrolled.jsx', target: '_blank' },
+                        'Uncontrolled Component'
+                    )
                 ),
                 _react2.default.createElement(
                     'p',
                     null,
-                    'This example will not update invalid date/time range.'
+                    _react2.default.createElement(
+                        'b',
+                        null,
+                        'Note:'
+                    ),
+                    ' This example will not update invalid date/time range.'
                 ),
-                _react2.default.createElement(_src.DateTimeRangePicker, {
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    'Selected: ',
+                    startDate,
+                    ' ',
+                    startTime,
+                    ' ~ ',
+                    endDate,
+                    ' ',
+                    endTime
+                ),
+                _react2.default.createElement(_DateTimeRangePicker2.default, {
                     locale: locale,
                     defaultStartDate: startDate,
                     defaultStartTime: startTime,
@@ -58855,10 +58913,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 __webpack_require__("../node_modules/trendmicro-ui/dist/css/trendmicro-ui.css");
 
-__webpack_require__("../node_modules/@trendmicro/react-buttons/dist/react-buttons.css");
-
-__webpack_require__("../node_modules/@trendmicro/react-dropdown/dist/react-dropdown.css");
-
 var _react = __webpack_require__("../node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
@@ -59058,4 +59112,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?2019118238c7b05e0d5d
+//# sourceMappingURL=bundle.js.map?be77a80c3c4cfd8f2e5f

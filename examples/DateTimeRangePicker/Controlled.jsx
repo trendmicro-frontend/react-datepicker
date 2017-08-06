@@ -1,7 +1,8 @@
+import Anchor from '@trendmicro/react-anchor';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DateTimeRangePicker } from '../../src';
+import DateTimeRangePicker from './DateTimeRangePicker';
 
 const normalizeDateString = (dateString) => {
     let m = moment(dateString);
@@ -112,8 +113,9 @@ export default class extends PureComponent {
 
         return (
             <div>
-                <h3>Controlled Component</h3>
-                <p>This example will update invalid date/time range.</p>
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Controlled.jsx" target="_blank">Controlled Component</Anchor></h3>
+                <p><b>Note:</b> This example will update invalid date/time range.</p>
+                <p>Selected: {startDate} {startTime} ~ {endDate} {endTime}</p>
                 <DateTimeRangePicker
                     locale={locale}
                     startDate={startDate}

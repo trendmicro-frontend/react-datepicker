@@ -19,8 +19,6 @@ Demo: https://trendmicro-frontend.github.io/react-datepicker
   ```js
   import {
       DatePicker,
-      DateTimePicker,
-      DateTimeRangePicker,
       DateInput,
       TimeInput
   } from '@trendmicro/react-datepicker';
@@ -31,119 +29,97 @@ Demo: https://trendmicro-frontend.github.io/react-datepicker
 
 ## Usage
 
+### DatePicker
+
 Initialize state in your React component:
 ```js
 state = {
-    locale: 'en',
-    startDate: '2017-08-01',
-    startTime: '00:00:00',
-    endDate: '2017-08-07',
-    endTime: '23:59:59'
+    date: moment().format('YYYY-MM-DD')
 };
 ```
 
-### DatePicker
+#### Controlled
 
 ```js
 <DatePicker
-    locale={this.state.locale}
-    date={this.state.startDate}
-    onChange={date => {
-        this.setState({ startDate: date });
+    date={this.state.date}
+    onSelect={date => {
+        this.setState(state => ({ date: date }));
     }}
 />
 ```
 
-### DatePicker in Dropdown Menu
-
-Check out Dropdown component at https://github.com/trendmicro-frontend/react-dropdown
+#### Uncontrolled
 
 ```js
-<Dropdown>
-    <Dropdown.Toggle
-        btnStyle="link"
-        noCaret
-        style={{ padding: 0 }}
-    >
-        <DateInput
-            value={this.state.startDate}
-            onChange={date => {
-                this.setState({ startDate: date });
-            }}
-        />
-    </Dropdown.Toggle>
-    <Dropdown.Menu style={{ padding: 8 }}>
-        <DatePicker
-            locale={this.state.locale}
-            date={this.state.startDate}
-            onChange={date => {
-                this.setState({ startDate: date });
-            }}
-        />
-    </Dropdown.Menu>
-</Dropdown>
-```
-
-### DateTimePicker
-
-```js
-<DateTimePicker
-    locale={this.state.locale}
-    date={this.state.startDate}
-    time={this.state.startTime}
-    onChangeDate={date => {
-        this.setState({ startDate: date });
-    }}
-    onChangeTime={time => {
-        this.setState({ startTime: time });
-    }}
-/>
-```
-
-### DateTimeRangePicker
-
-```js
-<DateTimeRangePicker
-    locale={this.state.locale}
-    startDate={this.state.startDate}
-    startTime={this.state.startTime}
-    endDate={this.state.endDate}
-    endTime={this.state.endTime}
-    onChangeStartDate={date => {
-        this.setState({ startDate: date });
-    }}
-    onChangeStartTime={time => {
-        this.setState({ startTime: time });
-    }}
-    onChangeEndDate={date => {
-        this.setState({ endDate: date });
-    }}
-    onChangeEndTime={time => {
-        this.setState({ endTime: time });
+<DatePicker
+    defaultDate={this.state.date}
+    onSelect={() => {
+        // Optional
     }}
 />
 ```
 
 ### DateInput
 
+Initialize state in your React component:
 ```js
-// Date format: YYYY-MM-DD
+state = {
+    // Example: 2017-08-01
+    value: moment().format('YYYY-MM-DD')
+};
+```
+
+#### Controlled
+
+```js
 <DateInput
-    value={this.state.startDate}
-    onChange={date => {
-        this.setState({ startDate: date });
+    value={this.state.value}
+    onChange={value => {
+        this.setState(state => ({ value: value }));
+    }}
+/>
+```
+
+#### Uncontrolled
+
+```js
+<DateInput
+    defaultValue={this.state.value}
+    onChange={value => {
+        // Optional
     }}
 />
 ```
 
 ### TimeInput
 
+Initialize state in your React component:
 ```js
-// Time format: HH:MM:SS
+state = {
+    // Example: 08:00:00
+    value: moment().format('hh:mm:ss')
+};
+```
+
+#### Controlled
+
+```js
 <TimeInput
-    value={this.state.startTime}
-    onChange={time => {
-        this.setState({ startTime: time });
+    value={this.state.value}
+    onChange={value => {
+        this.setState(state => ({ value: value }));
+    }}
+/>
+```
+
+#### Uncontrolled
+
+```js
+<TimeInput
+    defaultValue={this.state.value}
+    onChange={value => {
+        // Optional
     }}
 />
 ```
@@ -156,26 +132,35 @@ Check out Dropdown component at https://github.com/trendmicro-frontend/react-dro
 
 Name | Type | Default | Description 
 :--- | :--- | :------ | :----------
-
-#### DateTimePicker
-
-Name | Type | Default | Description 
-:--- | :--- | :------ | :----------
-
-#### DateTimeRangePicker
-
-Name | Type | Default | Description 
-:--- | :--- | :------ | :----------
+locale | string | 'en' |
+date | object or string | null |
+defaultDate | object or string | null |
+minDate | object or string | null | The minimum selectable date. When set to null, there is no minimum.
+maxDate | object or string | null | The maximum selectable date. When set to null, there is no maximum.
+onSelect | function(date) | | Called when a date is selected from datepicker.
+navArrows | object | |
 
 #### DateInput
 
 Name | Type | Default | Description 
 :--- | :--- | :------ | :----------
+locale | string | 'en' |
+dateFormat | string | 'YYYY-MM-DD' |
+value | object or string | null |
+defaultValue | object or string | null |
+minDate | object or string | null | The minimum selectable date. When set to null, there is no minimum.
+maxDate | object or string | null | The maximum selectable date. When set to null, there is no maximum.
+onChange | function(value) | | Called when the value changes.
+renderIcon | function(props) | |
 
 #### TimeInput
 
 Name | Type | Default | Description 
 :--- | :--- | :------ | :----------
+value | string | '00:00:00' |
+defaultValue | string | '00:00:00' |
+onChange | function(value) | | Called when the value changes.
+renderIcon | function(props) | |
 
 ## License
 

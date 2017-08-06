@@ -1,7 +1,8 @@
+import Anchor from '@trendmicro/react-anchor';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DateTimePicker } from '../../src';
+import DatePicker, { TimeInput, DateInput } from '../../src';
 
 export default class extends PureComponent {
     static propTypes = {
@@ -24,19 +25,35 @@ export default class extends PureComponent {
 
         return (
             <div>
-                <h3>Controlled Component</h3>
-                <p>{date} {time}</p>
-                <DateTimePicker
-                    locale={locale}
-                    date={date}
-                    time={time}
-                    onChangeDate={value => {
-                        this.setState(state => ({ date: value }));
-                    }}
-                    onChangeTime={value => {
-                        this.setState(state => ({ time: value }));
-                    }}
-                />
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimePicker/Controlled.jsx" target="_blank">Controlled Component</Anchor></h3>
+                <p>Selected: {date} {time}</p>
+                <div className="clearfix">
+                    <div className="pull-left">
+                        <DateInput
+                            value={date}
+                            onChange={value => {
+                                this.setState(state => ({ date: value }));
+                            }}
+                        />
+                    </div>
+                    <div className="pull-left" style={{ marginLeft: 8 }}>
+                        <TimeInput
+                            value={time}
+                            onChange={value => {
+                                this.setState(state => ({ time: value }));
+                            }}
+                        />
+                    </div>
+                </div>
+                <div>
+                    <DatePicker
+                        locale={locale}
+                        date={date}
+                        onSelect={date => {
+                            this.setState(state => ({ date: date }));
+                        }}
+                    />
+                </div>
             </div>
         );
     }

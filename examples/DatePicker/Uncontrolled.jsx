@@ -1,7 +1,8 @@
+import Anchor from '@trendmicro/react-anchor';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DatePicker } from '../../src';
+import DatePicker from '../../src';
 
 export default class extends PureComponent {
     static propTypes = {
@@ -14,22 +15,22 @@ export default class extends PureComponent {
         const now = moment();
 
         return {
-            value: moment(now).format('YYYY-MM-DD')
+            date: moment(now).format('YYYY-MM-DD')
         };
     }
     render() {
         const { locale } = this.props;
-        const { value } = this.state;
+        const { date } = this.state;
 
         return (
             <div>
-                <h3>Uncontrolled Component</h3>
-                <p>{value}</p>
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DatePicker/Uncontrolled.jsx" target="_blank">Uncontrolled Component</Anchor></h3>
+                <p>Selected: {date}</p>
                 <DatePicker
                     locale={locale}
-                    defaultValue={value}
-                    onSelect={value => {
-                        this.setState(state => ({ value: value }));
+                    defaultDate={date}
+                    onSelect={date => {
+                        this.setState(state => ({ date: date }));
                     }}
                 />
             </div>

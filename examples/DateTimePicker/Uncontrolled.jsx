@@ -1,7 +1,8 @@
+import Anchor from '@trendmicro/react-anchor';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { DateTimePicker } from '../../src';
+import DatePicker, { TimeInput, DateInput } from '../../src';
 
 export default class extends PureComponent {
     static propTypes = {
@@ -24,19 +25,35 @@ export default class extends PureComponent {
 
         return (
             <div>
-                <h3>Uncontrolled Component</h3>
-                <p>{date} {time}</p>
-                <DateTimePicker
-                    locale={locale}
-                    defaultDate={date}
-                    defaultTime={time}
-                    onChangeDate={value => {
-                        this.setState(state => ({ date: value }));
-                    }}
-                    onChangeTime={value => {
-                        this.setState(state => ({ time: value }));
-                    }}
-                />
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimePicker/Uncontrolled.jsx" target="_blank">Uncontrolled Component</Anchor></h3>
+                <p>Selected: {date} {time}</p>
+                <div className="clearfix">
+                    <div className="pull-left">
+                        <DateInput
+                            defaultValue={date}
+                            onChange={value => {
+                                this.setState(state => ({ date: value }));
+                            }}
+                        />
+                    </div>
+                    <div className="pull-left" style={{ marginLeft: 8 }}>
+                        <TimeInput
+                            defaultValue={time}
+                            onChange={value => {
+                                this.setState(state => ({ time: value }));
+                            }}
+                        />
+                    </div>
+                </div>
+                <div>
+                    <DatePicker
+                        locale={locale}
+                        defaultDate={date}
+                        onSelect={date => {
+                            this.setState(state => ({ date: date }));
+                        }}
+                    />
+                </div>
             </div>
         );
     }

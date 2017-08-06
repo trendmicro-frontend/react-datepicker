@@ -6,45 +6,27 @@ import uncontrollable from 'uncontrollable';
 import styles from './index.styl';
 
 class DatePicker extends PureComponent {
-    static defaultProps = {
-        locale: 'en',
-        value: null,
-        minDate: null,
-        maxDate: null,
-        onSelect: () => {},
-        renderDay: (day, locale) => {
-            if (typeof day === 'object' && typeof day.format === 'function') {
-                return day.format('D', locale);
-            }
-
-            return day;
-        },
-        navArrows: {
-            prev: <i className="fa fa-angle-left" />,
-            next: <i className="fa fa-angle-right" />
-        }
-    };
     static propTypes = {
         locale: PropTypes.string,
 
-        value: PropTypes.oneOfType([
+        date: PropTypes.oneOfType([
             PropTypes.object,
             PropTypes.string
         ]),
 
         // The minimum selectable date. When set to null, there is no minimum.
-        //
         // Types supported:
         // * Date: A date object containing the minimum date.
+        // * String: A date string in ISO 8601 format (i.e. YYYY-MM-DD).
         minDate: PropTypes.oneOfType([
             PropTypes.object,
             PropTypes.string
         ]),
 
         // The maximum selectable date. When set to null, there is no maximum.
-        //
         // Types supported:
         // * Date: A date object containing the maximum date.
+        // * String: A date string in ISO 8601 format (i.e. YYYY-MM-DD).
         maxDate: PropTypes.oneOfType([
             PropTypes.object,
             PropTypes.string
@@ -59,6 +41,24 @@ class DatePicker extends PureComponent {
             prev: PropTypes.node,
             next: PropTypes.node
         })
+    };
+    static defaultProps = {
+        locale: 'en',
+        date: null,
+        minDate: null,
+        maxDate: null,
+        onSelect: () => {},
+        renderDay: (day, locale) => {
+            if (typeof day === 'object' && typeof day.format === 'function') {
+                return day.format('D', locale);
+            }
+
+            return day;
+        },
+        navArrows: {
+            prev: <i className="fa fa-angle-left" />,
+            next: <i className="fa fa-angle-right" />
+        }
     };
 
     renderDay = (props) => {
@@ -85,7 +85,7 @@ class DatePicker extends PureComponent {
     render() {
         const {
             locale,
-            value,
+            date,
             minDate,
             maxDate,
             onSelect,
@@ -105,7 +105,7 @@ class DatePicker extends PureComponent {
                     next: navArrows.next
                 }}
                 locale={locale}
-                date={value}
+                date={date}
                 minDate={minDate}
                 maxDate={maxDate}
                 onChange={onSelect}
@@ -124,5 +124,5 @@ class DatePicker extends PureComponent {
 
 export default uncontrollable(DatePicker, {
     // Define the pairs of prop/handlers you want to be uncontrollable
-    value: 'onSelect'
+    date: 'onSelect'
 });

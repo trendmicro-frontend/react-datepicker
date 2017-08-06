@@ -1,4 +1,26 @@
 /*! react-datepicker v0.2.0 | (c) 2017 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-datepicker */
+.datepicker---date-picker-container---1kNBY {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 20px;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding: 0;
+  width: 248px;
+}
+.datepicker---date-picker-container---1kNBY *,
+.datepicker---date-picker-container---1kNBY *:before,
+.datepicker---date-picker-container---1kNBY *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+.react-date-picker__month-view-day--today-highlight {
+  color: #db3d44 !important;
+}
 .datepicker---date-input-container---27706 {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -72,86 +94,6 @@
   top: 50%;
   margin-top: -10px;
   color: #666;
-}
-.datepicker---date-picker-container---1kNBY {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  line-height: 20px;
-  border: none;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  padding: 0;
-  width: 248px;
-}
-.datepicker---date-picker-container---1kNBY *,
-.datepicker---date-picker-container---1kNBY *:before,
-.datepicker---date-picker-container---1kNBY *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-.react-date-picker__month-view-day--today-highlight {
-  color: #db3d44 !important;
-}
-.datepicker---date-picker-pane---2BcFK {
-  display: inline-block;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-header---2kUDQ,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-body---3d5la,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-footer---1oQxE {
-  zoom: 1;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-header---2kUDQ:before,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-body---3d5la:before,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-footer---1oQxE:before,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-header---2kUDQ:after,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-body---3d5la:after,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-footer---1oQxE:after {
-  content: "";
-  display: table;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-header---2kUDQ:after,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-body---3d5la:after,
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-footer---1oQxE:after {
-  clear: both;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-header---2kUDQ .datepicker---tilde---NKqUt {
-  float: left;
-  line-height: 32px;
-  text-align: center;
-  width: 24px;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-body---3d5la {
-  margin-top: 8px;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-body---3d5la .datepicker---date-picker-pane-container---2qFC7 {
-  float: left;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-body---3d5la .datepicker---date-picker-pane-container---2qFC7 + .datepicker---date-picker-pane-container---2qFC7 {
-  margin-left: 24px;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-body---3d5la .datepicker---date-picker-pane-container---2qFC7 + .datepicker---date-picker-pane-container---2qFC7:before {
-  content: ' ';
-  display: block;
-  height: 260px;
-  vertical-align: middle;
-  margin-left: -12px;
-  float: left;
-  margin-right: 12px;
-  margin-top: 16px;
-  border-left: 1px solid #e6e6e6;
-}
-.datepicker---date-picker-pane---2BcFK .datepicker---date-picker-pane-footer---1oQxE {
-  margin-top: 12px;
-}
-.datepicker---input-icon-group---rMA-h {
-  position: relative;
-  float: left;
-}
-.datepicker---input-icon-group---rMA-h + .datepicker---input-icon-group---rMA-h {
-  margin-left: 8px;
 }
 
 /*# sourceMappingURL=react-datepicker.css.map*/
