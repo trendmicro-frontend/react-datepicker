@@ -32,7 +32,7 @@ class DatePicker extends PureComponent {
             PropTypes.string
         ]),
 
-        // Called when a date is selected from datepicker.
+        // Called when a date is selected.
         onSelect: PropTypes.func,
 
         renderDay: PropTypes.func,
