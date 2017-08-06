@@ -150,6 +150,7 @@ state = {
 * [Controlled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker/Controlled.jsx)
 * [Uncontrolled](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker/Uncontrolled.jsx)
 * [Dropdown](https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker/Dropdown.jsx)
+    - @trendmicro/react-dropdown@0.7.0 or above is required to use `Dropdown.MenuWrapper`
 
 ## API
 
