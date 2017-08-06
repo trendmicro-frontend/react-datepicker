@@ -17,11 +17,7 @@ Demo: https://trendmicro-frontend.github.io/react-datepicker
 2. At this point you can import `@trendmicro/react-datepicker` and its styles in your application as follows:
 
   ```js
-  import {
-      DatePicker,
-      DateInput,
-      TimeInput
-  } from '@trendmicro/react-datepicker';
+  import DatePicker, { DateInput, TimeInput } from '@trendmicro/react-datepicker';
 
   // Be sure to include styles at some point, probably during your bootstraping
   import '@trendmicro/react-datepicker/dist/react-datepicker.css';
@@ -54,7 +50,7 @@ state = {
 ```js
 <DatePicker
     defaultDate={this.state.date}
-    onSelect={() => {
+    onSelect={date => {
         // Optional
     }}
 />
@@ -65,7 +61,7 @@ state = {
 Initialize state in your React component:
 ```js
 state = {
-    // Example: 2017-08-01
+    // 2017-08-01
     value: moment().format('YYYY-MM-DD')
 };
 ```
@@ -97,7 +93,7 @@ state = {
 Initialize state in your React component:
 ```js
 state = {
-    // Example: 08:00:00
+    // 08:00:00
     value: moment().format('hh:mm:ss')
 };
 ```
@@ -124,6 +120,17 @@ state = {
 />
 ```
 
+## Examples
+
+### DatePicker
+https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DatePicker
+
+### DateTimePicker
+https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimePicker
+
+### DateTimeRangePicker
+https://github.com/trendmicro-frontend/react-datepicker/tree/master/examples/DateTimeRangePicker
+
 ## API
 
 ### Properties
@@ -137,8 +144,10 @@ date | object or string | null |
 defaultDate | object or string | null |
 minDate | object or string | null | The minimum selectable date. When set to null, there is no minimum.
 maxDate | object or string | null | The maximum selectable date. When set to null, there is no maximum.
-onSelect | function(date) | | Called when a date is selected from datepicker.
+onSelect | function(date) | | Called when a date is selected.
 navArrows | object | |
+navArrows.prev | node | &lt;i className="fa fa-angle-left" /&gt; |
+navArrows.next | node | &lt;i className="fa fa-angle-right" /&gt; |
 
 #### DateInput
 
