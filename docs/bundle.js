@@ -55864,7 +55864,7 @@ var DatePicker = (_temp2 = _class = function (_PureComponent) {
     // * String: A date string in ISO 8601 format (i.e. YYYY-MM-DD).
     maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
 
-    // Called when a date is selected from datepicker.
+    // Called when a date is selected.
     onSelect: _propTypes2.default.func,
 
     renderDay: _propTypes2.default.func,
@@ -59112,4 +59112,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?be77a80c3c4cfd8f2e5f
+//# sourceMappingURL=bundle.js.map?e8f9d8b7a5d5cae25590
