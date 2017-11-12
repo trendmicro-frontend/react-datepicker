@@ -7,9 +7,10 @@ import assignDefined from './assignDefined';
 
 import toMoment from './toMoment';
 import join from './join';
-import bemFactory from './bemFactory';
 
 import HistoryView from './HistoryView';
+
+import styles from './NavBar.styl';
 
 const ARROWS = {
     prev: <svg height="24" viewBox="0 0 24 24" width="24">
@@ -22,8 +23,6 @@ const ARROWS = {
         <path d="M0 0h24v24H0z" fill="none" />
     </svg>
 };
-
-const bem = bemFactory('react-date-picker__nav-bar');
 
 export default class NavBar extends Component {
     constructor(props) {
@@ -49,43 +48,28 @@ export default class NavBar extends Component {
 
         props.historyViewEnabled = props.expandedHistoryView || props.enableHistoryView;
 
-        const secondary = props.secondary;
+        // const secondary = props.secondary;
 
         const className = join(
-            props.className,
-            bem(),
-            bem(null, `theme-${props.theme}`),
-            props.historyViewEnabled && bem(null, 'with-history-view')
+            styles.navbar,
+            props.historyViewEnabled && styles.enabledHistoryView
         );
 
         const historyView = props.historyViewEnabled ? this.renderHistoryView() : null;
 
 
-        return (<div
-            inline row
-            className={className}
-        >
+        return (<div className={className}>
 
-            {secondary && this.renderNav(-2, viewMoment)}
             {this.renderNav(-1, viewMoment)}
 
             <div
-                className={bem('date')}
-                style={{
-                    textAlign: 'center',
-                    color: '#222222',
-                    fontSize: '13px',
-                    fontFamily: 'Arial, "Helvetica Neue", Helvetica, sans-serif',
-                    textDecoration: 'bold',
-                    fontWeight: 700
-                }}
+                className={styles.date}
                 onMouseDown={props.historyViewEnabled ? this.toggleHistoryView : null}
             >
                 {this.renderNavDate(viewMoment)}
             </div>
 
             {this.renderNav(1, viewMoment)}
-            {secondary && this.renderNav(2, viewMoment)}
 
             {historyView}
         </div>);
@@ -96,7 +80,6 @@ export default class NavBar extends Component {
             return null;
         }
 
-        const className = bem('history-view');
         const { viewMoment, theme, minDate, maxDate, arrows } = this.p;
 
         const historyViewProps = assignDefined({
@@ -107,8 +90,6 @@ export default class NavBar extends Component {
                 this.historyView = view;
             },
             focusDecadeView: false,
-
-            className,
             theme,
 
             onOkClick: this.onHistoryViewOk,
@@ -215,10 +196,8 @@ export default class NavBar extends Component {
         }
 
         const className = [
-            bem('arrow'),
-            bem(`arrow--${name}`),
-            secondary && bem('secondary-arrow'),
-            disabled && bem('arrow--disabled')
+            styles.arrow,
+            styles[`arrow-${name}`]
         ];
 
         const arrow = props.arrows[dir] || props.arrows[name] || ARROWS[name];

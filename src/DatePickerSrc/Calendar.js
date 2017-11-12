@@ -85,12 +85,8 @@ export default class Calendar extends Component {
 
         const children = [
             navBar,
-            <div justifyContent="center" wrap={this.props.wrap || this.props.wrapTime}>
-                <div
-                    column
-                    wrap={false}
-                    alignItems="stretch"
-                >
+            <div>
+                <div>
                     {inner}
                 </div>
                 {clockInput}
