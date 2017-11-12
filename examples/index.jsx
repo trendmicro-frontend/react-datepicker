@@ -43,7 +43,7 @@ class App extends PureComponent {
                                     <div className="col-md-6 col-lg-4">
                                         <DatePickerExample.Controlled locale={locale} />
                                     </div>
-                                    {/* <div className="col-md-6 col-lg-4">
+                                    <div className="col-md-6 col-lg-4">
                                         <DatePickerExample.Uncontrolled locale={locale} />
                                     </div>
                                     <div className="col-md-6 col-lg-4">
@@ -51,7 +51,7 @@ class App extends PureComponent {
                                     </div>
                                     <div className="col-md-6 col-lg-4">
                                         <DatePickerExample.Dropdown locale={locale} />
-                                    </div> */}
+                                    </div>
                                 </div>
                             </Section>
                         </div>

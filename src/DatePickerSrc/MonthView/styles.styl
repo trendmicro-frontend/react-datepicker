@@ -29,7 +29,7 @@
     width: 35px;
     height: 39px;
     text-align: center;
-    font-size: 12px;
+    font-size: 13px;
     min-width: 30px;
     padding-top: 4px;
 }
@@ -44,7 +44,7 @@
 }
 
 .dayNextMonth, .dayPrevMonth {
-    color: #b3b3b3;;
+    color: #b3b3b3;
 
     &.dayWeekend {
         color: #d68e8e;
@@ -53,5 +53,13 @@
 
 
 .dayDisabled {
-    cursor: initial;
+    color: #b3b3b3;
+
+    .dayText{
+        cursor: default;
+
+        &:hover {
+            background: white;
+        }
+    }
 }

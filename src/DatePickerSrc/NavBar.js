@@ -197,6 +197,7 @@ export default class NavBar extends Component {
 
         const className = [
             styles.arrow,
+            disabled ? styles.disabled : styles.enabled,
             styles[`arrow-${name}`]
         ];
 
