@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import Navbar from './Navbar';
 import Section from './Section';
 import * as DatePickerExample from './DatePicker';
-import * as DateTimePickerExample from './DateTimePicker';
-import * as DateTimeRangePickerExample from './DateTimeRangePicker';
+// import * as DateTimePickerExample from './DateTimePicker';
+// import * as DateTimeRangePickerExample from './DateTimeRangePicker';
 
 class App extends PureComponent {
     state = {
@@ -43,7 +43,7 @@ class App extends PureComponent {
                                     <div className="col-md-6 col-lg-4">
                                         <DatePickerExample.Controlled locale={locale} />
                                     </div>
-                                    <div className="col-md-6 col-lg-4">
+                                    {/* <div className="col-md-6 col-lg-4">
                                         <DatePickerExample.Uncontrolled locale={locale} />
                                     </div>
                                     <div className="col-md-6 col-lg-4">
@@ -51,11 +51,11 @@ class App extends PureComponent {
                                     </div>
                                     <div className="col-md-6 col-lg-4">
                                         <DatePickerExample.Dropdown locale={locale} />
-                                    </div>
+                                    </div> */}
                                 </div>
                             </Section>
                         </div>
-                        <div className="col-md-12">
+                        {/* <div className="col-md-12">
                             <Section className="row-md-8">
                                 <h2>DateTimePicker</h2>
                                 <div className="row">
@@ -67,8 +67,8 @@ class App extends PureComponent {
                                     </div>
                                 </div>
                             </Section>
-                        </div>
-                        <div className="col-md-12">
+                        </div> */}
+                        {/* <div className="col-md-12">
                             <Section className="row-md-15">
                                 <h2>DateTimeRangePicker</h2>
                                 <div className="row">
@@ -83,7 +83,7 @@ class App extends PureComponent {
                                     </div>
                                 </div>
                             </Section>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
