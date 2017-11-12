@@ -1,0 +1,57 @@
+.dayText {
+    width: 30px;
+    cursor: pointer;
+    height: 30px;
+    padding-top: 3px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid transparent;
+
+    &:hover {
+        background: #eeeeee padding-box;
+    }
+}
+
+.dayWeekend {
+    color: red;
+}
+
+.dayDisabledMin {
+    font-family: dayDisabledMin
+}
+
+.dayDisabledMax {
+    font-family: dayDisabledMax
+}
+
+.dayCell {
+    float: left;
+    width: 35px;
+    height: 39px;
+    text-align: center;
+    font-size: 12px;
+    min-width: 30px;
+    padding-top: 4px;
+}
+
+.dayCurrent {
+    .dayText {
+        background: #db3d44 padding-box;
+        color: #fff;
+        padding-top: 4px;
+        margin: 0px auto 0 auto;
+    }
+}
+
+.dayNextMonth, .dayPrevMonth {
+    color: #b3b3b3;;
+
+    &.dayWeekend {
+        color: #d68e8e;
+    }
+}
+
+
+.dayDisabled {
+    cursor: initial;
+}

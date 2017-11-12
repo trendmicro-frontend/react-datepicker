@@ -16,7 +16,6 @@ import Footer from './Footer';
 import DateField from './DateField';
 import Calendar from './Calendar';
 import DateFormatInput from './DateFormatInput';
-import DateFormatSpinnerInput from './DateFormatSpinnerInput';
 
 // allow people to import with other aliases as well
 export const DatePicker = Calendar;
@@ -29,7 +28,6 @@ export {
     HistoryView,
 
     DateFormatInput,
-    DateFormatSpinnerInput,
 
     TransitionView,
     MultiMonthView,

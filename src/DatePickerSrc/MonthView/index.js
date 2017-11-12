@@ -13,9 +13,10 @@ import isInRange from '../utils/isInRange';
 
 import NavBar from '../NavBar';
 import Footer from '../Footer';
-import bemFactory from '../bemFactory';
 import joinFunctions from '../joinFunctions';
 import assignDefined from '../assignDefined';
+
+import styles from './styles.styl';
 
 import BasicMonthView, { getDaysInMonthView } from '../BasicMonthView';
 
@@ -221,20 +222,11 @@ export default class MonthView extends Component {
     }
 
     componentWillMount() {
-        this.updateBem(this.props);
         this.updateToMoment(this.props);
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.defaultClassName !== this.props.defaultClassName) {
-            this.updateBem(nextProps);
-        }
-
         this.updateToMoment(nextProps);
-    }
-
-    updateBem(props) {
-        this.bem = bemFactory(props.defaultClassName);
     }
 
     updateToMoment(props) {
@@ -250,9 +242,7 @@ export default class MonthView extends Component {
 
     prepareClassName(props) {
         return join(
-            props.className,
-            this.bem(),
-            this.bem(null, `theme-${props.theme}`)
+            props.className
         );
     }
 
@@ -339,16 +329,16 @@ export default class MonthView extends Component {
         const thisMonth = !before && !after;
 
         return join(
-            timestamp === TODAY && this.bem('day--today'),
-            props.highlightToday && timestamp === TODAY && this.bem('day--today-highlight'),
+            timestamp === TODAY && styles.today,
+            props.highlightToday && timestamp === TODAY && styles.todayHighlight,
 
-            before && this.bem('day--prev-month'),
-            before && !props.showDaysBeforeMonth && this.bem('day--hidden'),
+            before && styles.dayPrevMonth,
+            before && !props.showDaysBeforeMonth && styles.dayHidden,
 
-            after && this.bem('day--next-month'),
-            after && !props.showDaysAfterMonth && this.bem('day--hidden'),
+            after && styles.dayNextMonth,
+            after && !props.showDaysAfterMonth && styles.dayHidden,
 
-            thisMonth && this.bem('day--this-month')
+            thisMonth && styles.thisMonth
         );
     }
 
@@ -362,14 +352,14 @@ export default class MonthView extends Component {
 
         if (minDate && timestamp < minDate) {
             classes.push(
-                this.bem('day--disabled-min')
+                styles.dayDisabledMin
             );
             isBeforeMinDate = true;
         }
 
         if (maxDate && timestamp > maxDate) {
             classes.push(
-                this.bem('day--disabled-max')
+                styles.dayDisabledMax
             );
             isAfterMaxDate = true;
         }
@@ -391,8 +381,8 @@ export default class MonthView extends Component {
         if (weekDay === 0 /* Sunday */ || weekDay === 6 /* Saturday */) {
             // if (weekDay === weekendStartDay || weekDay === weekendStartDay + 1) {
             return join(
-                this.bem('day--weekend'),
-                highlightWeekends && this.bem('day--weekend-highlight')
+                styles.dayWeekend,
+                highlightWeekends && styles.dayWeekendHighlight
             );
         }
 
@@ -462,7 +452,7 @@ export default class MonthView extends Component {
     prepareDayProps(renderDayProps, props) {
         const { timestamp, dateMoment, className } = renderDayProps;
 
-        props = props || this.p;
+        props = props || this.props;
         const result = {};
 
         const minMaxProps = this.prepareMinMaxProps(timestamp, props);
@@ -478,16 +468,17 @@ export default class MonthView extends Component {
             minMaxProps,
             rangeProps,
             {
-                children: <div className={this.bem('day-text')}>
+                children: <div className={styles.dayText}>
                     {renderDayProps.day}
                 </div>,
                 className: join([
+                    styles.dayCell,
                     minMaxProps.className,
                     rangeProps.className,
                     prevNextClassName,
                     weekendClassName,
-                    timestamp === currentTimestamp ? this.bem('day--value') : null,
-                    timestamp === props.activeDate ? this.bem('day--active') : null,
+                    timestamp === currentTimestamp ? styles.dayCurrent : null,
+                    timestamp === props.activeDate ? styles.dayActive : null,
                     className
                 ])
             }
@@ -536,7 +527,7 @@ export default class MonthView extends Component {
 
         if (renderProps.disabled) {
             renderProps.className = join(
-                this.bem('day--disabled'),
+                styles.dayDisabled,
                 renderProps.className
             );
         } else {
@@ -583,86 +574,8 @@ export default class MonthView extends Component {
     render() {
         const props = this.p = this.prepareProps(this.props);
 
-        const basicViewProps = assign({}, props);
-
-        delete basicViewProps.activeDate;
-        delete basicViewProps.activateOnHover;
-        delete basicViewProps.arrows;
-
-        delete basicViewProps.cleanup;
-        delete basicViewProps.clockTabIndex;
-        delete basicViewProps.constrainViewDate;
-        delete basicViewProps.constrainActiveInView;
-        delete basicViewProps.dayPropsMap;
-        delete basicViewProps.date;
-        delete basicViewProps.defaultActiveDate;
-        delete basicViewProps.defaultDate;
-        delete basicViewProps.defaultRange;
-        delete basicViewProps.defaultViewDate;
-
-        delete basicViewProps.enableHistoryView;
-
-        delete basicViewProps.focusOnFooterMouseDown;
-        delete basicViewProps.focusOnNavMouseDown;
-        delete basicViewProps.footer;
-        delete basicViewProps.footerClearDate;
-
-        delete basicViewProps.getTransitionTime;
-
-        delete basicViewProps.highlightRangeOnMouseMove;
-        delete basicViewProps.highlightToday;
-        delete basicViewProps.highlightWeekends;
-        delete basicViewProps.hoverRange;
-
-        delete basicViewProps.index;
-        delete basicViewProps.insideField;
-        delete basicViewProps.insideMultiView;
-        delete basicViewProps.isDatePicker;
-        delete basicViewProps.isDisabledDay;
-
-        delete basicViewProps.maxConstrained;
-        delete basicViewProps.maxDate;
-        delete basicViewProps.maxDateMoment;
-        delete basicViewProps.minConstrained;
-        delete basicViewProps.minDate;
-        delete basicViewProps.minDateMoment;
-
-        delete basicViewProps.navBarArrows;
-        delete basicViewProps.navNext;
-        delete basicViewProps.navigation;
-        delete basicViewProps.navigate;
-        delete basicViewProps.navOnDateClick;
-        delete basicViewProps.navPrev;
-        delete basicViewProps.onActiveDateChange;
-        delete basicViewProps.onChange;
-        delete basicViewProps.onHoverRangeChange;
-        delete basicViewProps.onRangeChange;
-        delete basicViewProps.onViewDateChange;
-        delete basicViewProps.onTransitionStart;
-
-        delete basicViewProps.partialRange;
-        delete basicViewProps.range;
-        delete basicViewProps.rangeStart;
-        delete basicViewProps.renderNavBar;
-
-        delete basicViewProps.select;
-        delete basicViewProps.showDaysAfterMonth;
-        delete basicViewProps.showDaysBeforeMonth;
-
-        delete basicViewProps.theme;
-
-        delete basicViewProps.viewDate;
-        delete basicViewProps.viewMonthEnd;
-        delete basicViewProps.viewMonthStart;
-
-        if (typeof props.cleanup === 'function') {
-            props.cleanup(basicViewProps);
-        }
-
         return (<BasicMonthView
             tabIndex={0}
-            {...basicViewProps}
-
             renderChildren={this.renderChildren}
 
             onKeyDown={this.onViewKeyDown}

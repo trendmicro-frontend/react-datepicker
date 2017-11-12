@@ -9,11 +9,10 @@ import FORMAT from './utils/format';
 import toMoment from './toMoment';
 
 import weekDayNamesFactory from './utils/getWeekDayNames';
-import join from './join';
 
 import bemFactory from './bemFactory';
 
-const CLASS_NAME = 'react-date-picker__basic-month-view';
+import styles from './BasicMonthView.styl';
 
 const RENDER_DAY = (props) => {
     const divProps = assign({}, props);
@@ -186,16 +185,7 @@ class BasicMonthView extends Component {
 
         props.weekStartDay = getWeekStartDay(props);
 
-        props.className = this.prepareClassName(props);
-
         return props;
-    }
-
-    prepareClassName(props) {
-        return join(
-            props.className,
-            `${CLASS_NAME} dp-month-view`
-        );
     }
 
     render() {
@@ -214,62 +204,9 @@ class BasicMonthView extends Component {
             children = props.renderChildren(children, props);
         }
 
-        return (<div
-            column
-            wrap={false}
-            inline
-            alignItems="stretch"
-        >
+        return (<div className={styles.basicMonthView} >
             {children}
         </div>);
-    }
-
-    /**
-   * Render the week number cell
-   * @param  {Moment[]} days The days in a week
-   * @return {React.DOM}
-   */
-    renderWeekNumber(props, days) {
-        const firstDayOfWeek = days[0];
-        const week = firstDayOfWeek.weeks();
-
-        const weekNumberProps = {
-            key: 'week',
-
-            className: `${this.bem('cell')} ${this.bem('week-number')} dp-cell dp-weeknumber`,
-
-            // week number
-            week,
-
-            // the days in this week
-            days,
-
-            date: firstDayOfWeek,
-
-            children: week
-        };
-
-        const renderWeekNumber = props.renderWeekNumber;
-
-        let result;
-
-        if (renderWeekNumber) {
-            result = renderWeekNumber(weekNumberProps);
-        }
-
-        if (result === undefined) {
-            const divProps = assign({}, weekNumberProps);
-
-            delete divProps.date;
-            delete divProps.days;
-            delete divProps.week;
-
-            result = (<div
-                {...divProps}
-            />);
-        }
-
-        return result;
     }
 
     /**
@@ -284,7 +221,6 @@ class BasicMonthView extends Component {
         const len = days.length;
         const buckets = [];
         const bucketsLen = Math.ceil(len / 7);
-
         let i = 0;
         let weekStart;
         let weekEnd;
@@ -293,29 +229,16 @@ class BasicMonthView extends Component {
             weekStart = i * 7;
             weekEnd = (i + 1) * 7;
 
-            buckets.push(
-                [
-                    props.weekNumbers && this.renderWeekNumber(props, days.slice(weekStart, weekEnd))
-                ].concat(
-                    nodes.slice(weekStart, weekEnd)
-                )
-            );
+            buckets.push([...nodes.slice(weekStart, weekEnd)]);
         }
-
         return buckets.map((bucket, index) => (<div
             key={`row_${index}`}
-            className={`${this.bem('row')} dp-week dp-row`}
+            className={styles.daysRow}
         >{bucket}</div>));
     }
 
     renderDay(props, dateMoment) {
         const dayText = FORMAT.day(dateMoment, props.dayFormat);
-
-        const classes = [
-            this.bem('cell'),
-            this.bem('day'),
-            'dp-cell dp-day'
-        ];
 
         let renderDayProps = {
             day: dayText,
@@ -323,7 +246,7 @@ class BasicMonthView extends Component {
             timestamp: +dateMoment,
 
             key: dayText,
-            className: classes.join(' '),
+            className: styles.dayCell,
             children: dayText
         };
 
@@ -345,8 +268,6 @@ class BasicMonthView extends Component {
     renderWeekDayNames() {
         const props = this.p;
         const {
-            weekNumbers,
-            weekNumberName,
             weekDayNames,
             renderWeekDayNames,
             renderWeekDayName,
@@ -357,11 +278,9 @@ class BasicMonthView extends Component {
             return null;
         }
 
-        const names = weekNumbers ?
-            [weekNumberName].concat(getWeekDayNames(props)) :
-            getWeekDayNames(props);
+        const names = getWeekDayNames(props);
 
-        const className = `${this.bem('row')} ${this.bem('week-day-names')} dp-row dp-week-day-names`;
+        const className = styles.weekDayNamesContainer;
 
         const renderProps = {
             className,
@@ -380,7 +299,7 @@ class BasicMonthView extends Component {
                     name,
 
                     key: index,
-                    className: `${this.bem('cell')} ${this.bem('week-day-name')} dp-week-day-name`,
+                    className: styles.cell,
                     children: name
                 };
 
@@ -437,9 +356,6 @@ BasicMonthView.propTypes = {
 };
 
 BasicMonthView.defaultProps = {
-
-    defaultClassName: CLASS_NAME,
-
     dateFormat: 'YYYY-MM-DD',
     alwaysShowPrevWeek: false,
     weekNumbers: true,
