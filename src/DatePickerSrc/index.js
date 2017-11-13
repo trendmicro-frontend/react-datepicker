@@ -3,9 +3,6 @@ import MonthView from './MonthView';
 import TimePicker from './TimePicker';
 import TimeInput from './TimeInput';
 
-import TransitionView from './TransitionView';
-import MultiMonthView from './MultiMonthView';
-
 import HistoryView from './HistoryView';
 import YearView from './YearView';
 import DecadeView from './DecadeView';
@@ -29,8 +26,6 @@ export {
 
     DateFormatInput,
 
-    TransitionView,
-    MultiMonthView,
     NavBar,
     Footer,
 
