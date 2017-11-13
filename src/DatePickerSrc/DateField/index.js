@@ -4,6 +4,8 @@ import { findDOMNode } from 'react-dom';
 import Component from 'react-class';
 import assign from 'object-assign';
 
+import cx from 'classnames';
+
 import moment from 'moment';
 import DateFormatInput from '../DateFormatInput';
 import join from '../join';
@@ -13,6 +15,8 @@ import joinFunctions from '../joinFunctions';
 import assignDefined from '../assignDefined';
 
 import forwardTime from '../utils/forwardTime';
+
+import styles from './index.styl';
 
 const POSITIONS = { top: 'top', bottom: 'bottom' };
 
@@ -45,7 +49,7 @@ export default class DateField extends Component {
     }
 
     render() {
-        return (<div>
+        return (<div className={styles.dateField}>
             {this.renderInput()}
             {this.renderClearIcon()}
             {this.renderCalendarIcon()}
@@ -126,13 +130,13 @@ export default class DateField extends Component {
     }
 
     renderCalendarIcon() {
+        const { focused } = this.state;
         let result;
         const renderIcon = this.props.renderCalendarIcon;
 
         const calendarIconProps = {
-            className: 'react-date-field__calendar-icon',
             onMouseDown: this.onCalendarIconMouseDown,
-            children: <i className="react-date-field__calendar-icon-inner fa fa-calendar" />
+            children: <i className={cx('fa fa-calendar', { [styles.focused]: focused })} />
         };
 
         if (renderIcon) {
@@ -140,7 +144,7 @@ export default class DateField extends Component {
         }
 
         if (result === undefined) {
-            result = <div {...calendarIconProps} />;
+            result = <div className={styles.calendarIconContainer} {...calendarIconProps} />;
         }
 
         return result;
@@ -298,12 +302,12 @@ export default class DateField extends Component {
             onChange,
 
             dateFormat: props.dateFormat,
-            value: props.text || '',
+            value: props.value || '',
 
             onKeyDown,
 
             className: join(
-                'react-date-field__input',
+                styles.dateInput,
                 inputProps.className
             )
         });
@@ -600,7 +604,6 @@ export default class DateField extends Component {
         if (this.state.focused) {
             return;
         }
-
         this.setState({
             focused: true
         });

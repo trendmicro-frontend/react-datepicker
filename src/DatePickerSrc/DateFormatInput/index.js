@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import Component from 'react-class';
 import throttle from 'lodash.throttle';
-import assign from 'object-assign';
 
 import { getSelectionStart, getSelectionEnd, setCaretPosition } from '../TimeInput';
 
@@ -93,28 +92,10 @@ export default class DateFormatInput extends Component {
         const value = this.state.propsValue ?
             props.value :
             this.state.value;
-
-        const displayValue =
-      this.displayValue =
-        this.toMoment(value).format(props.dateFormat);
-
-        const inputProps = assign({}, props);
-
-        delete inputProps.changeDelay;
-        delete inputProps.date;
-        delete inputProps.dateFormat;
-        delete inputProps.isDateInput;
-        delete inputProps.maxDate;
-        delete inputProps.minDate;
-        delete inputProps.stopPropagation;
-        delete inputProps.updateOnWheel;
-
-        if (typeof props.cleanup === 'function') {
-            props.cleanup(inputProps);
-        }
+        const displayValue = this.displayValue = this.toMoment(value).format(props.dateFormat);
 
         return (<input
-            {...inputProps}
+            className={props.className}
             defaultValue={undefined}
             onFocus={this.onFocus}
             onBlur={this.onBlur}
