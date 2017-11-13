@@ -1,29 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Component from 'react-class';
+import { Button as ButtonDefault } from '@trendmicro/react-buttons';
+
 
 import assign from 'object-assign';
 
 import joinFunctions from './joinFunctions';
 import join from './join';
-import bemFactory from './bemFactory';
 
-const bem = bemFactory('react-date-picker__footer');
+import styles from './Footer.styl';
 
 const SPACER = <div />;
 
-const buttonClassName = 'react-date-picker__footer-button';
 
 const preventDefault = e => e.preventDefault();
 
 export const Button = (props) => {
-    const disabledClassName = props.disabled ?
-        `${buttonClassName}--disabled` :
-        '';
+    const className = styles.button;
 
-    const className = `${props.className || ''} ${buttonClassName} ${disabledClassName}`;
-    return (<button
-        tabIndex={-1}
+    return (<ButtonDefault
         {...props}
         className={className}
     />);
@@ -33,7 +29,7 @@ export default class Footer extends Component {
     render() {
         const props = this.p = assign({}, this.props);
 
-        const className = join(props.className, bem(), bem(null, `theme-${props.theme}`));
+        const className = join(props.className, styles.footer);
 
         const todayButton = this.renderTodayButton();
         const clearButton = this.renderClearButton();
@@ -66,9 +62,6 @@ export default class Footer extends Component {
         }
 
         return (<div
-            inline
-            row
-            justifyContent="center"
             className={className}
         >{children}</div>);
     }

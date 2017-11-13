@@ -8,10 +8,9 @@ import moment from 'moment';
 import times from './utils/times';
 import toMoment from './toMoment';
 import join from './join';
-import bemFactory from './bemFactory';
+import styles from './DecadeView.styl';
 import ON_KEY_DOWN from './MonthView/onKeyDown';
 
-const bem = bemFactory('react-date-picker__decade-view');
 
 const ARROWS = {
     prev: <svg height="24" viewBox="0 0 24 24" width="24">
@@ -352,27 +351,12 @@ export default class DecadeView extends Component {
 
         const yearsInView = this.getYearsInDecade(props.viewMoment);
 
-        const className = join(
-            'history-years-container',
-            props.className,
-            bem(),
-            props.theme && bem(null, `theme-${props.theme}`)
-        );
-
         let children = this.renderYears(props, yearsInView);
-        let align = 'stretch';
-        let column = true;
 
         if (props.navigation) {
-            column = false;
-            align = 'center';
-
             children = [
                 this.renderNav(-1),
-                <div
-                    inline flex column
-                    alignItems="stretch"
-                >
+                <div className={styles.years}>
                     {children}
                 </div>,
                 this.renderNav(1)
@@ -380,12 +364,8 @@ export default class DecadeView extends Component {
         }
 
         return (<div
-            inline
-            column={column}
-            alignItems={align}
-            tabIndex={0}
             onKeyDown={this.onKeyDown}
-            className={className}
+            className={styles.decadeView}
         >
             {children}
         </div>);
@@ -402,9 +382,9 @@ export default class DecadeView extends Component {
             props.maxDateMoment && getDecadeEndYear(navMoment) > getDecadeEndYear(props.maxDateMoment);
 
         const className = join(
-            bem('arrow'),
-            bem(`arrow--${name}`),
-            disabled && bem('arrow--disabled')
+            styles.arrow,
+            styles[`arrow-${name}`],
+            disabled && styles.disabled
         );
 
         const arrow = props.arrows[name] || ARROWS[name];
@@ -434,12 +414,8 @@ export default class DecadeView extends Component {
         });
 
         return buckets.map((bucket, i) => (<div
-            alignItems="center"
-            flex
-            row
-            inline
             key={`row_${i}`}
-            className="dp-row"
+            className={styles.row}
         >
             {bucket}
         </div>));
@@ -460,11 +436,11 @@ export default class DecadeView extends Component {
             timestamp === props.timestamp;
 
         const className = join(
-            bem('year'),
-            isActiveDate && bem('year', 'active'),
-            isValue && bem('year', 'value'),
-            props.minDate != null && timestamp < props.minDate && bem('year', 'disabled'),
-            props.maxDate != null && timestamp > props.maxDate && bem('year', 'disabled')
+            styles.year,
+            isActiveDate && styles.active,
+            isValue && styles.value,
+            props.minDate != null && timestamp < props.minDate && styles.disabled,
+            props.maxDate != null && timestamp > props.maxDate && styles.disabled
         );
 
         const onClick = this.handleClick.bind(this, {
