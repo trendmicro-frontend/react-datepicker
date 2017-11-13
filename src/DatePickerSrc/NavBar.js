@@ -47,7 +47,6 @@ export default class NavBar extends Component {
         );
 
         props.historyViewEnabled = props.expandedHistoryView || props.enableHistoryView;
-
         // const secondary = props.secondary;
 
         const className = join(

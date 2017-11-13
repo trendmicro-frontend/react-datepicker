@@ -112,7 +112,7 @@ class DatePicker extends PureComponent {
                 renderDay={this.renderDay}
                 showDaysBeforeMonth={true}
                 showDaysAfterMonth={true}
-                enableHistoryView={false}
+                enableHistoryView={true}
                 highlightWeekends={true}
                 highlightToday={true}
                 weekNumbers={false}

@@ -19,10 +19,7 @@ import {
     gotoViewDate
 } from './DecadeView';
 
-
-import bemFactory from './bemFactory';
-
-const bem = bemFactory('react-date-picker__year-view');
+import styles from './YearView.styl';
 
 
 const NAV_KEYS = {
@@ -127,19 +124,13 @@ export default class YearView extends Component {
         assign(props, dateProps);
 
         const className = join(
-            'history-months-view',
             props.className,
-            bem(),
-            props.theme && bem(null, `theme-${props.theme}`)
+            styles.yearView
         );
 
         const monthsInView = this.getMonthsInYear(props.viewMoment);
 
         return (<div
-            inline
-            column
-            alignItems="stretch"
-            tabIndex={0}
             onKeyDown={this.onKeyDown}
             className={className}
         >
@@ -154,13 +145,9 @@ export default class YearView extends Component {
             return nodes.slice(i * 4, (i + 1) * 4);
         });
 
-        const className = bem('row');
+        const className = styles.row;
 
         return buckets.map((bucket, i) => (<div
-            alignItems="center"
-            flex
-            row
-            inline
             key={`row_${i}`}
             className={className}
         >
@@ -196,10 +183,10 @@ export default class YearView extends Component {
       props.maxDate != null && timestamp > props.maxDate;
 
         const className = join(
-            bem('month'),
-            !disabled && isActiveDate && bem('month', 'active'),
-            isValue && bem('month', 'value'),
-            disabled && bem('month', 'disabled')
+            styles.month,
+            !disabled && isActiveDate && styles.active,
+            isValue && styles.value,
+            disabled && styles.disabled
         );
 
         const onClick = disabled ?
@@ -214,7 +201,7 @@ export default class YearView extends Component {
             className={className}
             onClick={onClick}
         >
-            <div className={'monthHistoryView'}>
+            <div className={styles.monthText}>
                 {monthText}
             </div>
         </div>);

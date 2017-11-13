@@ -5,7 +5,6 @@ import assign from 'object-assign';
 import toMoment from './toMoment';
 import join from './join';
 import joinFunctions from './joinFunctions';
-import bemFactory from './bemFactory';
 
 import Footer from './Footer';
 import YearView from './YearView';
@@ -23,7 +22,7 @@ import DecadeView, {
     gotoViewDate
 } from './DecadeView';
 
-const bem = bemFactory('react-date-picker__history-view');
+import styles from './HistoryView.styl';
 
 const preventDefault = (e) => {
     e.preventDefault();
@@ -54,8 +53,7 @@ export default class HistoryView extends Component {
 
         const className = join(
             props.className,
-            bem(),
-            props.theme && bem(null, `theme-${props.theme}`),
+            styles.historyView
         );
 
         const commonProps = assignDefined({}, {
@@ -81,14 +79,11 @@ export default class HistoryView extends Component {
 
 
         return (<div
-            inline
-            column
-            alignItems="stretch"
             className={className}
         >
             <img
                 role="presentation" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyppVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRTVFQTk5NDIwRUMxMUU3ODQzQ0JGQkE3MjZDNTNBMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRTVFQTk5NTIwRUMxMUU3ODQzQ0JGQkE3MjZDNTNBMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZEQTFGRTI5MjBFQzExRTc4NDNDQkZCQTcyNkM1M0EzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZEQTFGRTJBMjBFQzExRTc4NDNDQkZCQTcyNkM1M0EzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+1aPaewAAAE5JREFUeNqUzOEJACAIhNHutnD/2ZyjKAoi6jRB/OP34O5FTJ0XrweqGEDpu0FpYMRmNlYhVPEahTCKI4SZWCHMxi+EP/EN4W98Ik2AAQAQFRX9m51NzwAAAABJRU5ErkJggg=="
-                className="verticalArrow"
+                className={styles.verticalArrow}
             />
             {this.renderYearView(yearViewProps)}
             {this.renderDecadeView(decadeViewProps)}
