@@ -1,0 +1,67 @@
+.decadeView {
+    height: 24px;
+    margin-top: 20px;
+
+    .years {
+        width: 180px;
+
+        .row {
+            padding-left: 3px;
+            height: 20px
+            line-height: 20px;
+            text-align: center;
+
+            .year {
+                float: left;
+                cursor: pointer;
+                width: 50px;
+                margin-left: 6px;
+
+                &.active {
+                    border-radius: 3px;
+                    background-color: #db3d44;
+                    color: white;
+                }
+
+                &.disabled {
+                    cursor: default;
+                    color: #808080;
+                    &:hover {
+                        fill: white;
+                        cursor: default;
+                        background: white;
+                        border-radius: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+    .arrow {
+        padding: 0px 0px 0px 9px;
+        height: 20px;
+        line-height: 20px;
+        width: 24px;
+        float: left;
+
+        &.disabled {
+            &:hover {
+                fill: white;
+                cursor: default;
+                background: white;
+                border-radius: 3px;
+            }
+        }
+
+        &:hover {
+            fill: #9a9a9a;
+            cursor: pointer;
+            background: #eeeeee;
+            border-radius: 3px;
+        }
+    }
+
+    > div {
+        float: left;
+    }
+}

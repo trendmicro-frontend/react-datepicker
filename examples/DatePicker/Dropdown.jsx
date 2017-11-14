@@ -32,7 +32,7 @@ export default class extends PureComponent {
                     <Dropdown.Toggle
                         btnStyle="link"
                         noCaret
-                        style={{ padding: 0 }}
+                        style={{ padding: 0, border: 1, backgroundColor: 'white' }}
                     >
                         <DateInput
                             value={date}

@@ -1,0 +1,36 @@
+.navbar {
+    width: 248px;
+    height: 40px;
+    padding: 5px 0 5px 0;
+    line-height: 30px;
+
+    .date {
+        float: left;
+        width: 185px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .arrow {
+        padding: 0px 13px 5px 13px;
+        width: 31px;
+        height: 30px;
+        float: left;
+
+        &.disabled {
+            &:hover {
+                fill: white;
+                cursor: default;
+                background: white;
+                border-radius: 3px;
+            }
+        }
+
+        &:hover {
+            fill: #9a9a9a;
+            cursor: pointer;
+            background: #eeeeee;
+            border-radius: 3px;
+        }
+    }
+}
