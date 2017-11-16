@@ -1,8 +1,8 @@
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import MonthView from 'react-date-picker/lib/MonthView';
 import uncontrollable from 'uncontrollable';
-import MonthView from './DatePickerSrc/MonthView';
 import styles from './index.styl';
 
 class DatePicker extends PureComponent {
