@@ -3484,80 +3484,80 @@ exports.push([module.i, ".container-fluid---2Brsk {\n  padding-right: 15px;\n  p
 
 // exports
 exports.locals = {
-	"container-fluid": "container-fluid---2Brsk",
-	"containerFluid": "container-fluid---2Brsk",
 	"sr-only": "sr-only---2yAEF",
 	"srOnly": "sr-only---2yAEF",
-	"collapse": "collapse---20hv3",
-	"in": "in---ZKaSV",
-	"nav": "nav---DwEvZ",
-	"navbar": "navbar---3CgcW",
-	"navbar-header": "navbar-header---13JWC",
-	"navbarHeader": "navbar-header---13JWC",
-	"navbar-collapse": "navbar-collapse---3PeuQ",
-	"navbarCollapse": "navbar-collapse---3PeuQ",
-	"navbar-fixed-top": "navbar-fixed-top---1gjqn",
-	"navbarFixedTop": "navbar-fixed-top---1gjqn",
-	"navbar-static-top": "navbar-static-top---1XJMz",
-	"navbarStaticTop": "navbar-static-top---1XJMz",
-	"navbar-fixed-bottom": "navbar-fixed-bottom---2eN_k",
-	"navbarFixedBottom": "navbar-fixed-bottom---2eN_k",
-	"container": "container---2j6jX",
-	"navbar-brand": "navbar-brand---1HEM4",
-	"navbarBrand": "navbar-brand---1HEM4",
-	"navbar-toggle": "navbar-toggle---2VPJp",
-	"navbarToggle": "navbar-toggle---2VPJp",
-	"icon-bar": "icon-bar---3seAt",
-	"iconBar": "icon-bar---3seAt",
-	"navbar-nav": "navbar-nav---1bmvb",
-	"navbarNav": "navbar-nav---1bmvb",
-	"open": "open---3Nl4h",
-	"dropdown-menu": "dropdown-menu---1e_zi",
-	"dropdownMenu": "dropdown-menu---1e_zi",
-	"dropdown-header": "dropdown-header---1ghdi",
-	"dropdownHeader": "dropdown-header---1ghdi",
-	"navbar-form": "navbar-form---1sg2L",
-	"navbarForm": "navbar-form---1sg2L",
-	"form-group": "form-group---377uy",
-	"formGroup": "form-group---377uy",
-	"form-control": "form-control---17agB",
-	"formControl": "form-control---17agB",
-	"form-control-static": "form-control-static---6Jy2E",
-	"formControlStatic": "form-control-static---6Jy2E",
-	"input-group": "input-group---2fmg-",
-	"inputGroup": "input-group---2fmg-",
-	"input-group-addon": "input-group-addon---fOpQR",
-	"inputGroupAddon": "input-group-addon---fOpQR",
-	"input-group-btn": "input-group-btn---8c2e1",
-	"inputGroupBtn": "input-group-btn---8c2e1",
-	"control-label": "control-label---2PlSB",
-	"controlLabel": "control-label---2PlSB",
-	"radio": "radio---16q6i",
-	"checkbox": "checkbox---JEaqS",
-	"has-feedback": "has-feedback---_1-sR",
-	"hasFeedback": "has-feedback---_1-sR",
-	"form-control-feedback": "form-control-feedback---SMwWY",
-	"formControlFeedback": "form-control-feedback---SMwWY",
 	"navbar-btn": "navbar-btn---29Q8O",
 	"navbarBtn": "navbar-btn---29Q8O",
-	"btn-sm": "btn-sm---2ZnkM",
-	"btnSm": "btn-sm---2ZnkM",
 	"btn-xs": "btn-xs---1Kfje",
 	"btnXs": "btn-xs---1Kfje",
-	"navbar-text": "navbar-text---2gvDM",
-	"navbarText": "navbar-text---2gvDM",
-	"navbar-left": "navbar-left---_8Mhm",
-	"navbarLeft": "navbar-left---_8Mhm",
-	"navbar-right": "navbar-right---3KZRg",
-	"navbarRight": "navbar-right---3KZRg",
+	"navbar-static-top": "navbar-static-top---1XJMz",
+	"navbarStaticTop": "navbar-static-top---1XJMz",
+	"input-group": "input-group---2fmg-",
+	"inputGroup": "input-group---2fmg-",
+	"form-control-feedback": "form-control-feedback---SMwWY",
+	"formControlFeedback": "form-control-feedback---SMwWY",
+	"radio": "radio---16q6i",
+	"disabled": "disabled---1KUsN",
+	"active": "active---292aa",
+	"form-control": "form-control---17agB",
+	"formControl": "form-control---17agB",
 	"navbar-default": "navbar-default---1yc1S",
 	"navbarDefault": "navbar-default---1yc1S",
-	"active": "active---292aa",
-	"disabled": "disabled---1KUsN",
+	"navbar-toggle": "navbar-toggle---2VPJp",
+	"navbarToggle": "navbar-toggle---2VPJp",
+	"btn-sm": "btn-sm---2ZnkM",
+	"btnSm": "btn-sm---2ZnkM",
+	"navbar-brand": "navbar-brand---1HEM4",
+	"navbarBrand": "navbar-brand---1HEM4",
+	"navbar": "navbar---3CgcW",
+	"navbar-form": "navbar-form---1sg2L",
+	"navbarForm": "navbar-form---1sg2L",
+	"input-group-addon": "input-group-addon---fOpQR",
+	"inputGroupAddon": "input-group-addon---fOpQR",
+	"container-fluid": "container-fluid---2Brsk",
+	"containerFluid": "container-fluid---2Brsk",
+	"form-control-static": "form-control-static---6Jy2E",
+	"formControlStatic": "form-control-static---6Jy2E",
+	"collapse": "collapse---20hv3",
+	"navbar-fixed-top": "navbar-fixed-top---1gjqn",
+	"navbarFixedTop": "navbar-fixed-top---1gjqn",
+	"input-group-btn": "input-group-btn---8c2e1",
+	"inputGroupBtn": "input-group-btn---8c2e1",
+	"container": "container---2j6jX",
+	"checkbox": "checkbox---JEaqS",
+	"navbar-text": "navbar-text---2gvDM",
+	"navbarText": "navbar-text---2gvDM",
+	"has-feedback": "has-feedback---_1-sR",
+	"hasFeedback": "has-feedback---_1-sR",
+	"navbar-left": "navbar-left---_8Mhm",
+	"navbarLeft": "navbar-left---_8Mhm",
+	"btn-link": "btn-link---2eykm",
+	"btnLink": "btn-link---2eykm",
+	"navbar-nav": "navbar-nav---1bmvb",
+	"navbarNav": "navbar-nav---1bmvb",
+	"in": "in---ZKaSV",
+	"dropdown-header": "dropdown-header---1ghdi",
+	"dropdownHeader": "dropdown-header---1ghdi",
+	"navbar-collapse": "navbar-collapse---3PeuQ",
+	"navbarCollapse": "navbar-collapse---3PeuQ",
+	"nav": "nav---DwEvZ",
+	"navbar-header": "navbar-header---13JWC",
+	"navbarHeader": "navbar-header---13JWC",
+	"dropdown-menu": "dropdown-menu---1e_zi",
+	"dropdownMenu": "dropdown-menu---1e_zi",
+	"navbar-fixed-bottom": "navbar-fixed-bottom---2eN_k",
+	"navbarFixedBottom": "navbar-fixed-bottom---2eN_k",
+	"icon-bar": "icon-bar---3seAt",
+	"iconBar": "icon-bar---3seAt",
+	"navbar-right": "navbar-right---3KZRg",
+	"navbarRight": "navbar-right---3KZRg",
 	"navbar-link": "navbar-link---3Hly8",
 	"navbarLink": "navbar-link---3Hly8",
-	"btn-link": "btn-link---2eykm",
-	"btnLink": "btn-link---2eykm"
+	"open": "open---3Nl4h",
+	"form-group": "form-group---377uy",
+	"formGroup": "form-group---377uy",
+	"control-label": "control-label---2PlSB",
+	"controlLabel": "control-label---2PlSB"
 };
 
 /***/ }),
@@ -56495,7 +56495,6 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                                 return {
                                     period: eventKey,
                                     showDateTimeRangePicker: eventKey === 'custom',
-
                                     nextStartDate: state.startDate,
                                     nextStartTime: state.startTime,
                                     nextEndDate: state.endDate,
@@ -56558,12 +56557,413 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                                 mapPeriodToString('custom')
                             )
                         ),
-                        this.state.showDateTimeRangePicker && _react2.default.createElement(
+                        (this.state.showDateTimeRangePicker || this.state.period === 'custom') && _react2.default.createElement(
                             'div',
                             {
                                 style: {
                                     display: 'inline-block',
-                                    borderLeft: '1px solid #ddd',
+                                    borderRight: '1px solid #ddd',
+                                    padding: 12
+                                }
+                            },
+                            _react2.default.createElement(_DateTimeRangePicker2.default, {
+                                locale: locale,
+                                startDate: nextStartDate,
+                                startTime: nextStartTime,
+                                endDate: nextEndDate,
+                                endTime: nextEndTime,
+                                onChangeStartDate: this.changeStartDate,
+                                onChangeStartTime: this.changeStartTime,
+                                onChangeEndDate: this.changeEndDate,
+                                onChangeEndTime: this.changeEndTime
+                            }),
+                            _react2.default.createElement(
+                                'div',
+                                null,
+                                _react2.default.createElement(
+                                    _reactButtons.Button,
+                                    {
+                                        btnStyle: 'primary',
+                                        style: { marginRight: 8 },
+                                        onClick: function onClick() {
+                                            _this2.setState(function (state) {
+                                                return {
+                                                    open: false,
+                                                    showDateTimeRangePicker: false,
+
+                                                    // Apply date/time range
+                                                    startDate: nextStartDate,
+                                                    startTime: nextStartTime,
+                                                    endDate: nextEndDate,
+                                                    endTime: nextEndTime
+                                                };
+                                            });
+                                        }
+                                    },
+                                    'Apply'
+                                ),
+                                _react2.default.createElement(
+                                    _reactButtons.Button,
+                                    {
+                                        onClick: function onClick() {
+                                            _this2.setState(function (state) {
+                                                return {
+                                                    open: false,
+                                                    showDateTimeRangePicker: false
+                                                };
+                                            });
+                                        }
+                                    },
+                                    'Cancel'
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return _default;
+}(_react.PureComponent), _class.propTypes = {
+    locale: _propTypes2.default.string
+}, _temp2);
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./DateTimeRangePicker/DropdownRight.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp2;
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }(); // @trendmicro/react-dropdown@0.7.0 or above is required
+
+
+__webpack_require__("../node_modules/@trendmicro/react-buttons/dist/react-buttons.css");
+
+__webpack_require__("../node_modules/@trendmicro/react-dropdown/dist/react-dropdown.css");
+
+var _reactAnchor = __webpack_require__("../node_modules/@trendmicro/react-anchor/lib/index.js");
+
+var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
+
+var _reactButtons = __webpack_require__("../node_modules/@trendmicro/react-buttons/lib/index.js");
+
+var _reactDropdown = __webpack_require__("../node_modules/@trendmicro/react-dropdown/lib/index.js");
+
+var _reactDropdown2 = _interopRequireDefault(_reactDropdown);
+
+var _moment = __webpack_require__("../node_modules/moment/moment.js");
+
+var _moment2 = _interopRequireDefault(_moment);
+
+var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__("../node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _DateTimeRangePicker = __webpack_require__("./DateTimeRangePicker/DateTimeRangePicker.jsx");
+
+var _DateTimeRangePicker2 = _interopRequireDefault(_DateTimeRangePicker);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var normalizeDateString = function normalizeDateString(dateString) {
+    var m = (0, _moment2.default)(dateString);
+    if (!m.isValid()) {
+        m = (0, _moment2.default)();
+    }
+    return m.format('YYYY-MM-DD');
+};
+
+var normalizeTimeString = function normalizeTimeString(timeString) {
+    var _timeString$split = timeString.split(':'),
+        _timeString$split2 = _slicedToArray(_timeString$split, 3),
+        _timeString$split2$ = _timeString$split2[0],
+        hh = _timeString$split2$ === undefined ? '00' : _timeString$split2$,
+        _timeString$split2$2 = _timeString$split2[1],
+        mm = _timeString$split2$2 === undefined ? '00' : _timeString$split2$2,
+        _timeString$split2$3 = _timeString$split2[2],
+        ss = _timeString$split2$3 === undefined ? '00' : _timeString$split2$3;
+
+    hh = Number(hh) || 0;
+    mm = Number(mm) || 0;
+    ss = Number(ss) || 0;
+    hh = hh < 0 || hh > 23 ? '00' : ('0' + hh).slice(-2);
+    mm = mm < 0 || mm > 59 ? '00' : ('0' + mm).slice(-2);
+    ss = ss < 0 || ss > 59 ? '00' : ('0' + ss).slice(-2);
+    return hh + ':' + mm + ':' + ss;
+};
+
+var mapPeriodToString = function mapPeriodToString(period) {
+    return {
+        '1d': 'Last 24 hours',
+        '7d': 'Last 7 days',
+        '30d': 'Last 30 days',
+        '90d': 'Last 90 days',
+        'custom': 'Custom range'
+    }[period];
+};
+
+var _default = (_temp2 = _class = function (_PureComponent) {
+    _inherits(_default, _PureComponent);
+
+    function _default() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, _default);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = _default.__proto__ || Object.getPrototypeOf(_default)).call.apply(_ref, [this].concat(args))), _this), _this.state = _this.getInitialState(), _this.changeStartDate = function (date) {
+            if (!date) {
+                return;
+            }
+            var startDate = normalizeDateString(date);
+            var endDate = normalizeDateString(_this.state.nextEndDate);
+            var startTime = normalizeTimeString(_this.state.nextStartTime);
+            var endTime = normalizeTimeString(_this.state.nextEndTime);
+            var isoStartDateTime = startDate + 'T' + startTime;
+            var isoEndDateTime = endDate + 'T' + endTime;
+            var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+
+            _this.setState({
+                nextStartDate: startDate,
+                nextEndDate: isSameOrAfterEnd ? startDate : endDate,
+                nextStartTime: startTime,
+                nextEndTime: isSameOrAfterEnd ? startTime : endTime
+            });
+        }, _this.changeEndDate = function (date) {
+            if (!date) {
+                return;
+            }
+            var startDate = normalizeDateString(_this.state.nextStartDate);
+            var endDate = normalizeDateString(date);
+            var startTime = normalizeTimeString(_this.state.nextStartTime);
+            var endTime = normalizeTimeString(_this.state.nextEndTime);
+            var isoStartDateTime = startDate + 'T' + startTime;
+            var isoEndDateTime = endDate + 'T' + endTime;
+            var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+
+            _this.setState({
+                nextStartDate: isSameOrBeforeStart ? endDate : startDate,
+                nextEndDate: endDate,
+                nextStartTime: isSameOrBeforeStart ? endTime : startTime,
+                nextEndTime: endTime
+            });
+        }, _this.changeStartTime = function () {
+            var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '00:00:00';
+
+            var startDate = normalizeDateString(_this.state.nextStartDate);
+            var endDate = normalizeDateString(_this.state.nextEndDate);
+            var startTime = normalizeTimeString(time);
+            var endTime = normalizeTimeString(_this.state.nextEndTime);
+            var isoStartDateTime = startDate + 'T' + startTime;
+            var isoEndDateTime = endDate + 'T' + endTime;
+            var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+
+            _this.setState({
+                nextStartTime: startTime,
+                nextEndTime: isSameOrAfterEnd ? startTime : endTime
+            });
+        }, _this.changeEndTime = function () {
+            var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '00:00:00';
+
+            var startDate = normalizeDateString(_this.state.nextStartDate);
+            var endDate = normalizeDateString(_this.state.nextEndDate);
+            var startTime = normalizeTimeString(_this.state.nextStartTime);
+            var endTime = normalizeTimeString(time);
+            var isoStartDateTime = startDate + 'T' + startTime;
+            var isoEndDateTime = endDate + 'T' + endTime;
+            var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+
+            _this.setState({
+                nextStartTime: isSameOrBeforeStart ? endTime : startTime,
+                nextEndTime: endTime
+            });
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(_default, [{
+        key: 'getInitialState',
+        value: function getInitialState() {
+            var now = (0, _moment2.default)();
+            var startDate = (0, _moment2.default)(now).format('YYYY-MM-DD');
+            var startTime = (0, _moment2.default)(now).format('hh:mm:ss');
+            var endDate = (0, _moment2.default)(now).add(7, 'days').format('YYYY-MM-DD');
+            var endTime = (0, _moment2.default)(now).add(7, 'days').format('hh:mm:ss');
+
+            return {
+                // prev
+                startDate: startDate,
+                startTime: startTime,
+                endDate: endDate,
+                endTime: endTime,
+
+                // next
+                nextStartDate: startDate,
+                nextStartTime: startTime,
+                nextEndDate: endDate,
+                nextEndTime: endTime,
+
+                // Dropdown
+                open: false,
+                period: '1d',
+                showDateTimeRangePicker: false
+            };
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var locale = this.props.locale;
+            var _state = this.state,
+                startDate = _state.startDate,
+                startTime = _state.startTime,
+                endDate = _state.endDate,
+                endTime = _state.endTime,
+                nextStartDate = _state.nextStartDate,
+                nextStartTime = _state.nextStartTime,
+                nextEndDate = _state.nextEndDate,
+                nextEndTime = _state.nextEndTime,
+                period = _state.period;
+
+
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'h3',
+                    null,
+                    _react2.default.createElement(
+                        _reactAnchor2.default,
+                        { href: 'https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Dropdown.jsx', target: '_blank' },
+                        'Right Align Dropdown'
+                    )
+                ),
+                period !== 'custom' && _react2.default.createElement(
+                    'p',
+                    null,
+                    'Selected: ',
+                    mapPeriodToString(period)
+                ),
+                period === 'custom' && _react2.default.createElement(
+                    'p',
+                    null,
+                    'Selected: ',
+                    startDate,
+                    ' ',
+                    startTime,
+                    ' - ',
+                    endDate,
+                    ' ',
+                    endTime
+                ),
+                _react2.default.createElement(
+                    _reactDropdown2.default,
+                    {
+                        style: { width: '100%' },
+                        pullRight: true,
+                        open: this.state.open,
+                        onSelect: function onSelect(eventKey) {
+                            _this2.setState(function (state) {
+                                return {
+                                    period: eventKey,
+                                    showDateTimeRangePicker: eventKey === 'custom',
+                                    nextStartDate: state.startDate,
+                                    nextStartTime: state.startTime,
+                                    nextEndDate: state.endDate,
+                                    nextEndTime: state.endTime
+                                };
+                            });
+                        },
+                        onClose: function onClose() {
+                            _this2.setState(function (state) {
+                                return {
+                                    open: false,
+                                    showDateTimeRangePicker: false
+                                };
+                            });
+                        },
+                        onToggle: function onToggle(open) {
+                            _this2.setState(function (state) {
+                                var period = state.period;
+
+                                return {
+                                    open: open || period === 'custom'
+                                };
+                            });
+                        }
+                    },
+                    _react2.default.createElement(
+                        _reactDropdown2.default.Toggle,
+                        { style: { float: 'right' } },
+                        mapPeriodToString(period)
+                    ),
+                    _react2.default.createElement(
+                        _reactDropdown2.default.MenuWrapper,
+                        { style: { left: 'auto', right: 0 } },
+                        _react2.default.createElement(
+                            _reactDropdown2.default.Menu,
+                            { style: { left: 'auto', right: 0, float: 'right' } },
+                            _react2.default.createElement(
+                                _reactDropdown.MenuItem,
+                                { eventKey: '1d' },
+                                mapPeriodToString('1d')
+                            ),
+                            _react2.default.createElement(
+                                _reactDropdown.MenuItem,
+                                { eventKey: '7d' },
+                                mapPeriodToString('7d')
+                            ),
+                            _react2.default.createElement(
+                                _reactDropdown.MenuItem,
+                                { eventKey: '30d' },
+                                mapPeriodToString('30d')
+                            ),
+                            _react2.default.createElement(
+                                _reactDropdown.MenuItem,
+                                { eventKey: '90d' },
+                                mapPeriodToString('90d')
+                            ),
+                            _react2.default.createElement(
+                                _reactDropdown.MenuItem,
+                                { eventKey: 'custom' },
+                                mapPeriodToString('custom')
+                            )
+                        ),
+                        (this.state.showDateTimeRangePicker || this.state.period === 'custom') && _react2.default.createElement(
+                            'div',
+                            {
+                                style: {
+                                    display: 'inline-block',
+                                    borderRight: '1px solid #ddd',
                                     padding: 12
                                 }
                             },
@@ -56780,7 +57180,7 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Dropdown = exports.Uncontrolled = exports.Controlled = undefined;
+exports.DropdownRight = exports.Dropdown = exports.Uncontrolled = exports.Controlled = undefined;
 
 var _Controlled2 = __webpack_require__("./DateTimeRangePicker/Controlled.jsx");
 
@@ -56794,11 +57194,16 @@ var _Dropdown2 = __webpack_require__("./DateTimeRangePicker/Dropdown.jsx");
 
 var _Dropdown3 = _interopRequireDefault(_Dropdown2);
 
+var _DropdownRight2 = __webpack_require__("./DateTimeRangePicker/DropdownRight.jsx");
+
+var _DropdownRight3 = _interopRequireDefault(_DropdownRight2);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.Controlled = _Controlled3.default;
 exports.Uncontrolled = _Uncontrolled3.default;
 exports.Dropdown = _Dropdown3.default;
+exports.DropdownRight = _DropdownRight3.default;
 
 /***/ }),
 
@@ -57270,7 +57675,7 @@ var App = function (_PureComponent) {
                             { className: 'col-md-12' },
                             _react2.default.createElement(
                                 _Section2.default,
-                                { className: 'row-md-15' },
+                                { className: 'row-md-24' },
                                 _react2.default.createElement(
                                     'h2',
                                     null,
@@ -57291,8 +57696,13 @@ var App = function (_PureComponent) {
                                     ),
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'col-md-12' },
+                                        { className: 'col-md-12', style: { height: 540 } },
                                         _react2.default.createElement(DateTimeRangePickerExample.Dropdown, { locale: locale })
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-12', style: { height: 540 } },
+                                        _react2.default.createElement(DateTimeRangePickerExample.DropdownRight, { locale: locale })
                                     )
                                 )
                             )
@@ -57311,4 +57721,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?5df2e60216800060b60d
+//# sourceMappingURL=bundle.js.map?ca55af0ff04e391f8d48
