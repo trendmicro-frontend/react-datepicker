@@ -69,7 +69,7 @@ class App extends PureComponent {
                             </Section>
                         </div>
                         <div className="col-md-12">
-                            <Section className="row-md-15">
+                            <Section className="row-md-24">
                                 <h2>DateTimeRangePicker</h2>
                                 <div className="row">
                                     <div className="col-md-12 col-lg-6">
@@ -78,8 +78,11 @@ class App extends PureComponent {
                                     <div className="col-md-12 col-lg-6">
                                         <DateTimeRangePickerExample.Uncontrolled locale={locale} />
                                     </div>
-                                    <div className="col-md-12">
+                                    <div className="col-md-12" style={{ height: 540 }}>
                                         <DateTimeRangePickerExample.Dropdown locale={locale} />
+                                    </div>
+                                    <div className="col-md-12" style={{ height: 540 }}>
+                                        <DateTimeRangePickerExample.DropdownRight locale={locale} />
                                     </div>
                                 </div>
                             </Section>

@@ -147,7 +147,7 @@ export default class extends PureComponent {
 
         return (
             <div>
-                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Dropdown.jsx" target="_blank">Dropdown</Anchor></h3>
+                <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Dropdown.jsx" target="_blank">Right Align Dropdown</Anchor></h3>
                 {period !== 'custom' &&
                 <p>Selected: {mapPeriodToString(period)}</p>
                 }
@@ -156,6 +156,7 @@ export default class extends PureComponent {
                 }
                 <Dropdown
                     style={{ width: '100%' }}
+                    pullRight
                     open={this.state.open}
                     onSelect={eventKey => {
                         this.setState(state => ({
@@ -182,11 +183,11 @@ export default class extends PureComponent {
                         });
                     }}
                 >
-                    <Dropdown.Toggle>
+                    <Dropdown.Toggle style={{ float: 'right' }}>
                         {mapPeriodToString(period)}
                     </Dropdown.Toggle>
-                    <Dropdown.MenuWrapper>
-                        <Dropdown.Menu>
+                    <Dropdown.MenuWrapper style={{ left: 'auto', right: 0 }}>
+                        <Dropdown.Menu style={{ left: 'auto', right: 0, float: 'right' }}>
                             <MenuItem eventKey="1d">{mapPeriodToString('1d')}</MenuItem>
                             <MenuItem eventKey="7d">{mapPeriodToString('7d')}</MenuItem>
                             <MenuItem eventKey="30d">{mapPeriodToString('30d')}</MenuItem>
