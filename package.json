@@ -1,6 +1,6 @@
 {
   "name": "@trendmicro/react-datepicker",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "React DatePicker Component",
   "main": "lib/index.js",
   "files": [
@@ -50,7 +50,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-date-picker": "git+https://git@github.com/cheton/react-date-picker.git"
+    "react-date-picker": "git+https://git@github.com/cheton/react-date-picker.git",
+    "uncontrollable": "^4.1.0"
   },
   "devDependencies": {
     "@trendmicro/react-anchor": "~0.5.5",
