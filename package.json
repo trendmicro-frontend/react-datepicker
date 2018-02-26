@@ -50,7 +50,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-date-picker": "git@github.com:cheton/react-date-picker.git",
+    "react-date-picker": "git://github.com:cheton/react-date-picker.git",
     "uncontrollable": "^4.1.0"
   },
   "devDependencies": {
