@@ -174,12 +174,8 @@ navArrows.next | node | &lt;i className="fa fa-angle-right" /&gt; |
 
 Name | Type | Default | Description 
 :--- | :--- | :------ | :----------
-locale | string | 'en' |
-dateFormat | string | 'YYYY-MM-DD' |
 value | object or string | null |
 defaultValue | object or string | null |
-minDate | object or string | null | The minimum selectable date. When set to null, there is no minimum.
-maxDate | object or string | null | The maximum selectable date. When set to null, there is no maximum.
 onChange | function(value) | | Called when the value changes.
 renderIcon | function(props) | |
 

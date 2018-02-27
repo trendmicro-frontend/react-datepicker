@@ -1,19 +1,17 @@
 import cx from 'classnames';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import uncontrollable from 'uncontrollable';
-import isTwelveHourTime from './lib/is-twelve-hour-time';
 import replaceCharAt from './lib/replace-char-at';
 import getGroupId from './lib/get-group-id';
 import getGroups from './lib/get-groups';
-import adder from './lib/time-string-adder';
 import caret from './lib/caret';
-import validate from './lib/validate';
 import styles from './index.styl';
 
-const SILHOUETTE = '00:00:00:000 AM';
+const SILHOUETTE = '0000-01-01';
 
-class TimeInput extends PureComponent {
+class DateInput extends PureComponent {
     static propTypes = {
         className: PropTypes.string,
         value: PropTypes.string,
@@ -21,7 +19,7 @@ class TimeInput extends PureComponent {
         rendeIcon: PropTypes.func
     };
     static defaultProps = {
-        value: '00:00:00:000 AM',
+        value: '0000-00-00',
         renderIcon: (props) => (
             <label className={props.className}>
                 {props.children}
@@ -73,7 +71,7 @@ class TimeInput extends PureComponent {
             }
             newValue = value;
         } else {
-            if (newValue.charAt(start) === ':') {
+            if (newValue.charAt(start) === '-') {
                 start++;
             }
             // apply default to selection
@@ -84,8 +82,9 @@ class TimeInput extends PureComponent {
             newValue = result;
         }
 
-        if (validate(newValue)) {
-            if (newValue.charAt(end) === ':') {
+        const m = moment(newValue);
+        if (m.isValid()) {
+            if (newValue.charAt(end) === '-') {
                 end++;
             }
             this.onChange(newValue, end);
@@ -147,7 +146,13 @@ class TimeInput extends PureComponent {
 
         event.preventDefault();
 
-        let index = groupId * 3;
+        let index = 0; // YYYY-MM-DD
+        if (groupId === 1) {
+            index = (4 + 1);
+        }
+        if (groupId === 2) {
+            index = (4 + 1) + (2 + 1);
+        }
         if (this.props.value.charAt(index) === ' ') {
             index++;
         }
@@ -158,10 +163,34 @@ class TimeInput extends PureComponent {
 
     handleArrows = (event) => {
         event.preventDefault();
+
         const start = caret.start(this.input);
-        const amount = event.which === 38 ? 1 : -1;
-        const value = adder(this.props.value, getGroupId(start), amount);
-        this.onChange(value, start);
+        const groupId = getGroupId(start);
+        const unit = {
+            0: 'years',
+            1: 'months',
+            2: 'days'
+        }[groupId];
+
+        if (!unit) {
+            return;
+        }
+
+        const m = moment(this.props.value);
+        if (!m.isValid()) {
+            return;
+        }
+
+        const UP = 38;
+        const DOWN = 40;
+
+        if (event.which === UP) {
+            const value = m.add(1, unit).format('YYYY-MM-DD');
+            this.onChange(value, start);
+        } else if (event.which === DOWN) {
+            const value = m.subtract(1, unit).format('YYYY-MM-DD');
+            this.onChange(value, start);
+        }
     };
 
     handleBackspace = (event) => {
@@ -179,19 +208,19 @@ class TimeInput extends PureComponent {
         const silhouette = this.silhouette();
 
         if (!diff) {
-            if (value[start - 1] === ':') {
+            if (value[start - 1] === '-') {
                 start--;
             }
             value = replaceCharAt(value, start - 1, silhouette.charAt(start - 1));
             start--;
         } else {
             while (diff--) {
-                if (value[end - 1] !== ':') {
+                if (value[end - 1] !== '-') {
                     value = replaceCharAt(value, end - 1, silhouette.charAt(end - 1));
                 }
                 end--;
             }
-            if (value.charAt(start - 1) === ':') {
+            if (value.charAt(start - 1) === '-') {
                 start--;
             }
         }
@@ -214,20 +243,21 @@ class TimeInput extends PureComponent {
         const silhouette = this.silhouette();
 
         if (!diff) {
-            if (value[start] === ':') {
+            if (value[start] === '-') {
                 start++;
             }
             value = replaceCharAt(value, start, silhouette.charAt(start));
             start++;
         } else {
             while (diff--) {
-                if (value[end - 1] !== ':') {
+                if (value[end - 1] !== '-') {
                     value = replaceCharAt(value, start, silhouette.charAt(start));
                 }
                 start++;
             }
         }
-        if (value.charAt(start) === ':') {
+
+        if (value.charAt(start) === '-') {
             start++;
         }
 
@@ -238,16 +268,10 @@ class TimeInput extends PureComponent {
         return /[:\s]/.test(char);
     };
 
-    format = (val) => {
-        if (isTwelveHourTime(val)) {
-            val = val.replace(/^00/, '12');
-        }
-        return val.toUpperCase();
-    };
-
     onChange = (str, caretIndex) => {
-        if (this.props.onChange) {
-            this.props.onChange(this.format(str));
+        const m = moment(str);
+        if (m.isValid()) {
+            this.props.onChange && this.props.onChange(str);
         }
         if (this.mounted && typeof caretIndex === 'number') {
             this.setState({ caretIndex: caretIndex });
@@ -273,19 +297,19 @@ class TimeInput extends PureComponent {
         }
     }
     render() {
-        let className = 'TimeInput';
+        let className = 'DateInput';
 
         if (this.props.className) {
             className += (' ' + this.props.className);
         }
 
-        const value = this.format(this.props.value);
+        const { value } = this.props;
 
         return (
-            <div className={cx(className, styles.timeInputContainer)}>
-                <div className={styles.timeInput}>
+            <div className={cx(className, styles.dateInputContainer)}>
+                <div className={styles.dateInput}>
                     <input
-                        className="TimeInput-input"
+                        className="DateInput-input"
                         ref={node => {
                             this.input = node;
                         }}
@@ -297,15 +321,15 @@ class TimeInput extends PureComponent {
                     />
                 </div>
                 {this.props.renderIcon({
-                    className: styles.timeInputIcon,
-                    children: <i className="fa fa-clock-o" />
+                    className: styles.dateInputIcon,
+                    children: <i className="fa fa-calendar" />
                 })}
             </div>
         );
     }
 }
 
-export default uncontrollable(TimeInput, {
+export default uncontrollable(DateInput, {
     // Define the pairs of prop/handlers you want to be uncontrollable
     value: 'onChange'
 });

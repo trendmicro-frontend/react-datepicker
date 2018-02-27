@@ -45,12 +45,14 @@
     "react-datepicker"
   ],
   "peerDependencies": {
+    "moment": ">=2.8.0",
     "react": "^0.14.0 || >=15.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "react-date-picker": "git://github.com:cheton/react-date-picker.git",
+    "react-datepicker": "^1.2.1",
     "uncontrollable": "^4.1.0"
   },
   "devDependencies": {
@@ -80,6 +82,7 @@
     "find-imports": "~0.5.2",
     "html-webpack-plugin": "~2.30.1",
     "http-server": "~0.10.0",
+    "moment": "~2.20.1",
     "nib": "~1.1.2",
     "react": "^0.14.0 || >=15.0.0",
     "react-dom": "^0.14.0 || >=15.0.0",
