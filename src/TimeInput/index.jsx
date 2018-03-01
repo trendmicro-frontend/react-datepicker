@@ -112,7 +112,7 @@ class TimeInput extends PureComponent {
             this.handleBackspace(event);
             return;
         }
-        if (event.which === 46) {
+        if (event.which === 32 || event.which === 46) {
             this.handleForwardspace(event);
             return;
         }
