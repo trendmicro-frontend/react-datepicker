@@ -3,13 +3,27 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import uncontrollable from 'uncontrollable';
-import replaceCharAt from './lib/replace-char-at';
-import getGroupId from './lib/get-group-id';
-import getGroups from './lib/get-groups';
-import caret from './lib/caret';
 import styles from './index.styl';
 
-const SILHOUETTE = '0000-01-01';
+const SILHOUETTE = '1000-01-01';
+
+const getGroups = (str) => {
+    return str.split(/[\-\s+]/);
+};
+
+const getGroupId = (index) => {
+    if (index < 5) {
+        return 0;
+    }
+    if (index < 8) {
+        return 1;
+    }
+    return 2;
+};
+
+const replaceCharAt = (string, index, replace) => {
+    return string.substring(0, index) + replace + string.substring(index + 1);
+};
 
 class DateInput extends PureComponent {
     static propTypes = {
@@ -43,7 +57,7 @@ class DateInput extends PureComponent {
         let value = this.props.value;
         let newValue = this.input.value;
         let diff = newValue.length - value.length;
-        let end = caret.start(this.input);
+        let end = this.input.selectionStart;
         let insertion;
         let start = end - Math.abs(diff);
 
@@ -82,6 +96,10 @@ class DateInput extends PureComponent {
             newValue = result;
         }
 
+        if (newValue.length > SILHOUETTE.length) {
+            return;
+        }
+
         const m = moment(newValue);
         if (m.isValid()) {
             if (newValue.charAt(end) === '-') {
@@ -111,7 +129,7 @@ class DateInput extends PureComponent {
             this.handleBackspace(event);
             return;
         }
-        if (event.which === 46) {
+        if (event.which === 32 || event.which === 46) {
             this.handleForwardspace(event);
             return;
         }
@@ -128,7 +146,7 @@ class DateInput extends PureComponent {
     };
 
     handleTab = (event) => {
-        const start = caret.start(this.input);
+        const start = this.input.selectionStart;
         const value = this.props.value;
         const groups = getGroups(value);
         let groupId = getGroupId(start);
@@ -164,7 +182,7 @@ class DateInput extends PureComponent {
     handleArrows = (event) => {
         event.preventDefault();
 
-        const start = caret.start(this.input);
+        const start = this.input.selectionStart;
         const groupId = getGroupId(start);
         const unit = {
             0: 'years',
@@ -196,9 +214,9 @@ class DateInput extends PureComponent {
     handleBackspace = (event) => {
         event.preventDefault();
 
-        let start = caret.start(this.input);
         let value = this.props.value;
-        let end = caret.end(this.input);
+        let start = this.input.selectionStart;
+        let end = this.input.selectionEnd;
 
         if (!start && !end) {
             return;
@@ -231,9 +249,9 @@ class DateInput extends PureComponent {
     handleForwardspace = (event) => {
         event.preventDefault();
 
-        let start = caret.start(this.input);
+        let start = this.input.selectionStart;
         let value = this.props.value;
-        let end = caret.end(this.input);
+        let end = this.input.selectionEnd;
 
         if (start === end === (value.length - 1)) {
             return;
@@ -293,7 +311,9 @@ class DateInput extends PureComponent {
     componentDidUpdate() {
         const index = this.state.caretIndex;
         if (index || index === 0) {
-            caret.set(this.input, index);
+            const selectionStart = index;
+            const selectionEnd = index;
+            this.input.setSelectionRange(selectionStart, selectionEnd);
         }
     }
     render() {
