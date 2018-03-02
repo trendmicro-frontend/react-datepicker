@@ -1,7 +1,9 @@
-@import "reset-context";
+@import "../reset-context";
 
 .date-input-container {
     reset-context();
+
+    position: relative;
 
     .date-input {
         width: 120px;
@@ -19,10 +21,19 @@
             border: 1px solid #ccc;
             border-radius: 3px;
             outline: none;
-            
+
             &:focus {
                 border-color: #0096cc;
             }
         }
+    }
+
+    .date-input-icon {
+        position: absolute;
+        left: 9px;
+        top: 8px;
+        color: #666;
+        width: 14px;
+        height: 14px;
     }
 }

@@ -1,27 +1,49 @@
 import cx from 'classnames';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import uncontrollable from 'uncontrollable';
-import Clock from './Clock';
-import isTwelveHourTime from './lib/is-twelve-hour-time';
-import replaceCharAt from './lib/replace-char-at';
-import getGroupId from './lib/get-group-id';
-import getGroups from './lib/get-groups';
-import adder from './lib/time-string-adder';
-import caret from './lib/caret';
-import validate from './lib/validate';
+import Calendar from './Calendar';
 import styles from './index.styl';
 
-const SILHOUETTE = '00:00:00:000 AM';
+const KEYCODE_BACKSPACE = 8;
+const KEYCODE_TAB = 9;
+const KEYCODE_ESCAPE = 27;
+const KEYCODE_PAGE_UP = 33;
+const KEYCODE_PAGE_DOWN = 34;
+const KEYCODE_UP_ARROW = 38;
+const KEYCODE_DOWN_ARROW = 40;
+const KEYCODE_SPACE = 32;
+const KEYCODE_DELETE = 46;
 
-class TimeInput extends PureComponent {
+const SILHOUETTE = '0001-01-01';
+
+const getGroups = (str) => {
+    return str.split(/[\-\s+]/);
+};
+
+const getGroupId = (index) => {
+    if (index < 5) {
+        return 0;
+    }
+    if (index < 8) {
+        return 1;
+    }
+    return 2;
+};
+
+const replaceCharAt = (string, index, replace) => {
+    return string.substring(0, index) + replace + string.substring(index + 1);
+};
+
+class DateInput extends PureComponent {
     static propTypes = {
         className: PropTypes.string,
         value: PropTypes.string,
         onChange: PropTypes.func
     };
     static defaultProps = {
-        value: '00:00:00:000 AM'
+        value: '0000-00-00'
     };
 
     input = null;
@@ -47,7 +69,7 @@ class TimeInput extends PureComponent {
         let value = this.props.value;
         let newValue = this.input.value;
         let diff = newValue.length - value.length;
-        let end = caret.start(this.input);
+        let end = this.input.selectionStart;
         let insertion;
         let start = end - Math.abs(diff);
 
@@ -75,7 +97,7 @@ class TimeInput extends PureComponent {
             }
             newValue = value;
         } else {
-            if (newValue.charAt(start) === ':') {
+            if (newValue.charAt(start) === '-') {
                 start++;
             }
             // apply default to selection
@@ -86,8 +108,13 @@ class TimeInput extends PureComponent {
             newValue = result;
         }
 
-        if (validate(newValue)) {
-            if (newValue.charAt(end) === ':') {
+        if (newValue.length > SILHOUETTE.length) {
+            return;
+        }
+
+        const m = moment(newValue);
+        if (m.isValid()) {
+            if (newValue.charAt(end) === '-') {
                 end++;
             }
             this.onChange(newValue, end);
@@ -102,24 +129,36 @@ class TimeInput extends PureComponent {
     handleKeyDown = (event) => {
         event.stopPropagation();
 
-        if (event.which === 9) {
-            this.handleTab(event);
-            return;
-        }
-        if (event.which === 38 || event.which === 40) {
-            this.handleArrows(event);
-            return;
-        }
-        if (event.which === 8) {
+        if (event.which === KEYCODE_BACKSPACE) {
             this.handleBackspace(event);
             return;
         }
-        if (event.which === 32 || event.which === 46) {
+        if (event.which === KEYCODE_TAB) {
+            this.handleTab(event);
+            return;
+        }
+        if (event.which === KEYCODE_ESCAPE) {
+            this.handleEscape(event);
+            return;
+        }
+        if (event.which === KEYCODE_SPACE || event.which === KEYCODE_DELETE) {
             this.handleForwardspace(event);
             return;
         }
-        if (event.which === 27) {
-            this.handleEscape(event);
+        if (event.which === KEYCODE_PAGE_UP) {
+            this.handlePageUp(event);
+            return;
+        }
+        if (event.which === KEYCODE_PAGE_DOWN) {
+            this.handlePageDown(event);
+            return;
+        }
+        if (event.which === KEYCODE_UP_ARROW) {
+            this.handleUpArrow(event);
+            return;
+        }
+        if (event.which === KEYCODE_DOWN_ARROW) {
+            this.handleDownArrow(event);
             return;
         }
     };
@@ -131,7 +170,7 @@ class TimeInput extends PureComponent {
     };
 
     handleTab = (event) => {
-        const start = caret.start(this.input);
+        const start = this.input.selectionStart;
         const value = this.props.value;
         const groups = getGroups(value);
         let groupId = getGroupId(start);
@@ -149,7 +188,13 @@ class TimeInput extends PureComponent {
 
         event.preventDefault();
 
-        let index = groupId * 3;
+        let index = 0; // YYYY-MM-DD
+        if (groupId === 1) {
+            index = (4 + 1);
+        }
+        if (groupId === 2) {
+            index = (4 + 1) + (2 + 1);
+        }
         if (this.props.value.charAt(index) === ' ') {
             index++;
         }
@@ -158,20 +203,86 @@ class TimeInput extends PureComponent {
         }
     };
 
-    handleArrows = (event) => {
+    handlePageUp = (event) => {
         event.preventDefault();
-        const start = caret.start(this.input);
-        const amount = event.which === 38 ? 1 : -1;
-        const value = adder(this.props.value, getGroupId(start), amount);
+
+        const m = moment(this.props.value);
+        if (!m.isValid()) {
+            return;
+        }
+
+        const value = m.subtract(1, 'months').format('YYYY-MM-DD');
+        const start = this.input.selectionStart;
+        this.onChange(value, start);
+    };
+
+    handlePageDown = (event) => {
+        event.preventDefault();
+
+        const m = moment(this.props.value);
+        if (!m.isValid()) {
+            return;
+        }
+
+        const value = m.add(1, 'months').format('YYYY-MM-DD');
+        const start = this.input.selectionStart;
+        this.onChange(value, start);
+    };
+
+    handleUpArrow = (event) => {
+        event.preventDefault();
+
+        const start = this.input.selectionStart;
+        const groupId = getGroupId(start);
+        const unit = {
+            0: 'years',
+            1: 'months',
+            2: 'days'
+        }[groupId];
+
+        if (!unit) {
+            return;
+        }
+
+        const m = moment(this.props.value);
+        if (!m.isValid()) {
+            return;
+        }
+
+        const value = m.add(1, unit).format('YYYY-MM-DD');
+        this.onChange(value, start);
+    };
+
+    handleDownArrow = (event) => {
+        event.preventDefault();
+
+        const start = this.input.selectionStart;
+        const groupId = getGroupId(start);
+        const unit = {
+            0: 'years',
+            1: 'months',
+            2: 'days'
+        }[groupId];
+
+        if (!unit) {
+            return;
+        }
+
+        const m = moment(this.props.value);
+        if (!m.isValid()) {
+            return;
+        }
+
+        const value = m.subtract(1, unit).format('YYYY-MM-DD');
         this.onChange(value, start);
     };
 
     handleBackspace = (event) => {
         event.preventDefault();
 
-        let start = caret.start(this.input);
         let value = this.props.value;
-        let end = caret.end(this.input);
+        let start = this.input.selectionStart;
+        let end = this.input.selectionEnd;
 
         if (!start && !end) {
             return;
@@ -181,19 +292,19 @@ class TimeInput extends PureComponent {
         const silhouette = this.silhouette();
 
         if (!diff) {
-            if (value[start - 1] === ':') {
+            if (value[start - 1] === '-') {
                 start--;
             }
             value = replaceCharAt(value, start - 1, silhouette.charAt(start - 1));
             start--;
         } else {
             while (diff--) {
-                if (value[end - 1] !== ':') {
+                if (value[end - 1] !== '-') {
                     value = replaceCharAt(value, end - 1, silhouette.charAt(end - 1));
                 }
                 end--;
             }
-            if (value.charAt(start - 1) === ':') {
+            if (value.charAt(start - 1) === '-') {
                 start--;
             }
         }
@@ -204,9 +315,9 @@ class TimeInput extends PureComponent {
     handleForwardspace = (event) => {
         event.preventDefault();
 
-        let start = caret.start(this.input);
+        let start = this.input.selectionStart;
         let value = this.props.value;
-        let end = caret.end(this.input);
+        let end = this.input.selectionEnd;
 
         if (start === end === (value.length - 1)) {
             return;
@@ -216,20 +327,21 @@ class TimeInput extends PureComponent {
         const silhouette = this.silhouette();
 
         if (!diff) {
-            if (value[start] === ':') {
+            if (value[start] === '-') {
                 start++;
             }
             value = replaceCharAt(value, start, silhouette.charAt(start));
             start++;
         } else {
             while (diff--) {
-                if (value[end - 1] !== ':') {
+                if (value[end - 1] !== '-') {
                     value = replaceCharAt(value, start, silhouette.charAt(start));
                 }
                 start++;
             }
         }
-        if (value.charAt(start) === ':') {
+
+        if (value.charAt(start) === '-') {
             start++;
         }
 
@@ -240,16 +352,10 @@ class TimeInput extends PureComponent {
         return /[:\s]/.test(char);
     };
 
-    format = (val) => {
-        if (isTwelveHourTime(val)) {
-            val = val.replace(/^00/, '12');
-        }
-        return val.toUpperCase();
-    };
-
     onChange = (str, caretIndex) => {
-        if (this.props.onChange) {
-            this.props.onChange(this.format(str));
+        const m = moment(str);
+        if (m.isValid()) {
+            this.props.onChange && this.props.onChange(str);
         }
         if (this.mounted && typeof caretIndex === 'number') {
             this.setState({ caretIndex: caretIndex });
@@ -271,26 +377,28 @@ class TimeInput extends PureComponent {
     componentDidUpdate() {
         const index = this.state.caretIndex;
         if (index || index === 0) {
-            caret.set(this.input, index);
+            const selectionStart = index;
+            const selectionEnd = index;
+            this.input.setSelectionRange(selectionStart, selectionEnd);
         }
     }
     render() {
-        let className = 'TimeInput';
+        let className = 'DateInput';
 
         if (this.props.className) {
             className += (' ' + this.props.className);
         }
 
-        const value = this.format(this.props.value);
+        const { value } = this.props;
         const icon = (
-            <Clock className={styles.timeInputIcon} style={{ color: this.state.focused ? '#0096cc' : '#666' }} />
+            <Calendar className={styles.dateInputIcon} style={{ color: this.state.focused ? '#0096cc' : '#666' }} />
         );
 
         return (
-            <div className={cx(className, styles.timeInputContainer)}>
-                <div className={styles.timeInput}>
+            <div className={cx(className, styles.dateInputContainer)}>
+                <div className={styles.dateInput}>
                     <input
-                        className="TimeInput-input"
+                        className="DateInput-input"
                         ref={node => {
                             this.input = node;
                         }}
@@ -308,7 +416,7 @@ class TimeInput extends PureComponent {
     }
 }
 
-export default uncontrollable(TimeInput, {
+export default uncontrollable(DateInput, {
     // Define the pairs of prop/handlers you want to be uncontrollable
     value: 'onChange'
 });
