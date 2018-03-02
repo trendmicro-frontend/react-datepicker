@@ -45,7 +45,7 @@ export default class extends PureComponent {
                         />
                     </div>
                 </div>
-                <div>
+                <div style={{ marginTop: 8 }}>
                     <DatePicker
                         locale={locale}
                         date={date}

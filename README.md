@@ -166,9 +166,6 @@ defaultDate | object or string | null |
 minDate | object or string | null | The minimum selectable date. When set to null, there is no minimum.
 maxDate | object or string | null | The maximum selectable date. When set to null, there is no maximum.
 onSelect | function(date) | | Called when a date is selected.
-navArrows | object | |
-navArrows.prev | node | &lt;i className="fa fa-angle-left" /&gt; |
-navArrows.next | node | &lt;i className="fa fa-angle-right" /&gt; |
 
 #### DateInput
 
@@ -177,7 +174,6 @@ Name | Type | Default | Description
 value | object or string | null |
 defaultValue | object or string | null |
 onChange | function(value) | | Called when the value changes.
-renderIcon | function(props) | |
 
 #### TimeInput
 
@@ -186,7 +182,6 @@ Name | Type | Default | Description
 value | string | '00:00:00' |
 defaultValue | string | '00:00:00' |
 onChange | function(value) | | Called when the value changes.
-renderIcon | function(props) | |
 
 ## License
 

@@ -6,12 +6,12 @@
     border: none;
     border-radius: 0;
     box-shadow: none;
-    padding: 0;
-    width: 248px;
-}
+    padding: 0 5px;
 
-:global {
-    .react-date-picker__month-view-day--today-highlight {
-        color: #db3d44 !important;
-    }    
+    position: relative;
+    display: inline-block;
+
+    :global {
+        @import "react-datepicker";
+    }
 }

@@ -3,9 +3,20 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import uncontrollable from 'uncontrollable';
+import Calendar from './Calendar';
 import styles from './index.styl';
 
-const SILHOUETTE = '1000-01-01';
+const KEYCODE_BACKSPACE = 8;
+const KEYCODE_TAB = 9;
+const KEYCODE_ESCAPE = 27;
+const KEYCODE_PAGE_UP = 33;
+const KEYCODE_PAGE_DOWN = 34;
+const KEYCODE_UP_ARROW = 38;
+const KEYCODE_DOWN_ARROW = 40;
+const KEYCODE_SPACE = 32;
+const KEYCODE_DELETE = 46;
+
+const SILHOUETTE = '0001-01-01';
 
 const getGroups = (str) => {
     return str.split(/[\-\s+]/);
@@ -29,27 +40,28 @@ class DateInput extends PureComponent {
     static propTypes = {
         className: PropTypes.string,
         value: PropTypes.string,
-        onChange: PropTypes.func,
-        rendeIcon: PropTypes.func
+        onChange: PropTypes.func
     };
     static defaultProps = {
-        value: '0000-00-00',
-        renderIcon: (props) => (
-            <label className={props.className}>
-                {props.children}
-            </label>
-        )
+        value: '0000-00-00'
     };
 
     input = null;
     mounted = false;
     state = {
+        focused: false,
         caretIndex: null
+    };
+
+    handleFocus = (event) => {
+        if (this.mounted) {
+            this.setState({ focused: true });
+        }
     };
 
     handleBlur = (event) => {
         if (this.mounted) {
-            this.setState({ caretIndex: null });
+            this.setState({ caretIndex: null, focused: false });
         }
     };
 
@@ -117,24 +129,36 @@ class DateInput extends PureComponent {
     handleKeyDown = (event) => {
         event.stopPropagation();
 
-        if (event.which === 9) {
-            this.handleTab(event);
-            return;
-        }
-        if (event.which === 38 || event.which === 40) {
-            this.handleArrows(event);
-            return;
-        }
-        if (event.which === 8) {
+        if (event.which === KEYCODE_BACKSPACE) {
             this.handleBackspace(event);
             return;
         }
-        if (event.which === 32 || event.which === 46) {
+        if (event.which === KEYCODE_TAB) {
+            this.handleTab(event);
+            return;
+        }
+        if (event.which === KEYCODE_ESCAPE) {
+            this.handleEscape(event);
+            return;
+        }
+        if (event.which === KEYCODE_SPACE || event.which === KEYCODE_DELETE) {
             this.handleForwardspace(event);
             return;
         }
-        if (event.which === 27) {
-            this.handleEscape(event);
+        if (event.which === KEYCODE_PAGE_UP) {
+            this.handlePageUp(event);
+            return;
+        }
+        if (event.which === KEYCODE_PAGE_DOWN) {
+            this.handlePageDown(event);
+            return;
+        }
+        if (event.which === KEYCODE_UP_ARROW) {
+            this.handleUpArrow(event);
+            return;
+        }
+        if (event.which === KEYCODE_DOWN_ARROW) {
+            this.handleDownArrow(event);
             return;
         }
     };
@@ -179,7 +203,33 @@ class DateInput extends PureComponent {
         }
     };
 
-    handleArrows = (event) => {
+    handlePageUp = (event) => {
+        event.preventDefault();
+
+        const m = moment(this.props.value);
+        if (!m.isValid()) {
+            return;
+        }
+
+        const value = m.subtract(1, 'months').format('YYYY-MM-DD');
+        const start = this.input.selectionStart;
+        this.onChange(value, start);
+    };
+
+    handlePageDown = (event) => {
+        event.preventDefault();
+
+        const m = moment(this.props.value);
+        if (!m.isValid()) {
+            return;
+        }
+
+        const value = m.add(1, 'months').format('YYYY-MM-DD');
+        const start = this.input.selectionStart;
+        this.onChange(value, start);
+    };
+
+    handleUpArrow = (event) => {
         event.preventDefault();
 
         const start = this.input.selectionStart;
@@ -199,16 +249,32 @@ class DateInput extends PureComponent {
             return;
         }
 
-        const UP = 38;
-        const DOWN = 40;
+        const value = m.add(1, unit).format('YYYY-MM-DD');
+        this.onChange(value, start);
+    };
 
-        if (event.which === UP) {
-            const value = m.add(1, unit).format('YYYY-MM-DD');
-            this.onChange(value, start);
-        } else if (event.which === DOWN) {
-            const value = m.subtract(1, unit).format('YYYY-MM-DD');
-            this.onChange(value, start);
+    handleDownArrow = (event) => {
+        event.preventDefault();
+
+        const start = this.input.selectionStart;
+        const groupId = getGroupId(start);
+        const unit = {
+            0: 'years',
+            1: 'months',
+            2: 'days'
+        }[groupId];
+
+        if (!unit) {
+            return;
         }
+
+        const m = moment(this.props.value);
+        if (!m.isValid()) {
+            return;
+        }
+
+        const value = m.subtract(1, unit).format('YYYY-MM-DD');
+        this.onChange(value, start);
     };
 
     handleBackspace = (event) => {
@@ -324,6 +390,9 @@ class DateInput extends PureComponent {
         }
 
         const { value } = this.props;
+        const icon = (
+            <Calendar className={styles.dateInputIcon} style={{ color: this.state.focused ? '#0096cc' : '#666' }} />
+        );
 
         return (
             <div className={cx(className, styles.dateInputContainer)}>
@@ -336,14 +405,12 @@ class DateInput extends PureComponent {
                         type="text"
                         value={value}
                         onChange={this.handleChange}
+                        onFocus={this.handleFocus}
                         onBlur={this.handleBlur}
                         onKeyDown={this.handleKeyDown}
                     />
                 </div>
-                {this.props.renderIcon({
-                    className: styles.dateInputIcon,
-                    children: <i className="fa fa-calendar" />
-                })}
+                {icon}
             </div>
         );
     }

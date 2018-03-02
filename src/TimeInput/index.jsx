@@ -2,6 +2,7 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import uncontrollable from 'uncontrollable';
+import Clock from './Clock';
 import isTwelveHourTime from './lib/is-twelve-hour-time';
 import replaceCharAt from './lib/replace-char-at';
 import getGroupId from './lib/get-group-id';
@@ -17,27 +18,28 @@ class TimeInput extends PureComponent {
     static propTypes = {
         className: PropTypes.string,
         value: PropTypes.string,
-        onChange: PropTypes.func,
-        rendeIcon: PropTypes.func
+        onChange: PropTypes.func
     };
     static defaultProps = {
-        value: '00:00:00:000 AM',
-        renderIcon: (props) => (
-            <label className={props.className}>
-                {props.children}
-            </label>
-        )
+        value: '00:00:00:000 AM'
     };
 
     input = null;
     mounted = false;
     state = {
+        focused: false,
         caretIndex: null
+    };
+
+    handleFocus = (event) => {
+        if (this.mounted) {
+            this.setState({ focused: true });
+        }
     };
 
     handleBlur = (event) => {
         if (this.mounted) {
-            this.setState({ caretIndex: null });
+            this.setState({ caretIndex: null, focused: false });
         }
     };
 
@@ -280,6 +282,9 @@ class TimeInput extends PureComponent {
         }
 
         const value = this.format(this.props.value);
+        const icon = (
+            <Clock className={styles.timeInputIcon} style={{ color: this.state.focused ? '#0096cc' : '#666' }} />
+        );
 
         return (
             <div className={cx(className, styles.timeInputContainer)}>
@@ -292,14 +297,12 @@ class TimeInput extends PureComponent {
                         type="text"
                         value={value}
                         onChange={this.handleChange}
+                        onFocus={this.handleFocus}
                         onBlur={this.handleBlur}
                         onKeyDown={this.handleKeyDown}
                     />
                 </div>
-                {this.props.renderIcon({
-                    className: styles.timeInputIcon,
-                    children: <i className="fa fa-clock-o" />
-                })}
+                {icon}
             </div>
         );
     }

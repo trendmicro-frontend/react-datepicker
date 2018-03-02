@@ -1,4 +1,5 @@
 import 'trendmicro-ui/dist/css/trendmicro-ui.css';
+import qs from 'qs';
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
 import Navbar from './Navbar';
@@ -7,20 +8,18 @@ import * as DatePickerExample from './DatePicker';
 import * as DateTimePickerExample from './DateTimePicker';
 import * as DateTimeRangePickerExample from './DateTimeRangePicker';
 
+const q = qs.parse(window.location.search, { ignoreQueryPrefix: true });
+const locale = q.locale || 'en';
+
 class App extends PureComponent {
     state = {
-        locale: 'en'
+        locale: locale
     };
 
     changeLocale = (locale) => {
-        this.setState({ locale });
+        window.location.search = `locale=${locale}`;
     };
 
-    getInitialState() {
-        return {
-            locale: 'en'
-        };
-    }
     render() {
         const name = 'React DatePicker';
         const url = 'https://github.com/trendmicro-frontend/react-datepicker';
