@@ -4,12 +4,12 @@
     .date-picker-pane-header,
     .date-picker-pane-body,
     .date-picker-pane-footer {
-        clearfix();
+        white-space: nowrap;
     }
 
     .date-picker-pane-header {
         .tilde {
-            float: left;
+            display: inline-block;
             line-height: 32px;
             text-align: center;
             width: 24px;
@@ -20,7 +20,7 @@
         margin-top: 8px;
 
         .date-picker-pane-container {
-            float: left;
+            display: inline-block;
         }
 
         .date-picker-pane-container + .date-picker-pane-container {
@@ -46,7 +46,7 @@
 
 .input-icon-group {
     position: relative;
-    float: left;
+    display: inline-block;
 
     + .input-icon-group {
         margin-left: 8px;

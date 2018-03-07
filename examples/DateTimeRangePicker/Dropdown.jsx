@@ -1,11 +1,9 @@
-import '@trendmicro/react-buttons/dist/react-buttons.css';
-import '@trendmicro/react-dropdown/dist/react-dropdown.css';
-import Anchor from '@trendmicro/react-anchor';
-import { Button } from '@trendmicro/react-buttons';
-import Dropdown, { MenuItem } from '@trendmicro/react-dropdown'; // @trendmicro/react-dropdown@0.7.0 or above is required
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
+import Anchor from '@trendmicro/react-anchor';
+import { Button } from '@trendmicro/react-buttons';
+import Dropdown, { MenuItem } from '@trendmicro/react-dropdown';
 import DateTimeRangePicker from './DateTimeRangePicker';
 
 const normalizeDateString = (dateString) => {
@@ -28,18 +26,46 @@ const normalizeTimeString = (timeString) => {
 };
 
 const mapPeriodToString = (period) => {
-    return {
-        '1d': 'Last 24 hours',
-        '7d': 'Last 7 days',
-        '30d': 'Last 30 days',
-        '90d': 'Last 90 days',
-        'custom': 'Custom range'
-    }[period];
+    if (period === 'custom') {
+        return 'Specified range';
+    }
+
+    // Only days are supported (e.g. 1, 7, '1d', or '7d')
+    if (Number.isInteger(period) || period.match(/^\d+d$/)) {
+        const days = parseInt(period, 10);
+        if (days === 1) {
+            return 'Today';
+        }
+        if (days > 1) {
+            return `Last ${days} days`;
+        }
+    }
+
+    return '';
 };
 
-export default class extends PureComponent {
+class DateTimeRangePickerDropdown extends PureComponent {
     static propTypes = {
-        locale: PropTypes.string
+        locale: PropTypes.string,
+        periods: PropTypes.arrayOf(
+            PropTypes.oneOfType([
+                PropTypes.number,
+                PropTypes.string
+            ])
+        ),
+        period: PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.string
+        ]),
+        defaultPeriod: PropTypes.oneOfType([
+            PropTypes.number,
+            PropTypes.string
+        ]),
+        onSelect: PropTypes.func
+    };
+    static defaultProps = {
+        periods: ['1d', '7d', '14d', '30d', '60d'],
+        defaultPeriod: '7d'
     };
 
     state = this.getInitialState();
@@ -63,6 +89,7 @@ export default class extends PureComponent {
             nextEndTime: isSameOrAfterEnd ? startTime : endTime
         });
     };
+
     changeEndDate = (date) => {
         if (!date) {
             return;
@@ -82,6 +109,7 @@ export default class extends PureComponent {
             nextEndTime: endTime
         });
     };
+
     changeStartTime = (time = '00:00:00') => {
         const startDate = normalizeDateString(this.state.nextStartDate);
         const endDate = normalizeDateString(this.state.nextEndDate);
@@ -96,6 +124,7 @@ export default class extends PureComponent {
             nextEndTime: isSameOrAfterEnd ? startTime : endTime
         });
     };
+
     changeEndTime = (time = '00:00:00') => {
         const startDate = normalizeDateString(this.state.nextStartDate);
         const endDate = normalizeDateString(this.state.nextEndDate);
@@ -111,12 +140,112 @@ export default class extends PureComponent {
         });
     };
 
+    handleDropdownSelect = (eventKey) => {
+        const period = eventKey;
+
+        if (period !== this.state.period) {
+            const now = moment().seconds(0);
+            const days = parseInt(this.props.defaultPeriod, 10) || DateTimeRangePickerDropdown.defaultProps.defaultPeriod;
+            const startDate = moment(now).subtract(days, 'days').format('YYYY-MM-DD');
+            const startTime = moment(now).subtract(days, 'days').format('hh:mm:ss');
+            const endDate = moment(now).format('YYYY-MM-DD');
+            const endTime = moment(now).format('hh:mm:ss');
+
+            this.setState(state => ({
+                period,
+                startDate,
+                startTime,
+                endDate,
+                endTime
+            }));
+        }
+
+        this.setState(state => ({
+            nextStartDate: state.startDate,
+            nextStartTime: state.startTime,
+            nextEndDate: state.endDate,
+            nextEndTime: state.endTime
+        }), () => {
+            const { onSelect } = this.props;
+
+            if (typeof onSelect !== 'function') {
+                return;
+            }
+
+            const { period, startDate, startTime, endDate, endTime } = this.state;
+            if (period === 'custom') {
+                onSelect({ period, startDate, startTime, endDate, endTime });
+            } else {
+                onSelect({ period });
+            }
+        });
+    };
+
+    handleDropdownClose = () => {
+        this.setState(state => ({
+            open: false,
+
+            // Restore to previous state
+            nextStartDate: state.startDate,
+            nextStartTime: state.startTime,
+            nextEndDate: state.endDate,
+            nextEndTime: state.endTime
+        }));
+    };
+
+    handleDropdownToggle = (open) => {
+        this.setState(state => {
+            const { period } = state;
+            return {
+                open: open || period === 'custom'
+            };
+        });
+    };
+
+    handleClickApplyForSpecifiedRange = () => {
+        this.setState(state => ({
+            open: false,
+
+            // Apply specified range
+            startDate: state.nextStartDate,
+            startTime: state.nextStartTime,
+            endDate: state.nextEndDate,
+            endTime: state.nextEndTime
+        }), () => {
+            const { onSelect } = this.props;
+
+            if (typeof onSelect !== 'function') {
+                return;
+            }
+
+            const { period, startDate, startTime, endDate, endTime } = this.state;
+            if (period === 'custom') {
+                onSelect({ period, startDate, startTime, endDate, endTime });
+            } else {
+                onSelect({ period });
+            }
+        });
+    };
+
+    handleClickCancelForSpecifiedRange = () => {
+        this.setState(state => ({
+            open: false,
+
+            // Restore to previous state
+            nextStartDate: state.startDate,
+            nextStartTime: state.startTime,
+            nextEndDate: state.endDate,
+            nextEndTime: state.endTime
+        }));
+    };
+
     getInitialState() {
-        const now = moment();
-        const startDate = moment(now).format('YYYY-MM-DD');
-        const startTime = moment(now).format('hh:mm:ss');
-        const endDate = moment(now).add(7, 'days').format('YYYY-MM-DD');
-        const endTime = moment(now).add(7, 'days').format('hh:mm:ss');
+        const now = moment().seconds(0);
+        const days = parseInt(this.props.defaultPeriod, 10) || DateTimeRangePickerDropdown.defaultProps.defaultPeriod;
+        const startDate = moment(now).subtract(days, 'days').format('YYYY-MM-DD');
+        const startTime = moment(now).subtract(days, 'days').format('hh:mm:ss');
+        const endDate = moment(now).format('YYYY-MM-DD');
+        const endTime = moment(now).format('hh:mm:ss');
 
         return {
             // prev
@@ -133,17 +262,24 @@ export default class extends PureComponent {
 
             // Dropdown
             open: false,
-            period: '1d',
-            showDateTimeRangePicker: false
+            period: this.props.period
         };
     }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.period !== nextProps.period) {
+            this.setState({ period: nextProps.period });
+        }
+    }
+
     render() {
-        const { locale } = this.props;
+        const { locale, periods } = this.props;
         const {
             startDate, startTime, endDate, endTime,
-            nextStartDate, nextStartTime, nextEndDate, nextEndTime,
-            period
+            nextStartDate, nextStartTime, nextEndDate, nextEndTime
         } = this.state;
+        const period = this.state.period !== undefined ? this.state.period : this.props.defaultPeriod;
+        const showDateTimeRangePicker = this.state.open && (period === 'custom');
 
         return (
             <div>
@@ -155,51 +291,31 @@ export default class extends PureComponent {
                 <p>Selected: {startDate} {startTime} - {endDate} {endTime}</p>
                 }
                 <Dropdown
-                    style={{ width: '100%' }}
                     open={this.state.open}
-                    onSelect={eventKey => {
-                        this.setState(state => ({
-                            period: eventKey,
-                            showDateTimeRangePicker: eventKey === 'custom',
-                            nextStartDate: state.startDate,
-                            nextStartTime: state.startTime,
-                            nextEndDate: state.endDate,
-                            nextEndTime: state.endTime
-                        }));
-                    }}
-                    onClose={() => {
-                        this.setState(state => ({
-                            open: false,
-                            showDateTimeRangePicker: false
-                        }));
-                    }}
-                    onToggle={open => {
-                        this.setState(state => {
-                            const { period } = state;
-                            return {
-                                open: open || period === 'custom'
-                            };
-                        });
-                    }}
+                    onSelect={this.handleDropdownSelect}
+                    onClose={this.handleDropdownClose}
+                    onToggle={this.handleDropdownToggle}
                 >
                     <Dropdown.Toggle>
                         {mapPeriodToString(period)}
                     </Dropdown.Toggle>
-                    <Dropdown.MenuWrapper>
+                    <Dropdown.MenuWrapper flex={showDateTimeRangePicker}>
                         <Dropdown.Menu>
-                            <MenuItem eventKey="1d">{mapPeriodToString('1d')}</MenuItem>
-                            <MenuItem eventKey="7d">{mapPeriodToString('7d')}</MenuItem>
-                            <MenuItem eventKey="30d">{mapPeriodToString('30d')}</MenuItem>
-                            <MenuItem eventKey="90d">{mapPeriodToString('90d')}</MenuItem>
+                            {periods.map(period => (
+                                <MenuItem eventKey={period} key={period}>
+                                    {mapPeriodToString(period)}
+                                </MenuItem>
+                            ))}
+                            <MenuItem divider />
                             <MenuItem eventKey="custom">
                                 {mapPeriodToString('custom')}
                             </MenuItem>
                         </Dropdown.Menu>
-                        {(this.state.showDateTimeRangePicker || this.state.period === 'custom') &&
+                        {showDateTimeRangePicker &&
                         <div
                             style={{
                                 display: 'inline-block',
-                                borderRight: '1px solid #ddd',
+                                borderLeft: '1px solid #ddd',
                                 padding: 12
                             }}
                         >
@@ -214,35 +330,19 @@ export default class extends PureComponent {
                                 onChangeEndDate={this.changeEndDate}
                                 onChangeEndTime={this.changeEndTime}
                             />
-                            <div>
-                                <Button
-                                    btnStyle="primary"
-                                    style={{ marginRight: 8 }}
-                                    onClick={() => {
-                                        this.setState(state => ({
-                                            open: false,
-                                            showDateTimeRangePicker: false,
-
-                                            // Apply date/time range
-                                            startDate: nextStartDate,
-                                            startTime: nextStartTime,
-                                            endDate: nextEndDate,
-                                            endTime: nextEndTime
-                                        }));
-                                    }}
-                                >
-                                    Apply
-                                </Button>
-                                <Button
-                                    onClick={() => {
-                                        this.setState(state => ({
-                                            open: false,
-                                            showDateTimeRangePicker: false
-                                        }));
-                                    }}
-                                >
-                                    Cancel
-                                </Button>
+                            <div className="clearfix">
+                                <div className="pull-right">
+                                    <Button
+                                        btnStyle="primary"
+                                        style={{ marginRight: 8 }}
+                                        onClick={this.handleClickApplyForSpecifiedRange}
+                                    >
+                                        {'Apply'}
+                                    </Button>
+                                    <Button onClick={this.handleClickCancelForSpecifiedRange}>
+                                        {'Cancel'}
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                         }
@@ -252,3 +352,5 @@ export default class extends PureComponent {
         );
     }
 }
+
+export default DateTimeRangePickerDropdown;

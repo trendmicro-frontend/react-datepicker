@@ -33,34 +33,30 @@ class DateTimeRangePicker extends PureComponent {
         return (
             <div className={styles.datePickerPane}>
                 <div className={styles.datePickerPaneHeader}>
-                    <div className={styles.dateTimeContainer}>
-                        <div className={styles.inputIconGroup}>
-                            <DateInput
-                                value={startDate}
-                                onChange={onChangeStartDate}
-                            />
-                        </div>
-                        <div className={styles.inputIconGroup}>
-                            <TimeInput
-                                value={startTime}
-                                onChange={onChangeStartTime}
-                            />
-                        </div>
+                    <div className={styles.inputIconGroup}>
+                        <DateInput
+                            value={startDate}
+                            onChange={onChangeStartDate}
+                        />
+                    </div>
+                    <div className={styles.inputIconGroup}>
+                        <TimeInput
+                            value={startTime}
+                            onChange={onChangeStartTime}
+                        />
                     </div>
                     <div className={styles.tilde}>~</div>
-                    <div className={styles.dateTimeContainer}>
-                        <div className={styles.inputIconGroup}>
-                            <DateInput
-                                value={endDate}
-                                onChange={onChangeEndDate}
-                            />
-                        </div>
-                        <div className={styles.inputIconGroup}>
-                            <TimeInput
-                                value={endTime}
-                                onChange={onChangeEndTime}
-                            />
-                        </div>
+                    <div className={styles.inputIconGroup}>
+                        <DateInput
+                            value={endDate}
+                            onChange={onChangeEndDate}
+                        />
+                    </div>
+                    <div className={styles.inputIconGroup}>
+                        <TimeInput
+                            value={endTime}
+                            onChange={onChangeEndTime}
+                        />
                     </div>
                 </div>
                 <div className={styles.datePickerPaneBody}>
