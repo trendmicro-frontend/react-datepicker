@@ -1,3 +1,4 @@
+import _isInteger from 'lodash/isInteger';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
@@ -31,7 +32,7 @@ const mapPeriodToString = (period) => {
     }
 
     // Only days are supported (e.g. 1, 7, '1d', or '7d')
-    if (Number.isInteger(period) || period.match(/^\d+d$/)) {
+    if (_isInteger(period) || period.match(/^\d+d$/)) {
         const days = parseInt(period, 10);
         if (days === 1) {
             return 'Today';
