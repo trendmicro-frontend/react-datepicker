@@ -50,7 +50,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "react-datepicker": "^1.2.2",
+    "react-datepicker": "^1.3.0",
     "uncontrollable": "^5.0.0"
   },
   "devDependencies": {
