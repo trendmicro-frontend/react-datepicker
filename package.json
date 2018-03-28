@@ -56,7 +56,7 @@
   "devDependencies": {
     "@trendmicro/react-anchor": "~0.5.5",
     "@trendmicro/react-buttons": "~1.3.0",
-    "@trendmicro/react-dropdown": "~1.2.1",
+    "@trendmicro/react-dropdown": "~1.2.2",
     "babel-cli": "~6.26.0",
     "babel-core": "~6.26.0",
     "babel-eslint": "~8.2.2",
