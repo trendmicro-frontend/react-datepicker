@@ -300,7 +300,11 @@ class DateTimeRangePickerDropdown extends PureComponent {
                     <Dropdown.Toggle>
                         {mapPeriodToString(period)}
                     </Dropdown.Toggle>
-                    <Dropdown.MenuWrapper flex={showDateTimeRangePicker}>
+                    <Dropdown.MenuWrapper
+                        style={{
+                            whiteSpace: 'nowrap'
+                        }}
+                    >
                         <Dropdown.Menu>
                             {periods.map(period => (
                                 <MenuItem eventKey={period} key={period}>
