@@ -1,4 +1,4 @@
-/*! react-datepicker v1.0.0-alpha.1 | (c) 2018 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-datepicker */
+/*! react-datepicker v1.0.0-alpha.2 | (c) 2018 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-datepicker */
 .datepicker---date-picker-container---1kNBY {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -115,6 +115,11 @@
 .datepicker---date-picker-container---1kNBY .react-datepicker__day--selected:hover {
   background-color: #db3d44;
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .datepicker---date-input---1vOyn > input {
+    height: 32px;
+  }
+}
 .datepicker---date-input-container---2zD9B {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -129,33 +134,36 @@
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
-.datepicker---date-input-container---2zD9B .datepicker---date-input---1vOyn {
+.datepicker---date-input---1vOyn {
   width: 120px;
 }
-.datepicker---date-input-container---2zD9B .datepicker---date-input---1vOyn > input {
+.datepicker---date-input---1vOyn > input {
   display: block;
   width: 100%;
-  line-height: 20px;
-  height: auto;
-  padding: 5px 0;
+  line-height: inherit;
+  padding: 5px 12px;
   padding-left: 30px;
-  padding-right: 12px;
   font-size: 13px;
   color: #222;
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
 }
-.datepicker---date-input-container---2zD9B .datepicker---date-input---1vOyn > input:focus {
+.datepicker---date-input---1vOyn > input:focus {
   border-color: #0096cc;
 }
-.datepicker---date-input-container---2zD9B .datepicker---date-input-icon---1UeQu {
+.datepicker---date-input-icon---1UeQu {
   position: absolute;
   left: 9px;
   top: 8px;
   color: #666;
   width: 14px;
   height: 14px;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .datepicker---time-input---2ICRB > input {
+    height: 32px;
+  }
 }
 .datepicker---time-input-container---s4Ikh {
   -webkit-box-sizing: border-box;
@@ -171,27 +179,25 @@
   -moz-box-sizing: inherit;
   box-sizing: inherit;
 }
-.datepicker---time-input-container---s4Ikh .datepicker---time-input---2ICRB {
+.datepicker---time-input---2ICRB {
   width: 120px;
 }
-.datepicker---time-input-container---s4Ikh .datepicker---time-input---2ICRB > input {
+.datepicker---time-input---2ICRB > input {
   display: block;
   width: 100%;
-  line-height: 20px;
-  height: auto;
-  padding: 5px 0;
+  line-height: inherit;
+  padding: 5px 12px;
   padding-left: 30px;
-  padding-right: 12px;
   font-size: 13px;
   color: #222;
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
 }
-.datepicker---time-input-container---s4Ikh .datepicker---time-input---2ICRB > input:focus {
+.datepicker---time-input---2ICRB > input:focus {
   border-color: #0096cc;
 }
-.datepicker---time-input-container---s4Ikh .datepicker---time-input-icon---3TeZ8 {
+.datepicker---time-input-icon---3TeZ8 {
   position: absolute;
   left: 9px;
   top: 8px;

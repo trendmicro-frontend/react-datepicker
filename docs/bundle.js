@@ -2455,14 +2455,14 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".date-input-container---2ZIev {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.date-input-container---2ZIev *,\n.date-input-container---2ZIev *:before,\n.date-input-container---2ZIev *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.date-input-container---2ZIev .date-input---1NsGG {\n  width: 120px;\n}\n.date-input-container---2ZIev .date-input---1NsGG > input {\n  display: block;\n  width: 100%;\n  line-height: 20px;\n  height: auto;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.date-input-container---2ZIev .date-input---1NsGG > input:focus {\n  border-color: #0096cc;\n}\n.date-input-container---2ZIev .date-input-icon---nRcrw {\n  position: absolute;\n  left: 9px;\n  top: 8px;\n  color: #666;\n  width: 14px;\n  height: 14px;\n}\n", ""]);
+exports.push([module.i, "@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {\n  .date-input---1NsGG > input {\n    height: 32px;\n  }\n}\n.date-input-container---2ZIev {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.date-input-container---2ZIev *,\n.date-input-container---2ZIev *:before,\n.date-input-container---2ZIev *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.date-input---1NsGG {\n  width: 120px;\n}\n.date-input---1NsGG > input {\n  display: block;\n  width: 100%;\n  line-height: inherit;\n  padding: 5px 12px;\n  padding-left: 30px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.date-input---1NsGG > input:focus {\n  border-color: #0096cc;\n}\n.date-input-icon---nRcrw {\n  position: absolute;\n  left: 9px;\n  top: 8px;\n  color: #666;\n  width: 14px;\n  height: 14px;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"date-input-container": "date-input-container---2ZIev",
-	"dateInputContainer": "date-input-container---2ZIev",
 	"date-input": "date-input---1NsGG",
 	"dateInput": "date-input---1NsGG",
+	"date-input-container": "date-input-container---2ZIev",
+	"dateInputContainer": "date-input-container---2ZIev",
 	"date-input-icon": "date-input-icon---nRcrw",
 	"dateInputIcon": "date-input-icon---nRcrw"
 };
@@ -2477,14 +2477,14 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".time-input-container---38hMI {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.time-input-container---38hMI *,\n.time-input-container---38hMI *:before,\n.time-input-container---38hMI *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.time-input-container---38hMI .time-input---d9S4b {\n  width: 120px;\n}\n.time-input-container---38hMI .time-input---d9S4b > input {\n  display: block;\n  width: 100%;\n  line-height: 20px;\n  height: auto;\n  padding: 5px 0;\n  padding-left: 30px;\n  padding-right: 12px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.time-input-container---38hMI .time-input---d9S4b > input:focus {\n  border-color: #0096cc;\n}\n.time-input-container---38hMI .time-input-icon---CqHGW {\n  position: absolute;\n  left: 9px;\n  top: 8px;\n  color: #666;\n  width: 14px;\n  height: 14px;\n}\n", ""]);
+exports.push([module.i, "@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {\n  .time-input---d9S4b > input {\n    height: 32px;\n  }\n}\n.time-input-container---38hMI {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n  line-height: 20px;\n  position: relative;\n}\n.time-input-container---38hMI *,\n.time-input-container---38hMI *:before,\n.time-input-container---38hMI *:after {\n  -webkit-box-sizing: inherit;\n  -moz-box-sizing: inherit;\n  box-sizing: inherit;\n}\n.time-input---d9S4b {\n  width: 120px;\n}\n.time-input---d9S4b > input {\n  display: block;\n  width: 100%;\n  line-height: inherit;\n  padding: 5px 12px;\n  padding-left: 30px;\n  font-size: 13px;\n  color: #222;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  outline: none;\n}\n.time-input---d9S4b > input:focus {\n  border-color: #0096cc;\n}\n.time-input-icon---CqHGW {\n  position: absolute;\n  left: 9px;\n  top: 8px;\n  color: #666;\n  width: 14px;\n  height: 14px;\n}\n", ""]);
 
 // exports
 exports.locals = {
-	"time-input-container": "time-input-container---38hMI",
-	"timeInputContainer": "time-input-container---38hMI",
 	"time-input": "time-input---d9S4b",
 	"timeInput": "time-input---d9S4b",
+	"time-input-container": "time-input-container---38hMI",
+	"timeInputContainer": "time-input-container---38hMI",
 	"time-input-icon": "time-input-icon---CqHGW",
 	"timeInputIcon": "time-input-icon---CqHGW"
 };
@@ -2518,7 +2518,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".date-picker-pane---K22l_ {\n  display: inline-block;\n}\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y,\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG,\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa {\n  white-space: nowrap;\n}\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y .tilde---sKOcj {\n  display: inline-block;\n  line-height: 32px;\n  text-align: center;\n  width: 24px;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG {\n  margin-top: 8px;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g {\n  display: inline-block;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g + .date-picker-pane-container---1u-4g {\n  margin-left: 24px;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g + .date-picker-pane-container---1u-4g:before {\n  content: ' ';\n  display: block;\n  height: 260px;\n  vertical-align: middle;\n  margin-left: -12px;\n  float: left;\n  margin-right: 12px;\n  margin-top: 16px;\n  border-left: 1px solid #e6e6e6;\n}\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa {\n  margin-top: 12px;\n}\n.input-icon-group---1RBoX {\n  position: relative;\n  display: inline-block;\n}\n.input-icon-group---1RBoX + .input-icon-group---1RBoX {\n  margin-left: 8px;\n}\n", ""]);
+exports.push([module.i, ".date-picker-pane---K22l_ {\n  display: inline-block;\n}\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y,\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG,\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa {\n  white-space: nowrap;\n}\n.date-picker-pane---K22l_ .date-picker-pane-header---3ky6y .tilde---sKOcj {\n  display: inline-block;\n  line-height: 32px;\n  text-align: center;\n  width: 24px;\n  vertical-align: top;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG {\n  margin-top: 8px;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g {\n  display: inline-block;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g + .date-picker-pane-container---1u-4g {\n  margin-left: 24px;\n}\n.date-picker-pane---K22l_ .date-picker-pane-body---XFXHG .date-picker-pane-container---1u-4g + .date-picker-pane-container---1u-4g:before {\n  content: ' ';\n  display: block;\n  height: 260px;\n  vertical-align: middle;\n  margin-left: -12px;\n  float: left;\n  margin-right: 12px;\n  margin-top: 16px;\n  border-left: 1px solid #e6e6e6;\n}\n.date-picker-pane---K22l_ .date-picker-pane-footer---3SrNa {\n  margin-top: 12px;\n}\n.input-icon-group---1RBoX {\n  position: relative;\n  display: inline-block;\n  vertical-align: top;\n}\n.input-icon-group---1RBoX + .input-icon-group---1RBoX {\n  margin-left: 8px;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -51076,4 +51076,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?630db67d60497ab629e7
+//# sourceMappingURL=bundle.js.map?5a9ef0a8129599a84426

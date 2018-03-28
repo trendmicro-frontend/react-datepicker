@@ -1,39 +1,42 @@
 @import "../reset-context";
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .time-input > input {
+        height: 32px;
+    }
+}
+
 .time-input-container {
     reset-context();
-
     position: relative;
+}
 
-    .time-input {
-        width: 120px;
+.time-input {
+    width: 120px;
 
-        > input {
-            display: block;
-            width: 100%;
-            line-height: 20px;
-            height: auto;
-            padding: 5px 0;
-            padding-left: 30px;
-            padding-right: 12px;
-            font-size: 13px;
-            color: #222222;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            outline: none;
+    > input {
+        display: block;
+        width: 100%;
+        line-height: inherit;
+        padding: 5px 12px;
+        padding-left: 30px;
+        font-size: 13px;
+        color: #222222;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
 
-            &:focus {
-                border-color: #0096cc;
-            }
+        &:focus {
+            border-color: #0096cc;
         }
     }
+}
 
-    .time-input-icon {
-        position: absolute;
-        left: 9px;
-        top: 8px;
-        color: #666;
-        width: 14px;
-        height: 14px;
-    }
+.time-input-icon {
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    color: #666;
+    width: 14px;
+    height: 14px;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@trendmicro/react-datepicker",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "React DatePicker Component",
   "main": "lib/index.js",
   "files": [
