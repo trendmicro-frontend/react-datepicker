@@ -1,4 +1,4 @@
-/*! react-datepicker v1.0.0-alpha.2 | (c) 2018 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-datepicker */
+/*! react-datepicker v1.0.0-alpha.3 | (c) 2018 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-datepicker */
 .datepicker---date-picker-container---1kNBY {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -140,6 +140,7 @@
 .datepicker---date-input---1vOyn > input {
   display: block;
   width: 100%;
+  height: auto;
   line-height: inherit;
   padding: 5px 12px;
   padding-left: 30px;
@@ -185,6 +186,7 @@
 .datepicker---time-input---2ICRB > input {
   display: block;
   width: 100%;
+  height: auto;
   line-height: inherit;
   padding: 5px 12px;
   padding-left: 30px;
