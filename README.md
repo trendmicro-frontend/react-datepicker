@@ -10,10 +10,10 @@ Demo: https://trendmicro-frontend.github.io/react-datepicker
 
 ## Installation
 
-1. Install the latest version of [react](https://github.com/facebook/react) and [react-datepicker](https://github.com/trendmicro-frontend/react-datepicker):
+1. Install the latest version of [react](https://github.com/facebook/react), [moment](https://github.com/moment/moment) and [react-datepicker](https://github.com/trendmicro-frontend/react-datepicker):
 
   ```
-  npm install --save react @trendmicro/react-datepicker
+  npm install --save react moment @trendmicro/react-datepicker
   ```
 
 2. At this point you can import `@trendmicro/react-datepicker` and its styles in your application as follows:
@@ -158,7 +158,7 @@ state = {
 
 #### DatePicker
 
-Name | Type | Default | Description 
+Name | Type | Default | Description
 :--- | :--- | :------ | :----------
 locale | string | 'en' |
 date | object or string | null |
@@ -169,7 +169,7 @@ onSelect | function(date) | | Called when a date is selected.
 
 #### DateInput
 
-Name | Type | Default | Description 
+Name | Type | Default | Description
 :--- | :--- | :------ | :----------
 value | object or string | null |
 defaultValue | object or string | null |
@@ -177,7 +177,7 @@ onChange | function(value) | | Called when the value changes.
 
 #### TimeInput
 
-Name | Type | Default | Description 
+Name | Type | Default | Description
 :--- | :--- | :------ | :----------
 value | string | '00:00:00' |
 defaultValue | string | '00:00:00' |
