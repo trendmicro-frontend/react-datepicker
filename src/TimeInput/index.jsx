@@ -290,7 +290,6 @@ class TimeInput extends PureComponent {
             <div className={cx(className, styles.timeInputContainer)}>
                 <div className={styles.timeInput}>
                     <input
-                        className="TimeInput-input"
                         ref={node => {
                             this.input = node;
                         }}
