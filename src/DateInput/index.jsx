@@ -36,6 +36,14 @@ const replaceCharAt = (string, index, replace) => {
     return string.substring(0, index) + replace + string.substring(index + 1);
 };
 
+const isValidDate = (date) => {
+    if (!date) {
+        return false;
+    }
+
+    return moment(date).isValid();
+};
+
 class DateInput extends PureComponent {
     static propTypes = {
         value: PropTypes.string,
@@ -77,16 +85,20 @@ class DateInput extends PureComponent {
             return;
         }
 
-        const val = moment(this.props.value);
-        const min = moment(this.props.minDate).startOf('day');
-        const max = moment(this.props.maxDate).endOf('day');
+        const date = moment(this.props.value);
 
-        if (val.isBefore(min)) {
-            this.props.onChange(min.format('YYYY-MM-DD'));
+        if (isValidDate(this.props.minDate)) {
+            const minDate = moment(this.props.minDate).startOf('day');
+            if (date.isBefore(minDate)) {
+                this.props.onChange(minDate.format('YYYY-MM-DD'));
+            }
         }
 
-        if (val.isAfter(max)) {
-            this.props.onChange(max.format('YYYY-MM-DD'));
+        if (isValidDate(this.props.maxDate)) {
+            const maxDate = moment(this.props.maxDate).endOf('day');
+            if (date.isAfter(maxDate)) {
+                this.props.onChange(maxDate.format('YYYY-MM-DD'));
+            }
         }
     };
 
