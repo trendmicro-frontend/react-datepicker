@@ -173,6 +173,8 @@ Name | Type | Default | Description
 :--- | :--- | :------ | :----------
 value | object or string | null |
 defaultValue | object or string | null |
+minDate | object or string | null | The minimum date. When set to null, there is no minimum.
+maxDate | object or string | null | The maximum date. When set to null, there is no maximum.
 onChange | function(value) | | Called when the value changes.
 
 #### TimeInput

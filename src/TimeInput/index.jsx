@@ -275,19 +275,16 @@ class TimeInput extends PureComponent {
         }
     }
     render() {
-        let className = 'TimeInput';
-
-        if (this.props.className) {
-            className += (' ' + this.props.className);
-        }
-
         const value = this.format(this.props.value);
         const icon = (
             <Clock className={styles.timeInputIcon} style={{ color: this.state.focused ? '#0096cc' : '#666' }} />
         );
 
         return (
-            <div className={cx(className, styles.timeInputContainer)}>
+            <div
+                className={cx(this.props.className, styles.timeInputContainer)}
+                style={this.props.style}
+            >
                 <div className={styles.timeInput}>
                     <input
                         ref={node => {
