@@ -36,10 +36,37 @@ const replaceCharAt = (string, index, replace) => {
     return string.substring(0, index) + replace + string.substring(index + 1);
 };
 
+const isValidDate = (date) => {
+    if (!date) {
+        return false;
+    }
+
+    return moment(date).isValid();
+};
+
 class DateInput extends PureComponent {
     static propTypes = {
-        className: PropTypes.string,
         value: PropTypes.string,
+
+        // The minimum date. When set to null, there is no minimum.
+        // Types supported:
+        // * Date: A date object containing the minimum date.
+        // * String: A date string in ISO 8601 format (i.e. YYYY-MM-DD).
+        minDate: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.string
+        ]),
+
+        // The maximum date. When set to null, there is no maximum.
+        // Types supported:
+        // * Date: A date object containing the maximum date.
+        // * String: A date string in ISO 8601 format (i.e. YYYY-MM-DD).
+        maxDate: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.string
+        ]),
+
+        // Called when the value changes.
         onChange: PropTypes.func
     };
     static defaultProps = {
@@ -53,6 +80,28 @@ class DateInput extends PureComponent {
         caretIndex: null
     };
 
+    handleDateOutOfRange = () => {
+        if (typeof this.props.onChange !== 'function') {
+            return;
+        }
+
+        const date = moment(this.props.value);
+
+        if (isValidDate(this.props.minDate)) {
+            const minDate = moment(this.props.minDate).startOf('day');
+            if (date.isBefore(minDate)) {
+                this.props.onChange(minDate.format('YYYY-MM-DD'));
+            }
+        }
+
+        if (isValidDate(this.props.maxDate)) {
+            const maxDate = moment(this.props.maxDate).endOf('day');
+            if (date.isAfter(maxDate)) {
+                this.props.onChange(maxDate.format('YYYY-MM-DD'));
+            }
+        }
+    };
+
     handleFocus = (event) => {
         if (this.mounted) {
             this.setState({ focused: true });
@@ -62,6 +111,7 @@ class DateInput extends PureComponent {
     handleBlur = (event) => {
         if (this.mounted) {
             this.setState({ caretIndex: null, focused: false });
+            this.handleDateOutOfRange();
         }
     };
 
@@ -370,6 +420,7 @@ class DateInput extends PureComponent {
 
     componentDidMount () {
         this.mounted = true;
+        this.handleDateOutOfRange();
     }
     componentWillUnmount () {
         this.mounted = false;
@@ -383,27 +434,22 @@ class DateInput extends PureComponent {
         }
     }
     render() {
-        let className = 'DateInput';
-
-        if (this.props.className) {
-            className += (' ' + this.props.className);
-        }
-
-        const { value } = this.props;
         const icon = (
             <Calendar className={styles.dateInputIcon} style={{ color: this.state.focused ? '#0096cc' : '#666' }} />
         );
 
         return (
-            <div className={cx(className, styles.dateInputContainer)}>
+            <div
+                className={cx(this.props.className, styles.dateInputContainer)}
+                style={this.props.style}
+            >
                 <div className={styles.dateInput}>
                     <input
-                        className="DateInput-input"
                         ref={node => {
                             this.input = node;
                         }}
                         type="text"
-                        value={value}
+                        value={this.props.value}
                         onChange={this.handleChange}
                         onFocus={this.handleFocus}
                         onBlur={this.handleBlur}

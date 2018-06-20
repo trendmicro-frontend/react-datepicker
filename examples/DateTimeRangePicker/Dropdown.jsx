@@ -28,7 +28,7 @@ const normalizeTimeString = (timeString) => {
 
 const mapPeriodToString = (period) => {
     if (period === 'custom') {
-        return 'Specified range';
+        return 'Custom range...';
     }
 
     // Only days are supported (e.g. 1, 7, '1d', or '7d')
@@ -75,19 +75,30 @@ class DateTimeRangePickerDropdown extends PureComponent {
         if (!date) {
             return;
         }
-        const startDate = normalizeDateString(date);
-        const endDate = normalizeDateString(this.state.nextEndDate);
-        const startTime = normalizeTimeString(this.state.nextStartTime);
-        const endTime = normalizeTimeString(this.state.nextEndTime);
-        const isoStartDateTime = `${startDate}T${startTime}`;
-        const isoEndDateTime = `${endDate}T${endTime}`;
-        const isSameOrAfterEnd = moment(isoStartDateTime).isSameOrAfter(isoEndDateTime);
 
-        this.setState({
-            nextStartDate: startDate,
-            nextEndDate: isSameOrAfterEnd ? startDate : endDate,
-            nextStartTime: startTime,
-            nextEndTime: isSameOrAfterEnd ? startTime : endTime
+        this.setState(state => {
+            const startDate = normalizeDateString(date);
+            const endDate = normalizeDateString(state.nextEndDate);
+            const startTime = normalizeTimeString(state.nextStartTime);
+            const endTime = normalizeTimeString(state.nextEndTime);
+            const isoStartDateTime = `${startDate}T${startTime}`;
+            const isoEndDateTime = `${endDate}T${endTime}`;
+            const isEndDateAfterMaxDate = state.maxDate && moment(endDate).isAfter(moment(state.maxDate).endOf('day'));
+            const isSameOrAfterEnd = moment(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+
+            let nextEndDate = endDate;
+            if (isEndDateAfterMaxDate) {
+                nextEndDate = normalizeDateString(state.maxDate);
+            } else if (isSameOrAfterEnd) {
+                nextEndDate = startDate;
+            }
+
+            return {
+                nextStartDate: startDate,
+                nextEndDate: nextEndDate,
+                nextStartTime: startTime,
+                nextEndTime: isSameOrAfterEnd ? startTime : endTime
+            };
         });
     };
 
@@ -95,49 +106,64 @@ class DateTimeRangePickerDropdown extends PureComponent {
         if (!date) {
             return;
         }
-        const startDate = normalizeDateString(this.state.nextStartDate);
-        const endDate = normalizeDateString(date);
-        const startTime = normalizeTimeString(this.state.nextStartTime);
-        const endTime = normalizeTimeString(this.state.nextEndTime);
-        const isoStartDateTime = `${startDate}T${startTime}`;
-        const isoEndDateTime = `${endDate}T${endTime}`;
-        const isSameOrBeforeStart = moment(isoEndDateTime).isSameOrBefore(isoStartDateTime);
 
-        this.setState({
-            nextStartDate: isSameOrBeforeStart ? endDate : startDate,
-            nextEndDate: endDate,
-            nextStartTime: isSameOrBeforeStart ? endTime : startTime,
-            nextEndTime: endTime
+        this.setState(state => {
+            const startDate = normalizeDateString(state.nextStartDate);
+            const endDate = normalizeDateString(date);
+            const startTime = normalizeTimeString(state.nextStartTime);
+            const endTime = normalizeTimeString(state.nextEndTime);
+            const isoStartDateTime = `${startDate}T${startTime}`;
+            const isoEndDateTime = `${endDate}T${endTime}`;
+            const isStartDateBeforeMinDate = state.minDate && moment(startDate).isBefore(moment(state.minDate).startOf('day'));
+            const isSameOrBeforeStart = moment(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+
+            let nextStartDate = startDate;
+            if (isStartDateBeforeMinDate) {
+                nextStartDate = normalizeDateString(state.minDate);
+            } else if (isSameOrBeforeStart) {
+                nextStartDate = endDate;
+            }
+
+            return {
+                nextStartDate: nextStartDate,
+                nextEndDate: endDate,
+                nextStartTime: isSameOrBeforeStart ? endTime : startTime,
+                nextEndTime: endTime
+            };
         });
     };
 
     changeStartTime = (time = '00:00:00') => {
-        const startDate = normalizeDateString(this.state.nextStartDate);
-        const endDate = normalizeDateString(this.state.nextEndDate);
-        const startTime = normalizeTimeString(time);
-        const endTime = normalizeTimeString(this.state.nextEndTime);
-        const isoStartDateTime = `${startDate}T${startTime}`;
-        const isoEndDateTime = `${endDate}T${endTime}`;
-        const isSameOrAfterEnd = moment(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+        this.setState(state => {
+            const startDate = normalizeDateString(state.nextStartDate);
+            const endDate = normalizeDateString(state.nextEndDate);
+            const startTime = normalizeTimeString(time);
+            const endTime = normalizeTimeString(state.nextEndTime);
+            const isoStartDateTime = `${startDate}T${startTime}`;
+            const isoEndDateTime = `${endDate}T${endTime}`;
+            const isSameOrAfterEnd = moment(isoStartDateTime).isSameOrAfter(isoEndDateTime);
 
-        this.setState({
-            nextStartTime: startTime,
-            nextEndTime: isSameOrAfterEnd ? startTime : endTime
+            return {
+                nextStartTime: startTime,
+                nextEndTime: isSameOrAfterEnd ? startTime : endTime
+            };
         });
     };
 
     changeEndTime = (time = '00:00:00') => {
-        const startDate = normalizeDateString(this.state.nextStartDate);
-        const endDate = normalizeDateString(this.state.nextEndDate);
-        const startTime = normalizeTimeString(this.state.nextStartTime);
-        const endTime = normalizeTimeString(time);
-        const isoStartDateTime = `${startDate}T${startTime}`;
-        const isoEndDateTime = `${endDate}T${endTime}`;
-        const isSameOrBeforeStart = moment(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+        this.setState(state => {
+            const startDate = normalizeDateString(state.nextStartDate);
+            const endDate = normalizeDateString(state.nextEndDate);
+            const startTime = normalizeTimeString(state.nextStartTime);
+            const endTime = normalizeTimeString(time);
+            const isoStartDateTime = `${startDate}T${startTime}`;
+            const isoEndDateTime = `${endDate}T${endTime}`;
+            const isSameOrBeforeStart = moment(isoEndDateTime).isSameOrBefore(isoStartDateTime);
 
-        this.setState({
-            nextStartTime: isSameOrBeforeStart ? endTime : startTime,
-            nextEndTime: endTime
+            return {
+                nextStartTime: isSameOrBeforeStart ? endTime : startTime,
+                nextEndTime: endTime
+            };
         });
     };
 
@@ -203,7 +229,7 @@ class DateTimeRangePickerDropdown extends PureComponent {
         });
     };
 
-    handleClickApplyForSpecifiedRange = () => {
+    handleClickApplyForCustomRange = () => {
         this.setState(state => ({
             open: false,
 
@@ -228,7 +254,7 @@ class DateTimeRangePickerDropdown extends PureComponent {
         });
     };
 
-    handleClickCancelForSpecifiedRange = () => {
+    handleClickCancelForCustomRange = () => {
         this.setState(state => ({
             open: false,
 
@@ -243,12 +269,17 @@ class DateTimeRangePickerDropdown extends PureComponent {
     getInitialState() {
         const now = moment().seconds(0);
         const days = parseInt(this.props.defaultPeriod, 10) || DateTimeRangePickerDropdown.defaultProps.defaultPeriod;
+        const minDate = moment(now).startOf('day').subtract(60, 'days').format('YYYY-MM-DD');
+        const maxDate = moment(now).endOf('day').format('YYYY-MM-DD');
         const startDate = moment(now).subtract(days, 'days').format('YYYY-MM-DD');
         const startTime = moment(now).subtract(days, 'days').format('hh:mm:ss');
         const endDate = moment(now).format('YYYY-MM-DD');
         const endTime = moment(now).format('hh:mm:ss');
 
         return {
+            minDate: minDate,
+            maxDate: maxDate,
+
             // prev
             startDate: startDate,
             startTime: startTime,
@@ -276,6 +307,7 @@ class DateTimeRangePickerDropdown extends PureComponent {
     render() {
         const { locale, periods } = this.props;
         const {
+            minDate, maxDate,
             startDate, startTime, endDate, endTime,
             nextStartDate, nextStartTime, nextEndDate, nextEndTime
         } = this.state;
@@ -285,11 +317,13 @@ class DateTimeRangePickerDropdown extends PureComponent {
         return (
             <div>
                 <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Dropdown.jsx" target="_blank">Dropdown</Anchor></h3>
-                {period !== 'custom' &&
                 <p>Selected: {mapPeriodToString(period)}</p>
-                }
                 {period === 'custom' &&
-                <p>Selected: {startDate} {startTime} - {endDate} {endTime}</p>
+                <ul>
+                    <li>Minimum: {minDate}</li>
+                    <li>Maximum: {maxDate}</li>
+                    <li>Range: {startDate} {startTime} - {endDate} {endTime}</li>
+                </ul>
                 }
                 <Dropdown
                     open={this.state.open}
@@ -326,6 +360,8 @@ class DateTimeRangePickerDropdown extends PureComponent {
                         >
                             <DateTimeRangePicker
                                 locale={locale}
+                                minDate={minDate}
+                                maxDate={maxDate}
                                 startDate={nextStartDate}
                                 startTime={nextStartTime}
                                 endDate={nextEndDate}
@@ -340,11 +376,11 @@ class DateTimeRangePickerDropdown extends PureComponent {
                                     <Button
                                         btnStyle="primary"
                                         style={{ marginRight: 8 }}
-                                        onClick={this.handleClickApplyForSpecifiedRange}
+                                        onClick={this.handleClickApplyForCustomRange}
                                     >
                                         {'Apply'}
                                     </Button>
-                                    <Button onClick={this.handleClickCancelForSpecifiedRange}>
+                                    <Button onClick={this.handleClickCancelForCustomRange}>
                                         {'Cancel'}
                                     </Button>
                                 </div>
