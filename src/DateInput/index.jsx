@@ -78,8 +78,8 @@ class DateInput extends PureComponent {
         }
 
         const val = moment(this.props.value);
-        const min = moment(this.props.minDate);
-        const max = moment(this.props.maxDate);
+        const min = moment(this.props.minDate).startOf('day');
+        const max = moment(this.props.maxDate).endOf('day');
 
         if (val.isBefore(min)) {
             this.props.onChange(min.format('YYYY-MM-DD'));
