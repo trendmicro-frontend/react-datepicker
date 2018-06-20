@@ -34,66 +34,95 @@ export default class extends PureComponent {
         if (!date) {
             return;
         }
-        const startDate = normalizeDateString(date);
-        const endDate = normalizeDateString(this.state.endDate);
-        const startTime = normalizeTimeString(this.state.startTime);
-        const endTime = normalizeTimeString(this.state.endTime);
-        const isoStartDateTime = `${startDate}T${startTime}`;
-        const isoEndDateTime = `${endDate}T${endTime}`;
-        const isSameOrAfterEnd = moment(isoStartDateTime).isSameOrAfter(isoEndDateTime);
 
-        this.setState({
-            startDate: startDate,
-            endDate: isSameOrAfterEnd ? startDate : endDate,
-            startTime: startTime,
-            endTime: isSameOrAfterEnd ? startTime : endTime
+        this.setState(state => {
+            const startDate = normalizeDateString(date);
+            const endDate = normalizeDateString(state.endDate);
+            const startTime = normalizeTimeString(state.startTime);
+            const endTime = normalizeTimeString(state.endTime);
+            const isoStartDateTime = `${startDate}T${startTime}`;
+            const isoEndDateTime = `${endDate}T${endTime}`;
+            const isEndDateAfterMaxDate = state.maxDate && moment(endDate).isAfter(moment(state.maxDate).endOf('day'));
+            const isSameOrAfterEnd = moment(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+
+            let nextEndDate = endDate;
+            if (isEndDateAfterMaxDate) {
+                nextEndDate = normalizeDateString(state.maxDate);
+            } else if (isSameOrAfterEnd) {
+                nextEndDate = startDate;
+            }
+
+            return {
+                startDate: startDate,
+                endDate: nextEndDate,
+                startTime: startTime,
+                endTime: isSameOrAfterEnd ? startTime : endTime
+            };
         });
     };
+
     changeEndDate = (date) => {
         if (!date) {
             return;
         }
-        const startDate = normalizeDateString(this.state.startDate);
-        const endDate = normalizeDateString(date);
-        const startTime = normalizeTimeString(this.state.startTime);
-        const endTime = normalizeTimeString(this.state.endTime);
-        const isoStartDateTime = `${startDate}T${startTime}`;
-        const isoEndDateTime = `${endDate}T${endTime}`;
-        const isSameOrBeforeStart = moment(isoEndDateTime).isSameOrBefore(isoStartDateTime);
 
-        this.setState({
-            startDate: isSameOrBeforeStart ? endDate : startDate,
-            endDate: endDate,
-            startTime: isSameOrBeforeStart ? endTime : startTime,
-            endTime: endTime
+        this.setState(state => {
+            const startDate = normalizeDateString(state.startDate);
+            const endDate = normalizeDateString(date);
+            const startTime = normalizeTimeString(state.startTime);
+            const endTime = normalizeTimeString(state.endTime);
+            const isoStartDateTime = `${startDate}T${startTime}`;
+            const isoEndDateTime = `${endDate}T${endTime}`;
+            const isStartDateBeforeMinDate = state.minDate && moment(startDate).isBefore(moment(state.minDate).startOf('day'));
+            const isSameOrBeforeStart = moment(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+
+            let nextStartDate = startDate;
+            if (isStartDateBeforeMinDate) {
+                nextStartDate = normalizeDateString(state.minDate);
+            } else if (isSameOrBeforeStart) {
+                nextStartDate = endDate;
+            }
+
+            return {
+                startDate: nextStartDate,
+                endDate: endDate,
+                startTime: isSameOrBeforeStart ? endTime : startTime,
+                endTime: endTime
+            };
         });
     };
+
     changeStartTime = (time = '00:00:00') => {
-        const startDate = normalizeDateString(this.state.startDate);
-        const endDate = normalizeDateString(this.state.endDate);
-        const startTime = normalizeTimeString(time);
-        const endTime = normalizeTimeString(this.state.endTime);
-        const isoStartDateTime = `${startDate}T${startTime}`;
-        const isoEndDateTime = `${endDate}T${endTime}`;
-        const isSameOrAfterEnd = moment(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+        this.setState(state => {
+            const startDate = normalizeDateString(state.startDate);
+            const endDate = normalizeDateString(state.endDate);
+            const startTime = normalizeTimeString(time);
+            const endTime = normalizeTimeString(state.endTime);
+            const isoStartDateTime = `${startDate}T${startTime}`;
+            const isoEndDateTime = `${endDate}T${endTime}`;
+            const isSameOrAfterEnd = moment(isoStartDateTime).isSameOrAfter(isoEndDateTime);
 
-        this.setState({
-            startTime: startTime,
-            endTime: isSameOrAfterEnd ? startTime : endTime
+            return {
+                startTime: startTime,
+                endTime: isSameOrAfterEnd ? startTime : endTime
+            };
         });
     };
-    changeEndTime = (time = '00:00:00') => {
-        const startDate = normalizeDateString(this.state.startDate);
-        const endDate = normalizeDateString(this.state.endDate);
-        const startTime = normalizeTimeString(this.state.startTime);
-        const endTime = normalizeTimeString(time);
-        const isoStartDateTime = `${startDate}T${startTime}`;
-        const isoEndDateTime = `${endDate}T${endTime}`;
-        const isSameOrBeforeStart = moment(isoEndDateTime).isSameOrBefore(isoStartDateTime);
 
-        this.setState({
-            startTime: isSameOrBeforeStart ? endTime : startTime,
-            endTime: endTime
+    changeEndTime = (time = '00:00:00') => {
+        this.setState(state => {
+            const startDate = normalizeDateString(state.startDate);
+            const endDate = normalizeDateString(state.endDate);
+            const startTime = normalizeTimeString(state.startTime);
+            const endTime = normalizeTimeString(time);
+            const isoStartDateTime = `${startDate}T${startTime}`;
+            const isoEndDateTime = `${endDate}T${endTime}`;
+            const isSameOrBeforeStart = moment(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+
+            return {
+                startTime: isSameOrBeforeStart ? endTime : startTime,
+                endTime: endTime
+            };
         });
     };
 
@@ -101,6 +130,8 @@ export default class extends PureComponent {
         const now = moment();
 
         return {
+            minDate: '2000-01-01',
+            maxDate: moment(now).format('YYYY-MM-DD'),
             startDate: moment(now).format('YYYY-MM-DD'),
             startTime: moment(now).format('hh:mm:ss'),
             endDate: moment(now).add(7, 'days').format('YYYY-MM-DD'),
@@ -109,15 +140,21 @@ export default class extends PureComponent {
     }
     render() {
         const { locale } = this.props;
-        const { startDate, startTime, endDate, endTime } = this.state;
+        const { minDate, maxDate, startDate, startTime, endDate, endTime } = this.state;
 
         return (
             <div>
                 <h3><Anchor href="https://github.com/trendmicro-frontend/react-datepicker/blob/master/examples/DateTimeRangePicker/Controlled.jsx" target="_blank">Controlled Component</Anchor></h3>
                 <p><b>Note:</b> This example will update invalid date/time range.</p>
-                <p>Selected: {startDate} {startTime} ~ {endDate} {endTime}</p>
+                <ul>
+                    <li>Minimum: {minDate}</li>
+                    <li>Maximum: {maxDate}</li>
+                    <li>Range: {startDate} {startTime} ~ {endDate} {endTime}</li>
+                </ul>
                 <DateTimeRangePicker
                     locale={locale}
+                    minDate={minDate}
+                    maxDate={maxDate}
                     startDate={startDate}
                     startTime={startTime}
                     endDate={endDate}

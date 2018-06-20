@@ -7,6 +7,14 @@ import styles from './DateTimeRangePicker.styl';
 class DateTimeRangePicker extends PureComponent {
     static propTypes = {
         locale: PropTypes.string,
+        minDate: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.string
+        ]),
+        maxDate: PropTypes.oneOfType([
+            PropTypes.object,
+            PropTypes.string
+        ]),
         startDate: PropTypes.string,
         startTime: PropTypes.string,
         endDate: PropTypes.string,
@@ -20,6 +28,8 @@ class DateTimeRangePicker extends PureComponent {
     render() {
         const {
             locale,
+            minDate,
+            maxDate,
             startDate,
             startTime,
             endDate,
@@ -36,6 +46,8 @@ class DateTimeRangePicker extends PureComponent {
                     <div className={styles.inputIconGroup}>
                         <DateInput
                             value={startDate}
+                            minDate={minDate}
+                            maxDate={maxDate}
                             onChange={onChangeStartDate}
                         />
                     </div>
@@ -49,6 +61,8 @@ class DateTimeRangePicker extends PureComponent {
                     <div className={styles.inputIconGroup}>
                         <DateInput
                             value={endDate}
+                            minDate={minDate}
+                            maxDate={maxDate}
                             onChange={onChangeEndDate}
                         />
                     </div>
@@ -64,6 +78,8 @@ class DateTimeRangePicker extends PureComponent {
                         <DatePicker
                             locale={locale}
                             date={startDate}
+                            minDate={minDate}
+                            maxDate={maxDate}
                             onSelect={onChangeStartDate}
                         />
                     </div>
@@ -71,6 +87,8 @@ class DateTimeRangePicker extends PureComponent {
                         <DatePicker
                             locale={locale}
                             date={endDate}
+                            minDate={minDate}
+                            maxDate={maxDate}
                             onSelect={onChangeEndDate}
                         />
                     </div>
