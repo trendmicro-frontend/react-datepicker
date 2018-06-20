@@ -49172,6 +49172,14 @@ var replaceCharAt = function replaceCharAt(string, index, replace) {
     return string.substring(0, index) + replace + string.substring(index + 1);
 };
 
+var isValidDate = function isValidDate(date) {
+    if (!date) {
+        return false;
+    }
+
+    return (0, _moment2.default)(date).isValid();
+};
+
 var DateInput = (_temp2 = _class = function (_PureComponent) {
     _inherits(DateInput, _PureComponent);
 
@@ -49194,16 +49202,20 @@ var DateInput = (_temp2 = _class = function (_PureComponent) {
                 return;
             }
 
-            var val = (0, _moment2.default)(_this.props.value);
-            var min = (0, _moment2.default)(_this.props.minDate).startOf('day');
-            var max = (0, _moment2.default)(_this.props.maxDate).endOf('day');
+            var date = (0, _moment2.default)(_this.props.value);
 
-            if (val.isBefore(min)) {
-                _this.props.onChange(min.format('YYYY-MM-DD'));
+            if (isValidDate(_this.props.minDate)) {
+                var minDate = (0, _moment2.default)(_this.props.minDate).startOf('day');
+                if (date.isBefore(minDate)) {
+                    _this.props.onChange(minDate.format('YYYY-MM-DD'));
+                }
             }
 
-            if (val.isAfter(max)) {
-                _this.props.onChange(max.format('YYYY-MM-DD'));
+            if (isValidDate(_this.props.maxDate)) {
+                var maxDate = (0, _moment2.default)(_this.props.maxDate).endOf('day');
+                if (date.isAfter(maxDate)) {
+                    _this.props.onChange(maxDate.format('YYYY-MM-DD'));
+                }
             }
         }, _this.handleFocus = function (event) {
             if (_this.mounted) {
@@ -51491,67 +51503,93 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             if (!date) {
                 return;
             }
-            var startDate = normalizeDateString(date);
-            var endDate = normalizeDateString(_this.state.endDate);
-            var startTime = normalizeTimeString(_this.state.startTime);
-            var endTime = normalizeTimeString(_this.state.endTime);
-            var isoStartDateTime = startDate + 'T' + startTime;
-            var isoEndDateTime = endDate + 'T' + endTime;
-            var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
 
-            _this.setState({
-                startDate: startDate,
-                endDate: isSameOrAfterEnd ? startDate : endDate,
-                startTime: startTime,
-                endTime: isSameOrAfterEnd ? startTime : endTime
+            _this.setState(function (state) {
+                var startDate = normalizeDateString(date);
+                var endDate = normalizeDateString(state.endDate);
+                var startTime = normalizeTimeString(state.startTime);
+                var endTime = normalizeTimeString(state.endTime);
+                var isoStartDateTime = startDate + 'T' + startTime;
+                var isoEndDateTime = endDate + 'T' + endTime;
+                var isEndDateAfterMaxDate = state.maxDate && (0, _moment2.default)(endDate).isAfter((0, _moment2.default)(state.maxDate).endOf('day'));
+                var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+
+                var nextEndDate = endDate;
+                if (isEndDateAfterMaxDate) {
+                    nextEndDate = normalizeDateString(state.maxDate);
+                } else if (isSameOrAfterEnd) {
+                    nextEndDate = startDate;
+                }
+
+                return {
+                    startDate: startDate,
+                    endDate: nextEndDate,
+                    startTime: startTime,
+                    endTime: isSameOrAfterEnd ? startTime : endTime
+                };
             });
         }, _this.changeEndDate = function (date) {
             if (!date) {
                 return;
             }
-            var startDate = normalizeDateString(_this.state.startDate);
-            var endDate = normalizeDateString(date);
-            var startTime = normalizeTimeString(_this.state.startTime);
-            var endTime = normalizeTimeString(_this.state.endTime);
-            var isoStartDateTime = startDate + 'T' + startTime;
-            var isoEndDateTime = endDate + 'T' + endTime;
-            var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
 
-            _this.setState({
-                startDate: isSameOrBeforeStart ? endDate : startDate,
-                endDate: endDate,
-                startTime: isSameOrBeforeStart ? endTime : startTime,
-                endTime: endTime
+            _this.setState(function (state) {
+                var startDate = normalizeDateString(state.startDate);
+                var endDate = normalizeDateString(date);
+                var startTime = normalizeTimeString(state.startTime);
+                var endTime = normalizeTimeString(state.endTime);
+                var isoStartDateTime = startDate + 'T' + startTime;
+                var isoEndDateTime = endDate + 'T' + endTime;
+                var isStartDateBeforeMinDate = state.minDate && (0, _moment2.default)(startDate).isBefore((0, _moment2.default)(state.minDate).startOf('day'));
+                var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+
+                var nextStartDate = startDate;
+                if (isStartDateBeforeMinDate) {
+                    nextStartDate = normalizeDateString(state.minDate);
+                } else if (isSameOrBeforeStart) {
+                    nextStartDate = endDate;
+                }
+
+                return {
+                    startDate: nextStartDate,
+                    endDate: endDate,
+                    startTime: isSameOrBeforeStart ? endTime : startTime,
+                    endTime: endTime
+                };
             });
         }, _this.changeStartTime = function () {
             var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '00:00:00';
 
-            var startDate = normalizeDateString(_this.state.startDate);
-            var endDate = normalizeDateString(_this.state.endDate);
-            var startTime = normalizeTimeString(time);
-            var endTime = normalizeTimeString(_this.state.endTime);
-            var isoStartDateTime = startDate + 'T' + startTime;
-            var isoEndDateTime = endDate + 'T' + endTime;
-            var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+            _this.setState(function (state) {
+                var startDate = normalizeDateString(state.startDate);
+                var endDate = normalizeDateString(state.endDate);
+                var startTime = normalizeTimeString(time);
+                var endTime = normalizeTimeString(state.endTime);
+                var isoStartDateTime = startDate + 'T' + startTime;
+                var isoEndDateTime = endDate + 'T' + endTime;
+                var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
 
-            _this.setState({
-                startTime: startTime,
-                endTime: isSameOrAfterEnd ? startTime : endTime
+                return {
+                    startTime: startTime,
+                    endTime: isSameOrAfterEnd ? startTime : endTime
+                };
             });
         }, _this.changeEndTime = function () {
             var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '00:00:00';
 
-            var startDate = normalizeDateString(_this.state.startDate);
-            var endDate = normalizeDateString(_this.state.endDate);
-            var startTime = normalizeTimeString(_this.state.startTime);
-            var endTime = normalizeTimeString(time);
-            var isoStartDateTime = startDate + 'T' + startTime;
-            var isoEndDateTime = endDate + 'T' + endTime;
-            var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+            _this.setState(function (state) {
+                var startDate = normalizeDateString(state.startDate);
+                var endDate = normalizeDateString(state.endDate);
+                var startTime = normalizeTimeString(state.startTime);
+                var endTime = normalizeTimeString(time);
+                var isoStartDateTime = startDate + 'T' + startTime;
+                var isoEndDateTime = endDate + 'T' + endTime;
+                var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
 
-            _this.setState({
-                startTime: isSameOrBeforeStart ? endTime : startTime,
-                endTime: endTime
+                return {
+                    startTime: isSameOrBeforeStart ? endTime : startTime,
+                    endTime: endTime
+                };
             });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -51562,6 +51600,8 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var now = (0, _moment2.default)();
 
             return {
+                minDate: '2000-01-01',
+                maxDate: (0, _moment2.default)(now).format('YYYY-MM-DD'),
                 startDate: (0, _moment2.default)(now).format('YYYY-MM-DD'),
                 startTime: (0, _moment2.default)(now).format('hh:mm:ss'),
                 endDate: (0, _moment2.default)(now).add(7, 'days').format('YYYY-MM-DD'),
@@ -51573,6 +51613,8 @@ var _default = (_temp2 = _class = function (_PureComponent) {
         value: function render() {
             var locale = this.props.locale;
             var _state = this.state,
+                minDate = _state.minDate,
+                maxDate = _state.maxDate,
                 startDate = _state.startDate,
                 startTime = _state.startTime,
                 endDate = _state.endDate,
@@ -51602,19 +51644,37 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                     ' This example will update invalid date/time range.'
                 ),
                 _react2.default.createElement(
-                    'p',
+                    'ul',
                     null,
-                    'Selected: ',
-                    startDate,
-                    ' ',
-                    startTime,
-                    ' ~ ',
-                    endDate,
-                    ' ',
-                    endTime
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Minimum: ',
+                        minDate
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Maximum: ',
+                        maxDate
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Range: ',
+                        startDate,
+                        ' ',
+                        startTime,
+                        ' ~ ',
+                        endDate,
+                        ' ',
+                        endTime
+                    )
                 ),
                 _react2.default.createElement(_DateTimeRangePicker2.default, {
                     locale: locale,
+                    minDate: minDate,
+                    maxDate: maxDate,
                     startDate: startDate,
                     startTime: startTime,
                     endDate: endDate,
@@ -51693,6 +51753,8 @@ var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
         value: function render() {
             var _props = this.props,
                 locale = _props.locale,
+                minDate = _props.minDate,
+                maxDate = _props.maxDate,
                 startDate = _props.startDate,
                 startTime = _props.startTime,
                 endDate = _props.endDate,
@@ -51714,6 +51776,8 @@ var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
                         { className: _DateTimeRangePicker2.default.inputIconGroup },
                         _react2.default.createElement(_src.DateInput, {
                             value: startDate,
+                            minDate: minDate,
+                            maxDate: maxDate,
                             onChange: onChangeStartDate
                         })
                     ),
@@ -51735,6 +51799,8 @@ var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
                         { className: _DateTimeRangePicker2.default.inputIconGroup },
                         _react2.default.createElement(_src.DateInput, {
                             value: endDate,
+                            minDate: minDate,
+                            maxDate: maxDate,
                             onChange: onChangeEndDate
                         })
                     ),
@@ -51756,6 +51822,8 @@ var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
                         _react2.default.createElement(_src2.default, {
                             locale: locale,
                             date: startDate,
+                            minDate: minDate,
+                            maxDate: maxDate,
                             onSelect: onChangeStartDate
                         })
                     ),
@@ -51765,6 +51833,8 @@ var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
                         _react2.default.createElement(_src2.default, {
                             locale: locale,
                             date: endDate,
+                            minDate: minDate,
+                            maxDate: maxDate,
                             onSelect: onChangeEndDate
                         })
                     )
@@ -51776,6 +51846,8 @@ var DateTimeRangePicker = (_temp = _class = function (_PureComponent) {
     return DateTimeRangePicker;
 }(_react.PureComponent), _class.propTypes = {
     locale: _propTypes2.default.string,
+    minDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+    maxDate: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
     startDate: _propTypes2.default.string,
     startTime: _propTypes2.default.string,
     endDate: _propTypes2.default.string,
@@ -51910,7 +51982,7 @@ var normalizeTimeString = function normalizeTimeString(timeString) {
 
 var mapPeriodToString = function mapPeriodToString(period) {
     if (period === 'custom') {
-        return 'Specified range';
+        return 'Custom range...';
     }
 
     // Only days are supported (e.g. 1, 7, '1d', or '7d')
@@ -51945,67 +52017,93 @@ var DateTimeRangePickerDropdown = (_temp2 = _class = function (_PureComponent) {
             if (!date) {
                 return;
             }
-            var startDate = normalizeDateString(date);
-            var endDate = normalizeDateString(_this.state.nextEndDate);
-            var startTime = normalizeTimeString(_this.state.nextStartTime);
-            var endTime = normalizeTimeString(_this.state.nextEndTime);
-            var isoStartDateTime = startDate + 'T' + startTime;
-            var isoEndDateTime = endDate + 'T' + endTime;
-            var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
 
-            _this.setState({
-                nextStartDate: startDate,
-                nextEndDate: isSameOrAfterEnd ? startDate : endDate,
-                nextStartTime: startTime,
-                nextEndTime: isSameOrAfterEnd ? startTime : endTime
+            _this.setState(function (state) {
+                var startDate = normalizeDateString(date);
+                var endDate = normalizeDateString(state.nextEndDate);
+                var startTime = normalizeTimeString(state.nextStartTime);
+                var endTime = normalizeTimeString(state.nextEndTime);
+                var isoStartDateTime = startDate + 'T' + startTime;
+                var isoEndDateTime = endDate + 'T' + endTime;
+                var isEndDateAfterMaxDate = state.maxDate && (0, _moment2.default)(endDate).isAfter((0, _moment2.default)(state.maxDate).endOf('day'));
+                var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+
+                var nextEndDate = endDate;
+                if (isEndDateAfterMaxDate) {
+                    nextEndDate = normalizeDateString(state.maxDate);
+                } else if (isSameOrAfterEnd) {
+                    nextEndDate = startDate;
+                }
+
+                return {
+                    nextStartDate: startDate,
+                    nextEndDate: nextEndDate,
+                    nextStartTime: startTime,
+                    nextEndTime: isSameOrAfterEnd ? startTime : endTime
+                };
             });
         }, _this.changeEndDate = function (date) {
             if (!date) {
                 return;
             }
-            var startDate = normalizeDateString(_this.state.nextStartDate);
-            var endDate = normalizeDateString(date);
-            var startTime = normalizeTimeString(_this.state.nextStartTime);
-            var endTime = normalizeTimeString(_this.state.nextEndTime);
-            var isoStartDateTime = startDate + 'T' + startTime;
-            var isoEndDateTime = endDate + 'T' + endTime;
-            var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
 
-            _this.setState({
-                nextStartDate: isSameOrBeforeStart ? endDate : startDate,
-                nextEndDate: endDate,
-                nextStartTime: isSameOrBeforeStart ? endTime : startTime,
-                nextEndTime: endTime
+            _this.setState(function (state) {
+                var startDate = normalizeDateString(state.nextStartDate);
+                var endDate = normalizeDateString(date);
+                var startTime = normalizeTimeString(state.nextStartTime);
+                var endTime = normalizeTimeString(state.nextEndTime);
+                var isoStartDateTime = startDate + 'T' + startTime;
+                var isoEndDateTime = endDate + 'T' + endTime;
+                var isStartDateBeforeMinDate = state.minDate && (0, _moment2.default)(startDate).isBefore((0, _moment2.default)(state.minDate).startOf('day'));
+                var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+
+                var nextStartDate = startDate;
+                if (isStartDateBeforeMinDate) {
+                    nextStartDate = normalizeDateString(state.minDate);
+                } else if (isSameOrBeforeStart) {
+                    nextStartDate = endDate;
+                }
+
+                return {
+                    nextStartDate: nextStartDate,
+                    nextEndDate: endDate,
+                    nextStartTime: isSameOrBeforeStart ? endTime : startTime,
+                    nextEndTime: endTime
+                };
             });
         }, _this.changeStartTime = function () {
             var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '00:00:00';
 
-            var startDate = normalizeDateString(_this.state.nextStartDate);
-            var endDate = normalizeDateString(_this.state.nextEndDate);
-            var startTime = normalizeTimeString(time);
-            var endTime = normalizeTimeString(_this.state.nextEndTime);
-            var isoStartDateTime = startDate + 'T' + startTime;
-            var isoEndDateTime = endDate + 'T' + endTime;
-            var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
+            _this.setState(function (state) {
+                var startDate = normalizeDateString(state.nextStartDate);
+                var endDate = normalizeDateString(state.nextEndDate);
+                var startTime = normalizeTimeString(time);
+                var endTime = normalizeTimeString(state.nextEndTime);
+                var isoStartDateTime = startDate + 'T' + startTime;
+                var isoEndDateTime = endDate + 'T' + endTime;
+                var isSameOrAfterEnd = (0, _moment2.default)(isoStartDateTime).isSameOrAfter(isoEndDateTime);
 
-            _this.setState({
-                nextStartTime: startTime,
-                nextEndTime: isSameOrAfterEnd ? startTime : endTime
+                return {
+                    nextStartTime: startTime,
+                    nextEndTime: isSameOrAfterEnd ? startTime : endTime
+                };
             });
         }, _this.changeEndTime = function () {
             var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '00:00:00';
 
-            var startDate = normalizeDateString(_this.state.nextStartDate);
-            var endDate = normalizeDateString(_this.state.nextEndDate);
-            var startTime = normalizeTimeString(_this.state.nextStartTime);
-            var endTime = normalizeTimeString(time);
-            var isoStartDateTime = startDate + 'T' + startTime;
-            var isoEndDateTime = endDate + 'T' + endTime;
-            var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
+            _this.setState(function (state) {
+                var startDate = normalizeDateString(state.nextStartDate);
+                var endDate = normalizeDateString(state.nextEndDate);
+                var startTime = normalizeTimeString(state.nextStartTime);
+                var endTime = normalizeTimeString(time);
+                var isoStartDateTime = startDate + 'T' + startTime;
+                var isoEndDateTime = endDate + 'T' + endTime;
+                var isSameOrBeforeStart = (0, _moment2.default)(isoEndDateTime).isSameOrBefore(isoStartDateTime);
 
-            _this.setState({
-                nextStartTime: isSameOrBeforeStart ? endTime : startTime,
-                nextEndTime: endTime
+                return {
+                    nextStartTime: isSameOrBeforeStart ? endTime : startTime,
+                    nextEndTime: endTime
+                };
             });
         }, _this.handleDropdownSelect = function (eventKey) {
             var period = eventKey;
@@ -52077,7 +52175,7 @@ var DateTimeRangePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                     open: open || period === 'custom'
                 };
             });
-        }, _this.handleClickApplyForSpecifiedRange = function () {
+        }, _this.handleClickApplyForCustomRange = function () {
             _this.setState(function (state) {
                 return {
                     open: false,
@@ -52109,7 +52207,7 @@ var DateTimeRangePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                     onSelect({ period: period });
                 }
             });
-        }, _this.handleClickCancelForSpecifiedRange = function () {
+        }, _this.handleClickCancelForCustomRange = function () {
             _this.setState(function (state) {
                 return {
                     open: false,
@@ -52129,12 +52227,17 @@ var DateTimeRangePickerDropdown = (_temp2 = _class = function (_PureComponent) {
         value: function getInitialState() {
             var now = (0, _moment2.default)().seconds(0);
             var days = parseInt(this.props.defaultPeriod, 10) || DateTimeRangePickerDropdown.defaultProps.defaultPeriod;
+            var minDate = (0, _moment2.default)(now).startOf('day').subtract(60, 'days').format('YYYY-MM-DD');
+            var maxDate = (0, _moment2.default)(now).endOf('day').format('YYYY-MM-DD');
             var startDate = (0, _moment2.default)(now).subtract(days, 'days').format('YYYY-MM-DD');
             var startTime = (0, _moment2.default)(now).subtract(days, 'days').format('hh:mm:ss');
             var endDate = (0, _moment2.default)(now).format('YYYY-MM-DD');
             var endTime = (0, _moment2.default)(now).format('hh:mm:ss');
 
             return {
+                minDate: minDate,
+                maxDate: maxDate,
+
                 // prev
                 startDate: startDate,
                 startTime: startTime,
@@ -52166,6 +52269,8 @@ var DateTimeRangePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                 locale = _props.locale,
                 periods = _props.periods;
             var _state = this.state,
+                minDate = _state.minDate,
+                maxDate = _state.maxDate,
                 startDate = _state.startDate,
                 startTime = _state.startTime,
                 endDate = _state.endDate,
@@ -52190,23 +52295,39 @@ var DateTimeRangePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                         'Dropdown'
                     )
                 ),
-                period !== 'custom' && _react2.default.createElement(
+                _react2.default.createElement(
                     'p',
                     null,
                     'Selected: ',
                     mapPeriodToString(period)
                 ),
                 period === 'custom' && _react2.default.createElement(
-                    'p',
+                    'ul',
                     null,
-                    'Selected: ',
-                    startDate,
-                    ' ',
-                    startTime,
-                    ' - ',
-                    endDate,
-                    ' ',
-                    endTime
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Minimum: ',
+                        minDate
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Maximum: ',
+                        maxDate
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Range: ',
+                        startDate,
+                        ' ',
+                        startTime,
+                        ' - ',
+                        endDate,
+                        ' ',
+                        endTime
+                    )
                 ),
                 _react2.default.createElement(
                     _reactDropdown2.default,
@@ -52256,6 +52377,8 @@ var DateTimeRangePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                             },
                             _react2.default.createElement(_DateTimeRangePicker2.default, {
                                 locale: locale,
+                                minDate: minDate,
+                                maxDate: maxDate,
                                 startDate: nextStartDate,
                                 startTime: nextStartTime,
                                 endDate: nextEndDate,
@@ -52276,13 +52399,13 @@ var DateTimeRangePickerDropdown = (_temp2 = _class = function (_PureComponent) {
                                         {
                                             btnStyle: 'primary',
                                             style: { marginRight: 8 },
-                                            onClick: this.handleClickApplyForSpecifiedRange
+                                            onClick: this.handleClickApplyForCustomRange
                                         },
                                         'Apply'
                                     ),
                                     _react2.default.createElement(
                                         _reactButtons.Button,
-                                        { onClick: this.handleClickCancelForSpecifiedRange },
+                                        { onClick: this.handleClickCancelForCustomRange },
                                         'Cancel'
                                     )
                                 )
@@ -52776,6 +52899,8 @@ var _default = (_temp2 = _class = function (_PureComponent) {
             var now = (0, _moment2.default)();
 
             return {
+                minDate: '2000-01-01',
+                maxDate: (0, _moment2.default)(now).format('YYYY-MM-DD'),
                 startDate: (0, _moment2.default)(now).format('YYYY-MM-DD'),
                 startTime: (0, _moment2.default)(now).format('hh:mm:ss'),
                 endDate: (0, _moment2.default)(now).add(7, 'days').format('YYYY-MM-DD'),
@@ -52787,6 +52912,8 @@ var _default = (_temp2 = _class = function (_PureComponent) {
         value: function render() {
             var locale = this.props.locale;
             var _state = this.state,
+                minDate = _state.minDate,
+                maxDate = _state.maxDate,
                 startDate = _state.startDate,
                 startTime = _state.startTime,
                 endDate = _state.endDate,
@@ -52816,19 +52943,37 @@ var _default = (_temp2 = _class = function (_PureComponent) {
                     ' This example will not update invalid date/time range.'
                 ),
                 _react2.default.createElement(
-                    'p',
+                    'ul',
                     null,
-                    'Selected: ',
-                    startDate,
-                    ' ',
-                    startTime,
-                    ' ~ ',
-                    endDate,
-                    ' ',
-                    endTime
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Minimum: ',
+                        minDate
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Maximum: ',
+                        maxDate
+                    ),
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        'Range: ',
+                        startDate,
+                        ' ',
+                        startTime,
+                        ' ~ ',
+                        endDate,
+                        ' ',
+                        endTime
+                    )
                 ),
                 _react2.default.createElement(_DateTimeRangePicker2.default, {
                     locale: locale,
+                    minDate: minDate,
+                    maxDate: maxDate,
                     defaultStartDate: startDate,
                     defaultStartTime: startTime,
                     defaultEndDate: endDate,
@@ -53401,4 +53546,4 @@ _reactDom2.default.render(_react2.default.createElement(App, null), document.get
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?2cdedc3ee9717936d4c1
+//# sourceMappingURL=bundle.js.map?7cfd72f2feb6f86259fa
