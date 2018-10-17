@@ -2,6 +2,8 @@ import 'trendmicro-ui/dist/css/trendmicro-ui.css';
 import qs from 'qs';
 import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
+import toRenderProps from 'recompose/toRenderProps';
+import withStateHandlers from 'recompose/withStateHandlers';
 import Navbar from './Navbar';
 import Section from './Section';
 import * as DatePickerExample from './DatePicker';
@@ -10,6 +12,17 @@ import * as DateTimeRangePickerExample from './DateTimeRangePicker';
 
 const q = qs.parse(window.location.search, { ignoreQueryPrefix: true });
 const locale = q.locale || 'en';
+
+const Enhanced = toRenderProps(withStateHandlers(
+    { // state
+        period: '7d'
+    },
+    { // handlers
+        onSelect: () => ({ period }) => ({
+            period
+        })
+    }
+));
 
 class App extends PureComponent {
     state = {
@@ -78,7 +91,15 @@ class App extends PureComponent {
                                         <DateTimeRangePickerExample.Uncontrolled locale={locale} />
                                     </div>
                                     <div className="col-md-12" style={{ height: 540 }}>
-                                        <DateTimeRangePickerExample.Dropdown locale={locale} />
+                                        <Enhanced locale={locale}>
+                                            {({ locale, period, onSelect }) => (
+                                                <DateTimeRangePickerExample.Dropdown
+                                                    locale={locale}
+                                                    period={period}
+                                                    onSelect={onSelect}
+                                                />
+                                            )}
+                                        </Enhanced>
                                     </div>
                                     <div className="col-md-12" style={{ height: 540 }}>
                                         <DateTimeRangePickerExample.DropdownRight locale={locale} />
