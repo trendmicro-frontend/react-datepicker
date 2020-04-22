@@ -1,6 +1,6 @@
 {
   "name": "@trendmicro/react-datepicker",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "description": "React DatePicker Component",
   "main": "lib/index.js",
   "files": [
@@ -48,15 +48,15 @@
     "react": "^0.14.0 || >=15.0.0"
   },
   "dependencies": {
-    "classnames": "~2.2.5",
-    "prop-types": "~15.5.8",
+    "classnames": "^2.2.5",
+    "prop-types": "^15.6.0",
     "react-datepicker": "~1.5.0",
-    "uncontrollable": "~5.0.0"
+    "uncontrollable": "^7.0.0"
   },
   "devDependencies": {
-    "@trendmicro/react-anchor": "~0.5.5",
-    "@trendmicro/react-buttons": "~1.3.0",
-    "@trendmicro/react-dropdown": "~1.2.2",
+    "@trendmicro/react-anchor": "~0.5.6",
+    "@trendmicro/react-buttons": "~1.3.1",
+    "@trendmicro/react-dropdown": "~1.4.0",
     "babel-cli": "~6.26.0",
     "babel-core": "~6.26.0",
     "babel-eslint": "~8.2.2",
