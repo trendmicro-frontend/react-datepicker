@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import uncontrollable from 'uncontrollable';
+import { uncontrollable } from 'uncontrollable';
 import DatePicker, { TimeInput, DateInput } from '../../src';
 import styles from './DateTimeRangePicker.styl';
 
